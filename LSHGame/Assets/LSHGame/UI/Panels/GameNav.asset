@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe541b4d31ec4af4382d037a6d908fdb, type: 3}
+  m_Name: GameNav
+  m_EditorClassIdentifier: 
+  StartNode:
+    Guid: 69b508a0-d2c3-4b90-aa77-cdf9b3fbe850
+    EditorPosition: {x: 0, y: 0}
+    OutputPort:
+      Name: 
+      ConnectedGuid: 1927ea4f-7ad6-47ea-b97e-9182a5855ae8
+  NestedEndNode:
+    Guid: 75e542fb-eaff-438d-960d-139ede88d3be
+    EditorPosition: {x: -56, y: 304}
+    BackPort:
+      Name: 
+      ConnectedGuid: 
+  StateNodes:
+  - Guid: 1927ea4f-7ad6-47ea-b97e-9182a5855ae8
+    EditorPosition: {x: 252, y: 10}
+    CoicePorts:
+    - Name: back
+      ConnectedGuid: ebbc479e-4e6f-4fcd-b3d4-bcf22c5191b8
+    PanelName: GameOverlayPanel
+    InputController: Player
+    DoNotHide: 1
+    InAnimation: 
+    OutAnimation: 
+  - Guid: ebbc479e-4e6f-4fcd-b3d4-bcf22c5191b8
+    EditorPosition: {x: 285, y: 326}
+    CoicePorts:
+    - Name: SettingsButton
+      ConnectedGuid: 9d5128c7-9d08-4061-90a7-d541f75e7f23
+    - Name: back
+      ConnectedGuid: 1927ea4f-7ad6-47ea-b97e-9182a5855ae8
+    PanelName: PauseMenuPanel
+    InputController: 
+    DoNotHide: 0
+    InAnimation: 
+    OutAnimation: 
+  NestedNodes:
+  - Guid: 9d5128c7-9d08-4061-90a7-d541f75e7f23
+    EditorPosition: {x: 663, y: 191}
+    OutputPort:
+      Name: 
+      ConnectedGuid: 
+    BackPort:
+      Name: 
+      ConnectedGuid: 
+    NestedGraph: {fileID: 11400000, guid: a2a65d98f173ba14db04eedd0089f351, type: 2}
+  DefaultInputController: UI
+  DefaultInAnimation: 
+  DefaultOutAnimation: 

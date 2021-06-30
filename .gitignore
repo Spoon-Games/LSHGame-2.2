@@ -62,7 +62,7 @@
 /LSHGame/crashlytics-build.properties
 
 # FMOD
-/LSHGame-FMod-Project/.chache/
+/LSHGame-FMod-Project/.cache/
 /LSHGame-FMod-Project/.user/
 /LSHGame-FMod-Project/.unsaved/
 /LSHGame/fmod_editor.log

@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe541b4d31ec4af4382d037a6d908fdb, type: 3}
+  m_Name: MainMenuNav
+  m_EditorClassIdentifier: 
+  StartNode:
+    Guid: ca3ab933-8f8e-41b8-b662-0f764a9b1f6e
+    EditorPosition: {x: 0, y: 0}
+    OutputPort:
+      Name: 
+      ConnectedGuid: ed5ca5e2-19e6-421d-8b22-acff3de99406
+  NestedEndNode:
+    Guid: eaefbaaf-9860-45a7-a8e7-33596be9c3ce
+    EditorPosition: {x: 154, y: 375}
+    BackPort:
+      Name: 
+      ConnectedGuid: 
+  StateNodes:
+  - Guid: ed5ca5e2-19e6-421d-8b22-acff3de99406
+    EditorPosition: {x: 215, y: 28}
+    CoicePorts:
+    - Name: SettingsButton
+      ConnectedGuid: 07ddbd10-4f9c-4d08-8792-58a9a2c96cc2
+    - Name: back
+      ConnectedGuid: 
+    PanelName: MainMenuPanel
+    InputController: 
+    DoNotHide: 0
+    InAnimation: 
+    OutAnimation: 
+  NestedNodes:
+  - Guid: 07ddbd10-4f9c-4d08-8792-58a9a2c96cc2
+    EditorPosition: {x: 581, y: 75}
+    OutputPort:
+      Name: 
+      ConnectedGuid: 
+    BackPort:
+      Name: 
+      ConnectedGuid: 
+    NestedGraph: {fileID: 11400000, guid: a2a65d98f173ba14db04eedd0089f351, type: 2}
+  DefaultInputController: UI
+  DefaultInAnimation: 
+  DefaultOutAnimation: 

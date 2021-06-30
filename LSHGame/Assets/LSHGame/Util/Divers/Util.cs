@@ -236,5 +236,10 @@ namespace LSHGame.Util
         {
             return Physics2D.gravity.magnitude * rb.gravityScale;
         }
+
+        public static Rect GetColliderRect(this BoxCollider2D collider)
+        {
+            return new Rect() { size = collider.size, center = collider.offset };
+        }
     }
 }

@@ -37,6 +37,15 @@ namespace LSHGame.PlayerN
         [SerializeField]
         private bool isClimbExhaust = false;
 
+        [SerializeField]
+        private bool isRespawnOnStart = true;
+
+        [SerializeField]
+        private bool isOverrideMovingVelocity = false;
+
+        [SerializeField]
+        private Vector2 overrideMovingVelocity = Vector2.zero;
+
 
         [Header("Input")]
         [SerializeField]
@@ -50,13 +59,13 @@ namespace LSHGame.PlayerN
 
         [Header("References")]
         [SerializeField]
-        private PlayerColliders playerColliders;
+        private BasePlayerCollider playerCollider;
         [SerializeField]
         private LiliumEffect liliumEffect;
         [SerializeField]
         private CameraController cameraController;
 
-        private Rigidbody2D rb => playerColliders.rb;
+        private Rigidbody2D rb;
         private EffectsController effectsController;
         private PlayerStateMachine stateMachine;
 
@@ -76,12 +85,12 @@ namespace LSHGame.PlayerN
         
 
         //Climbing
-        private float climbWallDisableTimer = float.NegativeInfinity;
+        internal float lastJumpTimer = float.NegativeInfinity;
         private float climbWallExhaustTimer = 0;
 
         private Vector2 localScale;
 
-        private Vector2 inputMovement;
+        internal Vector2 inputMovement;
         private Vector2 lastInputMovement;
 
         internal Vector2 lastFrameMovingVelocity = default;
@@ -111,7 +120,7 @@ namespace LSHGame.PlayerN
             stateMachine = new PlayerStateMachine(GetComponent<PlayerLSM>());
             stateMachine.OnStateChanged += OnPlayerStateChanged;
 
-            playerColliders.Initialize(this, stateMachine);
+            rb = playerCollider.Initialize(this, stateMachine);
 
             localScale = transform.localScale;
 
@@ -122,7 +131,7 @@ namespace LSHGame.PlayerN
 
         private void Start()
         {
-            Spawn();
+                Spawn();
         }
 
         internal void Initialize(Player parent)
@@ -150,7 +159,7 @@ namespace LSHGame.PlayerN
   
 
             //Get Substances
-            playerColliders.CheckUpdate();
+            playerCollider.CheckUpdate();
 
             //Check
             CheckLilium();
@@ -167,7 +176,7 @@ namespace LSHGame.PlayerN
             //Exe Update
             ExeUpdate();
 
-            playerColliders.ExeUpdate();
+            playerCollider.ExeUpdate();
 
             Jump();
             FlipSprite();
@@ -176,6 +185,11 @@ namespace LSHGame.PlayerN
             stateMachine.Velocity = localVelocity;
             stateMachine.Position = transform.position;
             stateMachine.UpdateAnimator();
+
+            //Late ExeUpdate
+            playerCollider.LateExeUpdate();
+            if(isOverrideMovingVelocity)
+                Stats.MovingVelocity = overrideMovingVelocity;
 
             //Set Ridgidbody
             rb.velocity = localVelocity + Stats.MovingVelocity;
@@ -239,10 +253,10 @@ namespace LSHGame.PlayerN
 
 
             //Climb wall
-            bool isTouchingClimbWall = playerColliders.IsTouchingClimbWallLeft || playerColliders.IsTouchingClimbWallRight;
+            bool isTouchingClimbWall = playerCollider.IsTouchingClimbWallLeft || playerCollider.IsTouchingClimbWallRight;
             stateMachine.IsTouchingClimbWall = wallClimbInput.Check(GameInput.IsWallClimbHold, isTouchingClimbWall);
             stateMachine.IsTouchingClimbWall &= isTouchingClimbWall;
-            stateMachine.IsTouchingClimbWall &= Time.fixedTime > climbWallDisableTimer;
+            stateMachine.IsTouchingClimbWall &= Time.fixedTime > lastJumpTimer + 0.2f;
 
             
             
@@ -339,7 +353,7 @@ namespace LSHGame.PlayerN
         #region State Changed
         private void OnPlayerStateChanged(PlayerStates from, PlayerStates to)
         {
-
+            //Debug.Log("StateChanged To: " + to);
             if (from != PlayerStates.Dash && to == PlayerStates.Dash)
             {
                 GameInput.Hint_Dash?.Invoke();
@@ -351,7 +365,7 @@ namespace LSHGame.PlayerN
                 if (!GetSign(inputMovement.x, out float sign))
                     sign = flipedDirection.x;
                 if (from == PlayerStates.ClimbWall || from == PlayerStates.ClimbWallExhaust)
-                    sign = playerColliders.IsTouchingClimbWallLeft ^ this.isXFliped ? 1 : -1;
+                    sign = playerCollider.IsTouchingClimbWallLeft ^ this.isXFliped ? 1 : -1;
 
                 Vector2 direction = verticalDashSpeed > 0 ? inputMovement.normalized : new Vector2(sign, 0);
 
@@ -375,7 +389,7 @@ namespace LSHGame.PlayerN
             if (to == PlayerStates.Death)
             {
                 Respawn();
-                playerColliders.SetToDeadBody();
+                playerCollider.SetToDeadBody();
                 cameraController.SetFallingDead(true);
             }
 
@@ -490,7 +504,7 @@ namespace LSHGame.PlayerN
             if (jumpInput.Check(GameInput.IsJump, stateMachine.State == PlayerStates.Locomotion || stateMachine.State == PlayerStates.ClimbLadder || stateMachine.State == PlayerStates.ClimbLadderTop || (stateMachine.State == PlayerStates.Aireborne && Stats.IsJumpableInAir), ref buttonReleased))
             {
                 localVelocity.y = Stats.JumpSpeed * flipedDirection.y;
-                climbWallDisableTimer = Time.fixedTime + 0.2f;
+                lastJumpTimer = Time.fixedTime + 0.2f;
 
                 Stats.OnJump?.Invoke();
                 //rb.AddForce(new Vector2(0, jumpSpeed),ForceMode2D.Impulse);
@@ -498,24 +512,24 @@ namespace LSHGame.PlayerN
             else if (jumpInput.Check(GameInput.IsJump, stateMachine.State == PlayerStates.ClimbWall, ref buttonReleased, 1))
             {
                 localVelocity = Stats.ClimbingWallJumpVelocity * new Vector2(inputMovement.x, flipedDirection.y);
-                climbWallDisableTimer = Time.fixedTime + 0.2f;
+                lastJumpTimer = Time.fixedTime;
             }
             else if (jumpInput.Check(GameInput.IsJump, stateMachine.State == PlayerStates.ClimbWallExhaust, ref buttonReleased, 2))
             {
                 localVelocity = Stats.ClimbingWallJumpVelocity * new Vector2(JumpXVelClimbWallDir(), flipedDirection.y);
-                climbWallDisableTimer = Time.fixedTime + 0.2f;
+                lastJumpTimer = Time.fixedTime;
             }
 
             if (buttonReleased && GreaterYAbs(localVelocity.y, 0.05f))
             {
                 isJumpSpeedCutterActivated = true;
-                climbWallDisableTimer = float.NegativeInfinity;
+                lastJumpTimer = float.NegativeInfinity;
             }
         }
 
         private float JumpXVelClimbWallDir()
         {
-            return isXFliped ^ playerColliders.IsTouchingClimbWallLeft ? 1 : -1;
+            return isXFliped ^ playerCollider.IsTouchingClimbWallLeft ? 1 : -1;
         }
 
         private void ExeSneek()
@@ -603,7 +617,7 @@ namespace LSHGame.PlayerN
 
         private void SetClimbWallSpeedX()
         {
-            bool isLeftAbs = playerColliders.IsTouchingClimbWallLeft ^ transform.localScale.x > 0;
+            bool isLeftAbs = playerCollider.IsTouchingClimbWallLeft ^ transform.localScale.x > 0;
 
             if (inputMovement.x > 0 && isLeftAbs || inputMovement.x < 0 && !isLeftAbs)
             {
@@ -679,7 +693,10 @@ namespace LSHGame.PlayerN
             LevelManager.ResetLevel();
             Reset();
 
-            playerColliders.SetPositionCorrected(position);
+            if (isRespawnOnStart)
+                playerCollider.SetPositionCorrected(position);
+            else
+                Teleport(transform.position);
 
             stateMachine.IsDead = false;
         }
@@ -694,7 +711,7 @@ namespace LSHGame.PlayerN
         private void Reset()
         {
             stateMachine.Reset();
-            playerColliders.Reset();
+            playerCollider.Reset();
             cameraController.SetFallingDead(false);
 
             jumpInput.Reset();
@@ -712,7 +729,7 @@ namespace LSHGame.PlayerN
             liliumState = 0;
             liliumStartTimer = 0;
 
-            climbWallDisableTimer = float.NegativeInfinity;
+            lastJumpTimer = float.NegativeInfinity;
             climbWallExhaustTimer = 0;
             lastFrameMovingVelocity = default;
             localGravity = 0;

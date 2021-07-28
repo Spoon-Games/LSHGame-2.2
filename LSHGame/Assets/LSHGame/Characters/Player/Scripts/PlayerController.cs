@@ -2,7 +2,6 @@
 using LSHGame.Util;
 using SceneM;
 using UnityEngine;
-using UnityEngine.InputSystem.Controls;
 
 namespace LSHGame.PlayerN
 {
@@ -26,7 +25,7 @@ namespace LSHGame.PlayerN
 
         [Header("Experimental")]
         [SerializeField]
-        private float verticalDashSpeed = 0;
+        private bool dashWithoutLilium = false;
 
         [SerializeField]
         private bool isInvincible = false;
@@ -46,16 +45,19 @@ namespace LSHGame.PlayerN
         [SerializeField]
         private Vector2 overrideMovingVelocity = Vector2.zero;
 
+        [SerializeField]
+        private bool overrideGoRight;
+
 
         [Header("Input")]
         [SerializeField]
         private InputButton jumpInput;
 
         [SerializeField]
-        private InputButton dashInput;
+        private float wallClimbInputExtendDurration = 0.2f;
 
-        [SerializeField]
-        private InputButton wallClimbInput;
+        private Timer wallClimbInputExtendLeftTimer;
+        private Timer wallClimbInputExtendRightTimer;
 
         [Header("References")]
         [SerializeField]
@@ -72,7 +74,6 @@ namespace LSHGame.PlayerN
         private Player parent;
 
         //Dash
-        private bool isDashStartDisableByGround = true;
         private float dashStartDisableTimer = float.NegativeInfinity;
         private Vector2 dashVelocity;
         private Vector2 estimatedDashPosition;
@@ -82,11 +83,10 @@ namespace LSHGame.PlayerN
         //Lilium
         public int liliumState = 0;
         private float liliumStartTimer = 0;
-        
+
 
         //Climbing
         internal float lastJumpTimer = float.NegativeInfinity;
-        private float climbWallExhaustTimer = 0;
 
         private Vector2 localScale;
 
@@ -102,6 +102,14 @@ namespace LSHGame.PlayerN
         internal Vector2 flipedDirection = Vector2.zero;
         private bool isYFliped => flipedDirection.y == -1;
         private bool isXFliped => flipedDirection.x == -1;
+
+        private bool IsTouchingClimbWallLeftAbs => (!isXFliped && playerCollider.IsTouchingClimbWallLeft ||
+            isXFliped && playerCollider.IsTouchingClimbWallRight);
+        private bool IsTouchingClimbWallRightAbs => (!isXFliped && playerCollider.IsTouchingClimbWallRight ||
+            isXFliped && playerCollider.IsTouchingClimbWallLeft);
+
+        [SerializeField]
+        private Timer releaseFromClimbWallTimer = new Timer(0.2f);
 
         private bool isJumpSpeedCutterActivated = false;
 
@@ -124,6 +132,9 @@ namespace LSHGame.PlayerN
 
             localScale = transform.localScale;
 
+            wallClimbInputExtendRightTimer = new Timer(wallClimbInputExtendDurration);
+            wallClimbInputExtendLeftTimer = new Timer(wallClimbInputExtendDurration);
+
             //Debug.Log("PlayerController IsGroundedHash: " + PlayerLSM.IsGroundedHash + " AnimHash " + Animator.StringToHash("IsGrounded"));
             //GetComponent<Animator>().SetBool(Animator.StringToHash("IsGrounded"), true);
             //inputMaster.Enable();
@@ -131,7 +142,7 @@ namespace LSHGame.PlayerN
 
         private void Start()
         {
-                Spawn();
+            Spawn();
         }
 
         internal void Initialize(Player parent)
@@ -145,7 +156,7 @@ namespace LSHGame.PlayerN
         {
             //Get Stats
             flipedDirection = transform.localScale;
-            
+
             Vector2 rbVelocity = ((Vector2)transform.position - lastFramePosition) / Time.fixedDeltaTime;
             lastFramePosition = transform.position;
 
@@ -156,7 +167,9 @@ namespace LSHGame.PlayerN
 
             lastInputMovement = inputMovement;
             inputMovement = GameInput.MovmentInput;
-  
+            if (overrideGoRight)
+                inputMovement.x = 1;
+
 
             //Get Substances
             playerCollider.CheckUpdate();
@@ -164,12 +177,11 @@ namespace LSHGame.PlayerN
             //Check
             CheckLilium();
             CheckClimbWall();
-            CheckCrouching();
             CheckDash();
             CheckPlayerEnabled();
             CheckGravity();
             CheckSaveGround();
-            this.AsignEffectMaterials();
+            AsignEffectMaterials();
 
             stateMachine.UpdateState();
 
@@ -188,7 +200,7 @@ namespace LSHGame.PlayerN
 
             //Late ExeUpdate
             playerCollider.LateExeUpdate();
-            if(isOverrideMovingVelocity)
+            if (isOverrideMovingVelocity)
                 Stats.MovingVelocity = overrideMovingVelocity;
 
             //Set Ridgidbody
@@ -211,7 +223,7 @@ namespace LSHGame.PlayerN
         {
             //Debug.Log("liliumState: " + liliumState);
 
-            if(Stats.LiliumReference != null && liliumState < 1)
+            if (Stats.LiliumReference != null && liliumState < 1)
             {
                 if (Stats.LiliumReference.GetLilium())
                 {
@@ -223,7 +235,7 @@ namespace LSHGame.PlayerN
                 }
             }
 
-            if(Stats.BlackLiliumReference != null && liliumState > 0)
+            if (Stats.BlackLiliumReference != null && liliumState > 0)
             {
                 if (Stats.BlackLiliumReference.DeliverLilium())
                 {
@@ -232,7 +244,7 @@ namespace LSHGame.PlayerN
                 }
             }
 
-            if(liliumState > 0 && Time.fixedTime >= liliumStartTimer + liliumDeathDurration)
+            if (liliumState > 0 && Time.fixedTime >= liliumStartTimer + liliumDeathDurration)
             {
                 Kill();
             }
@@ -254,46 +266,39 @@ namespace LSHGame.PlayerN
 
             //Climb wall
             bool isTouchingClimbWall = playerCollider.IsTouchingClimbWallLeft || playerCollider.IsTouchingClimbWallRight;
-            stateMachine.IsTouchingClimbWall = wallClimbInput.Check(GameInput.IsWallClimbHold, isTouchingClimbWall);
+            //stateMachine.IsTouchingClimbWall = wallClimbInput.Check(GameInput.IsWallClimbHold, isTouchingClimbWall);
+
+            if (inputMovement.x > 0)
+                wallClimbInputExtendRightTimer.Clock();
+            if (inputMovement.x < 0)
+                wallClimbInputExtendLeftTimer.Clock();
+
+            if (!stateMachine.IsTouchingClimbWall && isTouchingClimbWall)
+            {
+                stateMachine.IsTouchingClimbWall = IsTouchingClimbWallLeftAbs && ((wallClimbInputExtendLeftTimer.Active || localVelocity.x < -0.05f));
+                stateMachine.IsTouchingClimbWall |= IsTouchingClimbWallRightAbs && (wallClimbInputExtendRightTimer.Active || localVelocity.x > 0.05f);
+            }
+
             stateMachine.IsTouchingClimbWall &= isTouchingClimbWall;
             stateMachine.IsTouchingClimbWall &= Time.fixedTime > lastJumpTimer + 0.2f;
 
-            
-            
+
+
 
             //Debug.Log("CheckClimbWall: " + stateMachine.IsTouchingClimbWall + " isPress: " + inputController.Player.WallClimbHold.GetBC().isPressed);
 
-            if (stateMachine.IsGrounded || stateMachine.IsTouchingClimbLadder)
-            {
-                climbWallExhaustTimer = 0;
-            }
-
-            stateMachine.IsClimbWallExhausted = Stats.ClimbingWallExhaustDurration <= climbWallExhaustTimer;
-            stateMachine.IsClimbWallExhausted &= isClimbExhaust;
-
-            //if (stateMachine.IsTouchingClimbWall)
-            //{
-            //    Debug.Log("TouchingClimbWall: Exhausted" + stateMachine.IsClimbWallExhausted + "\nIsGrounded: " + stateMachine.IsGrounded +
-            //        "\nIsClimbLadder: " + stateMachine.IsTouchingClimbLadder + " \nIsDash: " + stateMachine.IsDash);
-            //}
         }
 
-        private void CheckCrouching()
-        {
-            stateMachine.IsInputCrouch = inputMovement.y < 0;
-            stateMachine.IsInputCrouch &= isCroushing;
-        }
 
         private void CheckDash()
         {
-            isDashStartDisableByGround &= ! (stateMachine.IsGrounded || stateMachine.State == PlayerStates.ClimbWall 
-                || stateMachine.State == PlayerStates.ClimbWallExhaust || stateMachine.State == PlayerStates.ClimbLadder ||
-                stateMachine.State == PlayerStates.ClimbLadderTop);
+            Stats.IsDashActive &= liliumState > 0 || dashWithoutLilium;
 
-            if (dashInput.Check(GameInput.IsDash,
+            if (jumpInput.Check(GameInput.IsJump,
                 stateMachine.State != PlayerStates.Dash
-                && !isDashStartDisableByGround
-                && dashStartDisableTimer + Stats.DashRecoverDurration <= Time.fixedTime && liliumState > 0))
+                && dashStartDisableTimer + Stats.DashRecoverDurration <= Time.fixedTime 
+                && Stats.IsDashActive, conIndex: 2)
+                && Stats.IsDashActive) // make sure that dash is only activated while active
             {
                 stateMachine.IsDash = true;
             }
@@ -303,9 +308,9 @@ namespace LSHGame.PlayerN
 
                 //stateMachine.IsDash &= !GameInput.WasDashRealeased;
                 stateMachine.IsDash &= localVelocity.Approximately(dashVelocity, 0.5f) && estimatedDashPosition.Approximately(rb.transform.position, 0.5f);
-                stateMachine.IsDash &= Time.fixedTime < dashEndTimer + Stats.DashDurration;
+                stateMachine.IsDash &= Time.fixedTime < dashEndTimer;
 
-                stateMachine.IsDash &= liliumState > 0; //Check for lilium
+                //stateMachine.IsDash &= liliumState > 0; //Check for lilium
             }
         }
 
@@ -333,7 +338,6 @@ namespace LSHGame.PlayerN
             Stats.IsSaveGround &= stateMachine.State != PlayerStates.Death;
             Stats.IsSaveGround &= stateMachine.State != PlayerStates.Dash;
             Stats.IsSaveGround &= stateMachine.State != PlayerStates.ClimbWall;
-            Stats.IsSaveGround &= stateMachine.State != PlayerStates.ClimbWallExhaust;
             Stats.IsSaveGround &= stateMachine.State != PlayerStates.ClimbLadder;
             Stats.IsSaveGround &= stateMachine.State != PlayerStates.ClimbLadderTop;
             Stats.IsSaveGround &= stateMachine.State != PlayerStates.Aireborne;
@@ -356,32 +360,51 @@ namespace LSHGame.PlayerN
             //Debug.Log("StateChanged To: " + to);
             if (from != PlayerStates.Dash && to == PlayerStates.Dash)
             {
-                GameInput.Hint_Dash?.Invoke();
 
                 dashStartDisableTimer = Time.fixedTime;
-                isDashStartDisableByGround = true;
 
-                dashEndTimer = Time.fixedTime;
+                dashEndTimer = Time.fixedTime + Stats.DashDurration;
                 if (!GetSign(inputMovement.x, out float sign))
                     sign = flipedDirection.x;
-                if (from == PlayerStates.ClimbWall || from == PlayerStates.ClimbWallExhaust)
-                    sign = playerCollider.IsTouchingClimbWallLeft ^ this.isXFliped ? 1 : -1;
+                if (from == PlayerStates.ClimbWall)
+                    sign = playerCollider.IsTouchingClimbWallLeft ^ isXFliped ? 1 : -1;
 
-                Vector2 direction = verticalDashSpeed > 0 ? inputMovement.normalized : new Vector2(sign, 0);
+                Vector2 direction = Stats.DashDirection.normalized;//verticalDashSpeed > 0 ? inputMovement.normalized : new Vector2(sign, 0);
+                float speed = Stats.DashSpeed;
+                Vector2 dashCenterOffset = (Vector2)transform.position - Stats.DashActivateCenterPos;
 
-                dashVelocity = new Vector2(direction.x * Stats.DashSpeed, direction.y * verticalDashSpeed);
+                Vector2 directionToTargetPos = (direction * Stats.DashSpeed * Stats.DashDurration - dashCenterOffset).normalized;
+
+                Quaternion dirq = Quaternion.Lerp(Quaternion.LookRotation(Vector3.forward, direction), Quaternion.LookRotation(Vector3.forward, directionToTargetPos)
+                    , Stats.EqualizeDashDirectionWeight);
+                direction = dirq * Vector2.up;
+
+                float inDirectionLengthDiff = Vector2.Dot(dashCenterOffset, direction);
+                speed -= inDirectionLengthDiff / Stats.DashDurration * Mathf.Clamp01(Stats.EqualizeDashLengthWeight);
+
+
+
+                dashVelocity = direction * speed;//new Vector2(direction.x * Stats.DashSpeed, direction.y * verticalDashSpeed);
                 estimatedDashPosition = rb.transform.position;
                 localVelocity = dashVelocity;
 
                 liliumEffect.Dash();
             }
 
-            if(to == PlayerStates.ClimbWall)
+            if (to == PlayerStates.ClimbWall)
             {
                 GameInput.Hint_WallClimb?.Invoke();
+
+                effectsController.TriggerEffect("WallSlide");
+                effectsController.SetMaterial("Jump", "WallJump");
+            }
+            else if (from == PlayerStates.ClimbWall)
+            {
+                effectsController.StopEffect("WallSlide");
+                effectsController.SetMaterial("Jump", "Default");
             }
 
-            if(from == PlayerStates.Dash)
+            if (from == PlayerStates.Dash)
             {
                 lastDashTurningCenter = Vector2.negativeInfinity;
             }
@@ -403,7 +426,7 @@ namespace LSHGame.PlayerN
             {
                 case PlayerStates.Locomotion:
 
-                    Run(isAirborne:false);
+                    Run(isAirborne: false);
                     ExeSneek();
                     localGravity = Stats.Gravity;
                     break;
@@ -415,25 +438,16 @@ namespace LSHGame.PlayerN
                     if (SmalerY(localVelocity.y, 0))
                         localVelocity.y *= Stats.FallDamping;
                     break;
-                case PlayerStates.Crouching:
-                    Run(isAirborne: false,isCrouching:true);
-                    ExeSneek();
-                    localGravity = Stats.Gravity;
-                    break;
                 case PlayerStates.ClimbWall:
 
                     localGravity = 0;
                     SetClimbWallSpeedX();
-                    localVelocity.y = Stats.ClimbingWallSlideSpeed * inputMovement.y;
 
-                    if (Mathf.Abs(Stats.Gravity) > 0.06f)
-                        climbWallExhaustTimer += Time.fixedDeltaTime;
+                    if (inputMovement.y > 0)
+                        localVelocity.y = -Stats.ClimbingWallSlowSlideSpeed;
+                    else
+                        localVelocity.y = -Stats.ClimbingWallSlideSpeed;
 
-                    break;
-                case PlayerStates.ClimbWallExhaust:
-                    localGravity = Stats.Gravity;
-                    SetClimbWallSpeedX();
-                    localVelocity.y = -Stats.ClimbingWallExhaustSlideSpeed * localGravity;
                     break;
                 case PlayerStates.ClimbLadder:
 
@@ -453,7 +467,7 @@ namespace LSHGame.PlayerN
                     localGravity = 0;
                     break;
                 case PlayerStates.Death:
-                    localVelocity.x = 0 ;
+                    localVelocity.x = 0;
                     //localGravity = 0;
                     break;
             }
@@ -466,19 +480,15 @@ namespace LSHGame.PlayerN
 
             if (Mathf.Abs(inputMovement.y) > 0.01f && stateMachine.State == PlayerStates.ClimbLadder)
                 GameInput.Hint_LadderClimb?.Invoke();
-                
+
             float horVelocityRel = localVelocity.x;
             AnimationCurve accelCurve = Stats.RunAccelCurve;
             AnimationCurve deaccelCurve = Stats.RunDeaccelCurve;
 
-            if(isAirborne)
+            if (isAirborne)
             {
                 accelCurve = Stats.RunAccelAirborneCurve;
                 deaccelCurve = Stats.RunDeaccelAirborneCurve;
-            }else if(isCrouching)
-            {
-                accelCurve = Stats.RunCrouchAccelCurve;
-                deaccelCurve = Stats.RunCrouchDeaccelCurve;
             }
 
             if (Mathf.Abs(inputMovement.x) < 0.01f)
@@ -499,28 +509,34 @@ namespace LSHGame.PlayerN
 
         private void Jump()
         {
+            if (Stats.IsDashActive)
+                return;
+
             bool buttonReleased = false;
 
-            if (jumpInput.Check(GameInput.IsJump, stateMachine.State == PlayerStates.Locomotion || stateMachine.State == PlayerStates.ClimbLadder || stateMachine.State == PlayerStates.ClimbLadderTop || (stateMachine.State == PlayerStates.Aireborne && Stats.IsJumpableInAir), ref buttonReleased))
+            if (GreaterYAbs(Stats.JumpSpeed, localVelocity.y) &&
+                jumpInput.Check(GameInput.IsJump, stateMachine.State == PlayerStates.Locomotion || stateMachine.State == PlayerStates.ClimbLadder || stateMachine.State == PlayerStates.ClimbLadderTop || (stateMachine.State == PlayerStates.Aireborne && Stats.IsJumpableInAir), ref buttonReleased))
             {
-                localVelocity.y = Stats.JumpSpeed * flipedDirection.y;
+                localVelocity.y = Mathf.Max(Stats.JumpSpeed * flipedDirection.y, localVelocity.y);
                 lastJumpTimer = Time.fixedTime + 0.2f;
 
                 Stats.OnJump?.Invoke();
+                effectsController.TriggerEffect("Jump");
                 //rb.AddForce(new Vector2(0, jumpSpeed),ForceMode2D.Impulse);
             }
             else if (jumpInput.Check(GameInput.IsJump, stateMachine.State == PlayerStates.ClimbWall, ref buttonReleased, 1))
             {
-                localVelocity = Stats.ClimbingWallJumpVelocity * new Vector2(inputMovement.x, flipedDirection.y);
+                float xfactor = 1;
+                if (IsTouchingClimbWallLeftAbs)
+                    xfactor = inputMovement.x > 0 ? 1 : 0.8f;
+                else
+                    xfactor = inputMovement.x < 0 ? -1 : -0.8f;
+                localVelocity = Stats.ClimbingWallJumpVelocity * new Vector2(xfactor, flipedDirection.y);
                 lastJumpTimer = Time.fixedTime;
-            }
-            else if (jumpInput.Check(GameInput.IsJump, stateMachine.State == PlayerStates.ClimbWallExhaust, ref buttonReleased, 2))
-            {
-                localVelocity = Stats.ClimbingWallJumpVelocity * new Vector2(JumpXVelClimbWallDir(), flipedDirection.y);
-                lastJumpTimer = Time.fixedTime;
+                effectsController.TriggerEffect("Jump", "WallJump");
             }
 
-            if (buttonReleased && GreaterYAbs(localVelocity.y, 0.05f))
+            if (buttonReleased && GreaterYAbs(localVelocity.y, 0.05f) && GreaterYAbs(Stats.JumpSpeed, localVelocity.y))
             {
                 isJumpSpeedCutterActivated = true;
                 lastJumpTimer = float.NegativeInfinity;
@@ -554,7 +570,7 @@ namespace LSHGame.PlayerN
             //        Debug.Log("Radius: " + radius + " Velocity: " + localVelocity + " AngleSign: " + Mathf.Sign(Vector2.SignedAngle(radius, localVelocity)) +
             //            nTurningCenter: "+Stats.GlobalDashTurningCenter);
             //    }
-                
+
             //    RotateDash(currentRotation, Quaternion.Euler(0, 0, dashTurningTargetAngle), radius.magnitude);
             //}
             //else if(Stats.DashTurningRadius >= 0)
@@ -591,7 +607,7 @@ namespace LSHGame.PlayerN
             if (GetSign(localGravity, out float ysign))
                 flipedDirection.y = ysign;
 
-            if ((stateMachine.State == PlayerStates.ClimbWall || stateMachine.State == PlayerStates.ClimbWallExhaust))
+            if ((stateMachine.State == PlayerStates.ClimbWall))
             {
                 if (GetSign(inputMovement.x, out float sign2))
                     flipedDirection.x = sign2;
@@ -617,15 +633,19 @@ namespace LSHGame.PlayerN
 
         private void SetClimbWallSpeedX()
         {
-            bool isLeftAbs = playerCollider.IsTouchingClimbWallLeft ^ transform.localScale.x > 0;
+            if (!(inputMovement.x > 0 && IsTouchingClimbWallLeftAbs || inputMovement.x < 0 && IsTouchingClimbWallRightAbs))
+            {
+                releaseFromClimbWallTimer.Clock();
+            }
 
-            if (inputMovement.x > 0 && isLeftAbs || inputMovement.x < 0 && !isLeftAbs)
+            if (releaseFromClimbWallTimer.Finished)
             {
                 Run(true);
             }
             else
             {
-                localVelocity.x = isLeftAbs ? 1 : -1;
+                //Glue to the wall
+                localVelocity.x = IsTouchingClimbWallRightAbs ? 1 : -1;
             }
 
         }
@@ -715,10 +735,8 @@ namespace LSHGame.PlayerN
             cameraController.SetFallingDead(false);
 
             jumpInput.Reset();
-            dashInput.Reset();
 
 
-            isDashStartDisableByGround = true;
             dashStartDisableTimer = float.NegativeInfinity;
             dashVelocity = Vector2.zero;
             estimatedDashPosition = Vector2.zero;
@@ -730,7 +748,6 @@ namespace LSHGame.PlayerN
             liliumStartTimer = 0;
 
             lastJumpTimer = float.NegativeInfinity;
-            climbWallExhaustTimer = 0;
             lastFrameMovingVelocity = default;
             localGravity = 0;
             Vector2 flipedDirection = Vector2.zero;

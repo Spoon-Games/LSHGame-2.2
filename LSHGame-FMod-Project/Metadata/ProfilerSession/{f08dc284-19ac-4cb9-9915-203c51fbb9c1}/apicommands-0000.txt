@@ -1,0 +1,2532 @@
+Playback::frame, 0
+Playback::version, 2, 131335
+#
+# FMOD v2.01.07 command capture
+#   System::setSoftwareChannels(numsoftwarechannels: 256)
+#   System::setDSPBufferSize(bufferlength: 1024, numbuffers: 4)
+#   System::setSoftwareFormat(samplerate: 48000, speakermode: 3, numrawspeakers: 2)
+#   System::setAdvancedSettings(settings: {maxMPEGCodecs: 0, maxADPCMCodecs: 0, maxXMACodecs: 0, maxVorbisCodecs: 256, maxAT9Codecs: 0, maxFADPCMCodecs: 0, maxPCMCodecs: 0,
+#       ASIONumChannels: 0, vol0virtualvol: 0, defaultDecodeBufferSize: 400, geometryMaxFadeTime: 0,
+#       distanceFilterCenterFreq: 1500, reverb3Dinstance: 0, DSPBufferPoolSize: 8, resamplerMethod: 2, randomSeed: 363217558})
+#   Studio::System::setAdvancedSettings(settings: {commandqueuesize: 32768, handleinitialsize: 65536, studioupdateperiod: 20, idlesampledatapoolsize: 262144})
+#   Studio::System::initialize(maxchannels: 1024, studioflags: 0x00000029, flags: 0x00430000)
+#
+Playback::frame, 0
+# Printing initial instance state
+System::loadBankFile, ..\LSHGame-FMod-Project\Build\Desktop/Master.strings.bank, 0, 2097184
+Playback::loadBankFinished, {3a6307ee-5af6-0e4e-3534-c53ce9df0ff4}, 2097184, 0
+System::loadBankFile, ..\LSHGame-FMod-Project\Build\Desktop/Master.bank, 0, 2097440
+Playback::loadBankFinished, {a27e273a-2b8d-420c-b37d-4fc2182c096c}, 2097440, 0
+Bank::getEventListItem, 2097440, 0, {82128428-da4a-4fc0-8e61-08e7969d7ea8}, 2097952
+Bank::getEventListItem, 2097440, 1, {f7b06f77-5fe2-433e-8db1-5a1c3cef6f62}, 2098464
+Bank::getEventListItem, 2097440, 2, {bd91c4dd-aa27-43ce-a6e4-72c969de49ed}, 2101280
+Bank::getBusListItem, 2097440, 0, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {41.2855,5.01498,-10}, true
+EventDescription::createInstance, 2098464, 2126880
+EventInstance::set3DAttributes, 2126880, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+EventDescription::createInstance, 2101280, 2125344
+EventDescription::createInstance, 2097952, 2098208
+EventInstance::setTimelinePosition, 2098208, 16618
+EventInstance::start, 2098208
+# Finished printing initial instance state
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.14942,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.25324,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.41251,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.59081,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.81061,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.98594,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,6.18048,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,6.44937,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+System::setListenerAttributes, 0, {{41.2855,6.61088,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 3072
+System::setListenerAttributes, 0, {{41.2855,6.69178,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,6.74465,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,6.72673,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,6.68262,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,6.57023,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,6.37916,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,6.20154,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,6.02329,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+EventInstance::release, 2126880
+EventDescription::createInstance, 2098464, 2127392
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01497,0},{0,0,0},{0,0,1},{0,1,0}}
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01497,0},{0,0,0},{0,0,1},{0,1,0}}
+EventInstance::start, 2127392
+System::setListenerAttributes, 0, {{41.2855,5.85614,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01497,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.73905,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.65367,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.56934,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.50421,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.44329,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.39307,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.34996,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 3072
+System::setListenerAttributes, 0, {{41.2855,5.31068,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.25591,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.22751,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.20299,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.17817,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.16077,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.14338,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.12803,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.11494,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.10281,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.09291,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.0833,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.07507,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.06752,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.06123,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.05512,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.05019,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.04594,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.04228,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.03689,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,5.72498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.14608,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,6.31498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.28515,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,6.56498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.44695,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,6.97497,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.62871,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,7.13497,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.82355,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,7.36497,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,6.04622,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127392, {{41.2855,7.47496,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,6.27672,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,6.43294,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,6.54894,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,6.64199,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,6.71279,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,6.74183,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,6.74753,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,6.69281,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 3072
+System::setListenerAttributes, 0, {{41.2855,6.62751,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,6.35235,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,6.1577,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+EventInstance::release, 2127392
+EventDescription::createInstance, 2098464, 2127904
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01496,0},{0,0,0},{0,0,1},{0,1,0}}
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01496,0},{0,0,0},{0,0,1},{0,1,0}}
+EventInstance::start, 2127904
+System::setListenerAttributes, 0, {{41.2855,5.9627,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01497,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.85584,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01497,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.75311,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.66456,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.58815,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.52118,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.45877,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.40892,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.35924,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.31943,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.28449,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.25428,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.22755,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.20311,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.18163,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.14968,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.13449,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.12025,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.10777,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.09702,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.08723,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.07905,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.07196,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.06534,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.05974,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.05447,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.04928,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.04518,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.04179,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.03843,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,5.38498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.08894,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,6.03498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.20298,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,6.31498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.33956,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,6.97497,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.65083,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,7.13497,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.8655,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2127904, {{41.2855,7.36497,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,6.12634,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,6.30094,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,6.43042,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,6.55119,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,6.64791,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,6.71708,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,6.74507,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,6.74993,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,6.73102,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,6.63959,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,6.4903,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+System::setListenerAttributes, 0, {{41.2855,6.26016,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,6.11901,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.991,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+EventInstance::release, 2127904
+EventDescription::createInstance, 2098464, 2128416
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01497,0},{0,0,0},{0,0,1},{0,1,0}}
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01497,0},{0,0,0},{0,0,1},{0,1,0}}
+EventInstance::start, 2128416
+System::setListenerAttributes, 0, {{41.2855,5.82029,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01497,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.73175,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.64573,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.57488,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.51103,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.45378,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.40384,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.35887,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.31958,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.28256,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.25477,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.22607,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.20183,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.18092,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.16237,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.1458,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.13134,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.11789,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.1057,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.08997,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.08171,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.0744,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.06755,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.06154,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.05639,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.05145,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.04742,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.0436,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.04042,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.03755,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.03506,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.03278,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.03067,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.02892,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.0273,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.02592,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.02468,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2128416, {{41.2855,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.02359,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.0221,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.02127,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.02057,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01991,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01931,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01882,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+System::setListenerAttributes, 0, {{41.2855,5.01839,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01801,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01766,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01736,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01706,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01682,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.0166,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01641,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01624,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01609,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01595,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01585,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01574,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01561,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01553,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01547,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01541,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01536,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01532,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01528,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01524,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01521,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01518,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01516,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01514,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01512,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.0151,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01509,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01508,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2855,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2761,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2615,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.2275,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.1842,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.1349,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.053,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{40.9687,5.01497,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{40.8804,5.01497,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+EventInstance::release, 2125344
+EventDescription::createInstance, 2101280, 2129184
+EventInstance::start, 2129184
+System::setListenerAttributes, 0, {{40.7596,5.01497,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{40.631,5.01497,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{40.4492,5.11748,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{40.2824,5.24116,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{40.0749,5.43872,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{39.848,5.67063,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{39.5498,5.96845,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{39.3981,6.11375,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{39.2088,6.27225,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{39.0161,6.41855,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{38.8535,6.52731,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{38.6407,6.62774,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{38.4395,6.7012,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+System::setListenerAttributes, 0, {{38.1729,6.73972,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{37.9815,6.74508,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{37.762,6.70074,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{37.5617,6.63736,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{37.3442,6.54313,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{37.0998,6.37403,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{36.9213,6.22352,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{36.7267,5.9919,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{36.5289,5.71564,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{36.3303,5.44362,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+EventInstance::release, 2128416
+EventDescription::createInstance, 2098464, 2129696
+EventInstance::set3DAttributes, 2129696, {{35.2871,4.01501,0},{0,0,0},{0,0,1},{0,1,0}}
+EventInstance::set3DAttributes, 2129696, {{35.2871,4.01501,0},{0,0,0},{0,0,1},{0,1,0}}
+EventInstance::start, 2129696
+System::setListenerAttributes, 0, {{36.1435,5.18781,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{35.2871,4.01501,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{36.0478,5.05684,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{35.2871,4.01501,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{35.9609,4.93772,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{35.2871,4.01501,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{35.88,4.82698,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{35.2871,4.01501,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{35.8142,4.7369,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{35.2871,4.01501,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{35.7564,4.65765,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{35.2871,4.01501,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{35.7001,4.5806,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{35.2871,4.01501,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{35.6484,4.50984,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{35.2871,4.01501,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{35.6074,4.45363,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{35.2871,4.01502,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{35.5704,4.40305,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{35.2871,4.01502,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{35.5387,4.35957,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{35.2871,4.01502,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{35.5105,4.32099,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{35.2871,4.01502,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{35.4839,4.28455,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{35.353,4.01501,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+EventInstance::release, 2129184
+EventDescription::createInstance, 2101280, 2130464
+EventInstance::start, 2130464
+System::setListenerAttributes, 0, {{35.4656,4.24676,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{35.4164,4.01501,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{35.4598,4.2198,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{35.5963,4.01501,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{35.4755,4.19635,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{35.7089,4.01501,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{35.5015,4.17616,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{35.8335,4.01501,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{35.5398,4.15755,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{36.1088,4.01501,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+System::setListenerAttributes, 0, {{35.6379,4.13299,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{36.4079,4.01501,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{35.7196,4.12046,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{36.5633,4.01501,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{35.8238,4.10744,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{36.7213,4.015,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{35.9228,4.09724,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{37.0407,4.015,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{36.0573,4.08734,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{37.2007,4.385,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{36.2229,4.13045,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{37.5207,5.035,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{36.3697,4.23278,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{37.6807,5.315,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{36.5319,4.36667,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{38.0007,5.785,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{36.713,4.54148,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{38.1607,5.975,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{36.9281,4.75453,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{38.4807,6.265,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{37.1593,4.97945,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{38.6407,6.365,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+System::setListenerAttributes, 0, {{37.3215,5.13116,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{38.9607,6.47499,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{37.5083,5.28431,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{39.1207,6.48499,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{37.6984,5.42587,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{39.2807,6.46499,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{37.8735,5.54086,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{39.6007,6.33961,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{38.0748,5.63395,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{39.7607,6.23717,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{38.3211,5.72206,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2129696, {{40.0807,5.95955,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{38.5207,5.749,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{38.8629,5.72064,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{39.0498,5.68308,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{39.2764,5.6004,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{39.4735,5.53498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+EventInstance::release, 2129696
+EventDescription::createInstance, 2098464, 2130976
+EventInstance::set3DAttributes, 2130976, {{41.2007,5.01496,0},{0,0,0},{0,0,1},{0,1,0}}
+EventInstance::set3DAttributes, 2130976, {{41.2007,5.01496,0},{0,0,0},{0,0,1},{0,1,0}}
+EventInstance::start, 2130976
+System::setListenerAttributes, 0, {{39.6679,5.47647,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{41.5207,5.01497,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{39.8844,5.42253,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{41.6807,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{40.1107,5.37119,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{41.9485,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{40.4456,5.30627,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1177,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{40.7077,5.26062,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{40.8794,5.23141,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.0217,5.20722,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.1462,5.18605,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.2612,5.16649,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.3614,5.14945,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.4518,5.13408,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.536,5.11976,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.6056,5.10792,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.6689,5.09717,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.7512,5.08317,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.7957,5.0756,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.8342,5.06905,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.8708,5.06283,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.9007,5.05774,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.9296,5.05282,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.9569,5.04818,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{41.9787,5.04449,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{41.9996,5.04093,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.017,5.03796,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.032,5.03542,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.0462,5.033,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.0587,5.03088,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.0696,5.02902,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.0789,5.02745,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.0877,5.02594,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.0953,5.02464,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1018,5.02355,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1076,5.02257,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1151,5.02128,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1195,5.02053,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+EventInstance::set3DAttributes, 2130976, {{42.1522,5.01498,0},{0,0,0},{0,0,1},{0,1,0}}
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1233,5.01989,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1269,5.01927,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1298,5.01878,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1324,5.01835,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1348,5.01794,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1368,5.0176,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1385,5.0173,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.14,5.01704,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1415,5.01679,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1427,5.01659,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1438,5.01641,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1448,5.01624,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1457,5.01608,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1465,5.01595,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1471,5.01584,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1477,5.01574,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1486,5.01558,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.149,5.01552,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1494,5.01545,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1499,5.01537,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1501,5.01533,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1504,5.01529,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1506,5.01525,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1508,5.01522,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1509,5.01519,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1511,5.01517,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1512,5.01515,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1513,5.01513,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1514,5.01511,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1515,5.0151,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1516,5.01508,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1516,5.01507,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1517,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1517,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1518,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1519,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1519,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1519,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.152,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.152,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.152,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.152,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.152,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1521,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1521,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 3072
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 3072
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 3072
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 3072
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 2048
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false
+Playback::frame, 1024
+System::setListenerAttributes, 0, {{42.1522,5.01498,-10},{0,0,0},{0,0,1},{0,1,0}}, {0,0,0}, false
+System::getBus, {0f5c6cca-6890-4d76-b981-628b7d5897fe}, 2097696
+Bus::setMute, 2097696, false

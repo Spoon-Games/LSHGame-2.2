@@ -3,7 +3,8 @@ using UnityEngine;
 
 namespace LSHGame.PlayerN
 {
-    public class LiliumSubProp : SubstanceProperty
+    [RequireComponent(typeof(RecreateModule))]
+    public class LiliumSubProp : SubstanceProperty, IRecreatable
     {
         [SerializeField]
         private ParticleSystem liliumParticleSystem;
@@ -28,6 +29,13 @@ namespace LSHGame.PlayerN
 
             hasLilium = false;
             return true;
+        }
+
+        public void Recreate()
+        {
+            hasLilium = true;
+            if (!LiliumParticleSystem.isPlaying)
+                LiliumParticleSystem.Play();
         }
     }
 

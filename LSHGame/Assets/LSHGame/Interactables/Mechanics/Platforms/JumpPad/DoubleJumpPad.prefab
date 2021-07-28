@@ -12,6 +12,18 @@ PrefabInstance:
       value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 2041390885, guid: b27ea92f3a1d18843a628c7bfd404fa4, type: 3}
+      propertyPath: BounceSettings.BounceSpeed
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 2041390885, guid: b27ea92f3a1d18843a628c7bfd404fa4, type: 3}
+      propertyPath: BounceSettings.FixedRotation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2041390885, guid: b27ea92f3a1d18843a628c7bfd404fa4, type: 3}
+      propertyPath: BounceSettings.IsRelativeSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2041390885, guid: b27ea92f3a1d18843a628c7bfd404fa4, type: 3}
       propertyPath: BounceSettings.MinMaxBounceSpeed.x
       value: 17
       objectReference: {fileID: 0}
@@ -71,5 +83,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoubleJumpPad
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1377026239, guid: b27ea92f3a1d18843a628c7bfd404fa4, type: 3}
+    - {fileID: 1377026240, guid: b27ea92f3a1d18843a628c7bfd404fa4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b27ea92f3a1d18843a628c7bfd404fa4, type: 3}

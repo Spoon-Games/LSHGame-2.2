@@ -351,7 +351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6542335775388865927, guid: 6a307c9351deca045a2d9de493783f33, type: 3}
       propertyPath: m_TagString
-      value: m:Eater
+      value: m:Demon
       objectReference: {fileID: 0}
     - target: {fileID: 6542335775443126388, guid: 6a307c9351deca045a2d9de493783f33, type: 3}
       propertyPath: m_Layer
@@ -359,7 +359,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6542335775443126388, guid: 6a307c9351deca045a2d9de493783f33, type: 3}
       propertyPath: m_TagString
-      value: m:Eater
+      value: m:Demon
       objectReference: {fileID: 0}
     - target: {fileID: 6542335776478621866, guid: 6a307c9351deca045a2d9de493783f33, type: 3}
       propertyPath: m_Name
@@ -371,7 +371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6542335776478621866, guid: 6a307c9351deca045a2d9de493783f33, type: 3}
       propertyPath: m_TagString
-      value: m:Eater
+      value: m:Demon
       objectReference: {fileID: 0}
     - target: {fileID: 6542335776478621869, guid: 6a307c9351deca045a2d9de493783f33, type: 3}
       propertyPath: m_Bounds.m_Center.x

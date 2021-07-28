@@ -173,25 +173,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 0
-  m_LightVolumeOpacity: 0
+  m_LightVolumeIntensity: 0
+  m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000f17cf2fd51542eb06597d2de2f8406f2
   m_LightCookieSprite: {fileID: 0}
-  m_UseNormalMap: 0
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 1
-  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 1
+  m_UseNormalMap: 0
+  m_ShadowIntensityEnabled: 0
   m_ShadowIntensity: 0
+  m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0
+  m_Vertices:
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  m_Triangles: 0000
+  m_LocalBounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.78295624
   m_PointLightOuterRadius: 4.1781554
-  m_PointLightDistance: 3
-  m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -274,6 +287,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -551,69 +565,11 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    _runCrouchAccelCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: -0.1463335
-        value: -15.48346
-        inSlope: 163.25916
-        outSlope: 163.25916
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.1328589
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 38.84824
-        outSlope: 38.84824
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.32740694
-        outWeight: 0.12857436
-      - serializedVersion: 3
-        time: 0.3
-        value: 4
-        inSlope: 0.23650259
-        outSlope: 0.23650259
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.20233591
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    _runCrouchDeaccelCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 9
-        inSlope: -24.798733
-        outSlope: -24.798733
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.13124536
-      - serializedVersion: 3
-        time: 0.15
-        value: 0
-        inSlope: -110.110306
-        outSlope: -110.110306
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.06040255
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
     _jumpSpeed: 20
     _jumpSpeedCutter: 0.371
     _climbingLadderSpeed: 5
     _climbingWallSlideSpeed: 4
-    _climbingWallExhaustSlideSpeed: 6
-    _climbingWallExhaustDurration: 2
+    _climbingWallSlowSlideSpeed: 1
     _climbingWallJumpVelocity: {x: 10, y: 22}
     _dashDurration: 0.2
     _dashSpeed: 23
@@ -622,32 +578,31 @@ MonoBehaviour:
     _fallDamping: 0.948
   liliumDeathDurration: 13
   deathTransition: {fileID: 11400000, guid: 287a4bd7f6a8bb842a2fb8976d134f0f, type: 2}
-  verticalDashSpeed: 0
+  dashWithoutLilium: 0
   isInvincible: 0
   isCroushing: 0
   isClimbExhaust: 0
   isRespawnOnStart: 1
   isOverrideMovingVelocity: 0
   overrideMovingVelocity: {x: 0, y: 0}
+  overrideGoRight: 0
   jumpInput:
-    beforeConDeltaTime: 0.1
-    afterConDeltaTime: 0.15
+    inputConditions:
+    - beforeConDeltaTime: 0.1
+      afterConDeltaTime: 0.15
+    - beforeConDeltaTime: 0.1
+      afterConDeltaTime: 0.15
+    - beforeConDeltaTime: 0.1
+      afterConDeltaTime: 0
     needRepress: 1
     resetTimer: 0
-  dashInput:
-    beforeConDeltaTime: 0.1
-    afterConDeltaTime: 0.05
-    needRepress: 1
-    resetTimer: 0
-  wallClimbInput:
-    beforeConDeltaTime: 0.2
-    afterConDeltaTime: 0.2
-    needRepress: 0
-    resetTimer: 0
+  wallClimbInputExtendDurration: 0.2
   playerCollider: {fileID: 6030100856259899549}
   liliumEffect: {fileID: 8515514168544099954}
   cameraController: {fileID: 3607370227687814527}
   liliumState: 0
+  releaseFromClimbWallTimer:
+    durration: 0.2
 --- !u!114 &736705763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1114,7 +1069,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0.33
     y: -0.9
-    width: 0.18
+    width: 0.36
     height: 1.4
   crushedRectInset: 0.1
   groundLayers:

@@ -32,6 +32,13 @@ namespace LSHGame.Util
             TriggerEffectParams(name, null);
         }
 
+        public void TriggerEffect(string name, string material)
+        {
+            SetMaterial(name, material);
+            TriggerEffect(name);
+            SetMaterialDefault(name);
+        }
+
         public void SetAllMaterialsToDefault()
         {
             foreach(var trigger in effectTriggers.Values)
@@ -46,6 +53,14 @@ namespace LSHGame.Util
                 trigger.SetMaterial(material);
             else
                 Debug.Log("Can not set Material in " + this.name + ", effect " + effect + " does not exists");
+        }
+
+        public void SetMaterialDefault(string effect)
+        {
+            if (effectTriggers.TryGetValue(effect, out IEffectTrigger trigger))
+                trigger.SetMaterialToDefault();
+            else
+                Debug.Log("Can not set Material Default in " + this.name + ", effect " + effect + " does not exists");
         }
 
         public void StopEffect(string name)

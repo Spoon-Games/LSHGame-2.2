@@ -27,7 +27,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 40.680206, y: 60.032112, z: -354.24734}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2607602494249204729}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -43,8 +44,128 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b41ba0db6d7abf48ba812f93b21c207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helpText: "D\xFCrcke [W,S,A,D] zum Bewegen und [Leertaste] zum Springen "
+  text: {fileID: 3728925829644036628}
   hintType: 0
   delay: 3
-  disappearingDelay: 2
   hintOnStart: 1
+--- !u!1001 &1429641004240345666
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5467015490909881997}
+    m_Modifications:
+    - target: {fileID: 4028199713629102523, guid: 2004292e34c93c645a97badb309c9522, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4028199713629102523, guid: 2004292e34c93c645a97badb309c9522, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4028199713629102523, guid: 2004292e34c93c645a97badb309c9522, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4028199713629102523, guid: 2004292e34c93c645a97badb309c9522, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4028199713629102523, guid: 2004292e34c93c645a97badb309c9522, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4028199713629102523, guid: 2004292e34c93c645a97badb309c9522, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4028199713629102523, guid: 2004292e34c93c645a97badb309c9522, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4028199713629102523, guid: 2004292e34c93c645a97badb309c9522, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4028199713629102523, guid: 2004292e34c93c645a97badb309c9522, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4028199713629102523, guid: 2004292e34c93c645a97badb309c9522, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4028199713629102523, guid: 2004292e34c93c645a97badb309c9522, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4028199713629102523, guid: 2004292e34c93c645a97badb309c9522, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4028199713629102523, guid: 2004292e34c93c645a97badb309c9522, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4028199713629102523, guid: 2004292e34c93c645a97badb309c9522, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4028199713629102523, guid: 2004292e34c93c645a97badb309c9522, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4028199713629102523, guid: 2004292e34c93c645a97badb309c9522, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4028199713629102523, guid: 2004292e34c93c645a97badb309c9522, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4028199713629102523, guid: 2004292e34c93c645a97badb309c9522, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4028199713629102523, guid: 2004292e34c93c645a97badb309c9522, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4028199713629102523, guid: 2004292e34c93c645a97badb309c9522, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4028199713629102523, guid: 2004292e34c93c645a97badb309c9522, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6010471882712157935, guid: 2004292e34c93c645a97badb309c9522, type: 3}
+      propertyPath: m_Name
+      value: InSceneTextHint
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173725168630427490, guid: 2004292e34c93c645a97badb309c9522, type: 3}
+      propertyPath: m_text
+      value: "Dr\xFCcke [A,D] zum Bewegen\nund [Leertaste] zum Springen"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054517952576338424, guid: 2004292e34c93c645a97badb309c9522, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2004292e34c93c645a97badb309c9522, type: 3}
+--- !u!224 &2607602494249204729 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4028199713629102523, guid: 2004292e34c93c645a97badb309c9522, type: 3}
+  m_PrefabInstance: {fileID: 1429641004240345666}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3728925829644036628 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2335350200041877590, guid: 2004292e34c93c645a97badb309c9522, type: 3}
+  m_PrefabInstance: {fileID: 1429641004240345666}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e86b4d3b69e0e74b8a343f0e5b78072, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -3,8 +3,11 @@ using UnityEngine;
 
 namespace LSHGame.Util
 {
-    public class EffectTrigger : MonoBehaviour, IEffectTrigger
+    public class EffectTrigger : MonoBehaviour, IEffectTrigger, IRecreatable
     {
+        [SerializeField]
+        private bool stopOnRecreate = true;
+
         private IEffectPlayer[] effectPlayers;
 
         protected IEffectPlayer[] EffectPlayers
@@ -25,6 +28,12 @@ namespace LSHGame.Util
         public void AddToDict(Dictionary<string, IEffectTrigger> triggers)
         {
             triggers.Add(name, this);
+        }
+
+        public void Recreate()
+        {
+            if (stopOnRecreate)
+                Stop();
         }
 
         public void SetMaterial(string material){}

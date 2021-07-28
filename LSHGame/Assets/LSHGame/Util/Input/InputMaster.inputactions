@@ -39,7 +39,7 @@
                 },
                 {
                     "name": "Dash",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "88ad458c-c898-4801-89df-2a10686aa5b3",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -135,61 +135,6 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "arrows",
-                    "id": "517f357c-09d1-44ab-96ec-eff48f25c100",
-                    "path": "2DVector(mode=2)",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "5702cc32-9ff4-4dd9-903f-5f42603827db",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard and Mouse",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "80257b15-b81c-4305-984a-a98f343db136",
-                    "path": "<Keyboard>/downArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard and Mouse",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "824dbcb1-b34e-4d49-a2e8-9ed757fed9e5",
-                    "path": "<Keyboard>/leftArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard and Mouse",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "7f1d0906-9871-4526-ac22-4b2704e2cdb9",
-                    "path": "<Keyboard>/rightArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard and Mouse",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "",
                     "id": "1d0d75a3-3459-4d80-bf6c-6b67e21413a1",
                     "path": "<Keyboard>/space",
@@ -227,6 +172,39 @@
                     "id": "4a86802e-1f6c-487a-bcce-b647676bcb60",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2548ae6a-9d76-45b0-95da-353386bb7f89",
+                    "path": "<Keyboard>/d",
+                    "interactions": "MultiTap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "081ffe28-569e-4bde-94b7-f4776a92ff5e",
+                    "path": "<Keyboard>/a",
+                    "interactions": "MultiTap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f56612ef-aeba-4d0f-9db2-1edb24de56de",
+                    "path": "<Keyboard>/space",
+                    "interactions": "MultiTap",
                     "processors": "",
                     "groups": "",
                     "action": "Dash",

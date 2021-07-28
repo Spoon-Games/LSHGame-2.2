@@ -2,7 +2,7 @@
 
 namespace LSHGame.PlayerN
 {
-    public enum PlayerStates { Locomotion,Aireborne,ClimbWall,ClimbWallExhaust,ClimbLadder,ClimbLadderTop,Dash,Death,Crouching}
+    public enum PlayerStates { Locomotion,Aireborne,ClimbWall,ClimbLadder,ClimbLadderTop,Dash,Death}
 
     public class PlayerStateMachine
     {
@@ -15,15 +15,9 @@ namespace LSHGame.PlayerN
 
         public Vector2 Position { get; set; }
 
-        public bool IsInputCrouch { get; set; }
-
-        public bool IsHeadObstructed { get; set; }
-
         public bool IsGrounded { get; set; }
 
         public bool IsTouchingClimbWall { get; set; }
-
-        public bool IsClimbWallExhausted { get; set; }
 
         public bool IsTouchingClimbLadder { get; set; }
 
@@ -66,12 +60,11 @@ namespace LSHGame.PlayerN
             animatorMachine.VerticalPosition = Position.y;
 
             animatorMachine.SAireborne = State == PlayerStates.Aireborne;
-            animatorMachine.SClimbingWall = State == PlayerStates.ClimbWall || State == PlayerStates.ClimbWallExhaust;
             animatorMachine.SClimbinLadder = State == PlayerStates.ClimbLadder;
             animatorMachine.SDash = State == PlayerStates.Dash;
             animatorMachine.SDeath = State == PlayerStates.Death;
             animatorMachine.SLocomotion = State == PlayerStates.Locomotion || State == PlayerStates.ClimbLadderTop;
-            animatorMachine.SCrouching = State == PlayerStates.Crouching;
+            animatorMachine.SClimbingWall = State == PlayerStates.ClimbWall;
 
             if (animatorStateChanged)
             {
@@ -85,10 +78,7 @@ namespace LSHGame.PlayerN
         {
             Velocity = Vector2.zero;
             IsGrounded = false;
-            IsInputCrouch = false;
-            IsHeadObstructed = false;
             IsTouchingClimbLadder = false;
-            IsClimbWallExhausted = false;
             IsTouchingClimbWall = false;
             IsDash = false;
             IsDead = false;
@@ -99,29 +89,20 @@ namespace LSHGame.PlayerN
             if (IsDead)
                 return PlayerStates.Death;
 
-            if (oldState == PlayerStates.Crouching && IsHeadObstructed)
-                return PlayerStates.Crouching;
-
             if (IsDash)
                 return PlayerStates.Dash;
 
             if (IsTouchingClimbLadder)
                 return PlayerStates.ClimbLadder;
 
-            if (IsTouchingClimbWall && IsClimbWallExhausted)
-                return PlayerStates.ClimbWallExhaust;
-
-            if (IsTouchingClimbWall)
-                return PlayerStates.ClimbWall;
-
             if (!IsGrounded && IsFeetTouchingClimbLadder)
                 return PlayerStates.ClimbLadderTop;
 
-            if (IsInputCrouch && IsGrounded)
-                return PlayerStates.Crouching;
-
             if (IsGrounded)
                 return PlayerStates.Locomotion;
+
+            if (IsTouchingClimbWall)
+                return PlayerStates.ClimbWall;
 
             return PlayerStates.Aireborne;
         }

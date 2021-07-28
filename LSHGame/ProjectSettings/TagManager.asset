@@ -8,6 +8,8 @@ TagManager:
   - m:Eater
   - PortalPoint
   - VoidHazard
+  - m:Demon
+  - m:Void
   layers:
   - Default
   - TransparentFX

@@ -34,7 +34,7 @@ namespace LSHGame.PlayerN
                 return (Vector2)transform.up * pinchOfSpeed;
             }
 
-            if (pinchOfExtensionTimer.Active())
+            if (pinchOfExtensionTimer.Active)
                 return (Vector2)transform.up * pinchOfSpeed;
 
             return Vector2.zero;

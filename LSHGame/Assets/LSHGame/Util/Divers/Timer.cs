@@ -7,11 +7,14 @@ namespace LSHGame.Util
     {
         public float durration = 1;
 
-        public override bool Finished()
-        {
-            return ClockedTime + durration <= Time.fixedTime;
-        }
+        public override bool Finished => ClockedTime + durration <= Time.fixedTime && !IsReset;
 
+        public Timer(){}
+
+        public Timer(float durration)
+        {
+            this.durration = durration;
+        }
         
     }
 
@@ -28,10 +31,7 @@ namespace LSHGame.Util
             base.Clock();
         }
 
-        public override bool Finished()
-        {
-            return ClockedTime + randomDurration <= Time.fixedTime;
-        }
+        public override bool Finished => ClockedTime + randomDurration <= Time.fixedTime && !IsReset;
     }
 
     public abstract class BaseTimer
@@ -39,13 +39,17 @@ namespace LSHGame.Util
         protected float _clockedTime = float.NegativeInfinity;
         public float ClockedTime => _clockedTime;
 
+        public abstract bool Finished { get; }
+
+        public virtual bool Active => !Finished && !IsReset;
+
+        public virtual bool IsReset => _clockedTime == float.NegativeInfinity;
+
         public virtual void Clock()
         {
             _clockedTime = Time.fixedTime;
         }
 
-        public abstract bool Finished();
-
-        public virtual bool Active() => !Finished();
+        public virtual void Reset() => _clockedTime = float.NegativeInfinity;
     }
 }

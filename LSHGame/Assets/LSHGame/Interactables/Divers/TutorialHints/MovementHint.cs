@@ -7,18 +7,14 @@ namespace LSHGame
 {
     public class MovementHint : MonoBehaviour
     {
-        [SerializeField]
-        private string helpText;
+        [SerializeField] private InSceneTextComponent text;
 
-        public enum HintType { Movement, Climbing, Dash, LadderClimbing}
+        public enum HintType { Movement, LadderClimbing}
         [SerializeField]
         private HintType hintType;
 
         [SerializeField]
         private float delay;
-
-        [SerializeField]
-        private float disappearingDelay = 0;
 
         [SerializeField]
         private bool hintOnStart = false;
@@ -32,12 +28,6 @@ namespace LSHGame
                 case HintType.Movement:
                     GameInput.Hint_Movement += ActionExecuted;
                     break;
-                case HintType.Climbing:
-                    GameInput.Hint_WallClimb += ActionExecuted;
-                    break;
-                case HintType.Dash:
-                    GameInput.Hint_Dash += ActionExecuted;
-                    break;
                 case HintType.LadderClimbing:
                     GameInput.Hint_LadderClimb += ActionExecuted;
                     break;
@@ -49,7 +39,7 @@ namespace LSHGame
 
         public void StartHint()
         {
-            if (!isActive && !(hintType == HintType.Dash && !GameInput.Hint_IsLilium))
+            if (!isActive)
             {
                 TimeSystem.Delay(delay, t => { Show(); });
                 isActive = true;
@@ -60,7 +50,7 @@ namespace LSHGame
         {
             if (isActive)
             {
-                HelpTextView.Instance.SetHelpText(helpText);
+                text.Show();
             }
         }
 
@@ -69,7 +59,7 @@ namespace LSHGame
         {
             if (isActive)
             {
-                HelpTextView.Instance.HideHelpText(delay: disappearingDelay);
+                text.Hide();
                 isActive = false;
             }
         }
@@ -82,9 +72,7 @@ namespace LSHGame
         private void OnDestroy()
         {
             GameInput.Hint_Movement -= ActionExecuted;
-            GameInput.Hint_WallClimb -= ActionExecuted;
             GameInput.Hint_LadderClimb -= ActionExecuted;
-            GameInput.Hint_Dash -= ActionExecuted;
         }
     }
 }

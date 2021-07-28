@@ -9,8 +9,7 @@ namespace LSHGame.Util
 
         [Header("Climbing Wall")]
         public DefaultableProperty<float> ClimbingWallSlideSpeed;
-        public DefaultableProperty<float> ClimbingWallExhaustSlideSpeed;
-        public DefaultableProperty<float> ClimbWallExhaustDurration;
+        public DefaultableProperty<float> ClimbingWallSlowSlideSpeed;
         public DefaultableProperty<Vector2> ClimbingWallJumpVelocity;
 
 
@@ -20,8 +19,7 @@ namespace LSHGame.Util
             {
                 r.ClimbingLadderSpeed += ClimbingLadderSpeed;
                 r.ClimbingWallSlideSpeed += ClimbingWallSlideSpeed;
-                r.ClimbingWallExhaustSlideSpeed += ClimbingWallExhaustSlideSpeed;
-                r.ClimbingWallExhaustDurration += ClimbWallExhaustDurration;
+                r.ClimbingWallSlowSlideSpeed += ClimbingWallSlowSlideSpeed;
                 r.ClimbingWallJumpVelocity += ClimbingWallJumpVelocity;
             }
         }
@@ -31,8 +29,8 @@ namespace LSHGame.Util
     {
         float ClimbingLadderSpeed { get; set; }
         float ClimbingWallSlideSpeed { get; set; }
-        float ClimbingWallExhaustSlideSpeed { get; set; }
-        float ClimbingWallExhaustDurration { get; set; }
+        float ClimbingWallSlowSlideSpeed { get; set; }
+        
         Vector2 ClimbingWallJumpVelocity { get; set; }
     }
 

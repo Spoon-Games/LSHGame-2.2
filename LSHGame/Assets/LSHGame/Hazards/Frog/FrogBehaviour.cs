@@ -67,19 +67,19 @@ namespace LSHGame
             //State Update --- Jump
             if(state == FrogState.Idle)
             {
-                if(betweenAttackTimer.Finished() && 
+                if(betweenAttackTimer.Finished && 
                     PlayerObserver.TryFindTarget(transform,out Transform player))
                 {
                     state = FrogState.Attack;
                     Jump(player.position);
-                } else if(betweenIdleJumpTimer.Finished())
+                } else if(betweenIdleJumpTimer.Finished)
                 {
                     JumpRandomDirection();
                 }
 
             }else if(state == FrogState.Attack)
             {
-                if(betweenAttackTimer.Finished())
+                if(betweenAttackTimer.Finished)
                 {
                     if (PlayerObserver.TryFindTarget(transform, out Transform player))
                     {

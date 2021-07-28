@@ -26,6 +26,7 @@ namespace LSHGame.UI
 
         protected override void OnSwitchState(State state)
         {
+            base.OnSwitchState(state);
             switch (state)
             {
                 case State.Idle:

@@ -126,8 +126,8 @@ namespace LSHGame.PlayerN
             bool isCrushed = false;
             if(currentPinchCollider != null)
                 isCrushed = IsTouchingLayerRectRelative( currentPinchCollider.GetColliderRect().InsetRect(crushedRectInset) , crushLayers, false);
-
-            stateMachine.IsHeadObstructed = RetrieveSubstanceOnRect(PlayerSubstanceColliderType.Head, HeadTouchRect, true);
+            if (isCrushed)
+                Stats.EffectMaterials["Death"] = "Squash";
 
 
             /* Activate queried substances */
@@ -205,7 +205,12 @@ namespace LSHGame.PlayerN
             if (stateMachine.State == PlayerStates.Death)
                 return PinchStates.Default;
 
-            if (parent.lastJumpTimer + 0.2f > Time.fixedTime)
+            if (stateMachine.State == PlayerStates.Aireborne
+                && !isHorizontal
+                && !parent.inputMovement.x.Approximately(0, 0.5f))
+                return PinchStates.Horizontal;
+
+            if (parent.lastJumpTimer + 0.2f > Time.fixedTime && isUp)
                 return PinchStates.Up;
 
             if ((stateMachine.State == PlayerStates.ClimbLadder ||
@@ -225,8 +230,7 @@ namespace LSHGame.PlayerN
 
             if (stateMachine.State == PlayerStates.Locomotion ||
                 stateMachine.State == PlayerStates.Dash || 
-                stateMachine.State == PlayerStates.ClimbWall ||
-                stateMachine.State == PlayerStates.ClimbWallExhaust)
+                stateMachine.State == PlayerStates.ClimbWall )
                 return PinchStates.Horizontal;
 
             if (isUp)
@@ -355,8 +359,6 @@ namespace LSHGame.PlayerN
             stateMachine.IsGrounded = IsTouchingLayer(trs, feetCollider.GetColliderRect(), groundLayers);
 
             RetrieveSubstancePreview(trs, prevSubSet, PlayerSubstanceColliderType.Main, mainCollider);
-
-            stateMachine.IsHeadObstructed = RetrieveSubstancePreview(trs, prevSubSet, PlayerSubstanceColliderType.Head, headTouchRect, true);
 
 
             /* Activate queried substances */

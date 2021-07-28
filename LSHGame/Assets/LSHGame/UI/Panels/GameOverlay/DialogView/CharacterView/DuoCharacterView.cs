@@ -122,11 +122,11 @@ namespace LSHGame.UI
                 mood = defaultMood;
             }
 
-            if (!tag.Attributes.TryGetValue("Name", out string name))
-                name = person.Name;
+            if (!tag.Attributes.TryGetValue("Name", out string titleName))
+                titleName = person.TitleName;
 
 
-            SetMood(mood, defaultMood, name, isRight);
+            SetMood(mood, defaultMood, titleName, isRight);
             FadeFocus(isRight);
 
             //if (!tag.IsAttribute("Page","false"))
@@ -140,7 +140,7 @@ namespace LSHGame.UI
             SetMood(defaultMood, defaultMood, person.TitleName, isRight);
         }
 
-        private void SetMood(Mood mood, Mood defaultMood, string name, bool isRight)
+        private void SetMood(Mood mood, Mood defaultMood, string titleName, bool isRight)
         {
             if (mood != null && defaultMood != null)
             {
@@ -148,7 +148,7 @@ namespace LSHGame.UI
                 currentVoice = (mood.Voice != null ? mood.Voice : defaultMood.Voice);
             }
 
-            (isRight ? nameFieldRight : nameFieldLeft).text = name;
+            (isRight ? nameFieldRight : nameFieldLeft).text = titleName;
         }
 
         #endregion

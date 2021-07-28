@@ -74,6 +74,24 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &-8072885716208164677
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7358d226b4697a24a8dec7aa99d13ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameterName: VerticalPosition
+  StepsPerUnit: 1.5
+  offset: 0
+  looping: 1
+  effects:
+  - LadderStep
 --- !u!1101 &-7714044398341388959
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -694,6 +712,7 @@ AnimatorState:
   - {fileID: -8213839941319508506}
   m_StateMachineBehaviours:
   - {fileID: 7073568393085857399}
+  - {fileID: -8072885716208164677}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -730,7 +749,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 32860c5507a7a5f40bde9da2551d0d14, type: 2}
+  m_Motion: {fileID: 7400000, guid: 183c2344de5a9514fabeb9d530f1e371, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -756,7 +775,7 @@ AnimatorStateMachine:
     m_Position: {x: 460, y: 40, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8161441958454089159}
-    m_Position: {x: 90, y: 410, z: 0}
+    m_Position: {x: 60, y: 430, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1951335324561841568}
     m_Position: {x: 200, y: 350, z: 0}
@@ -1101,6 +1120,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0ea81c03533e3e4a9c31f1013d61b3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parameterName: VerticalPosition
+  StepsPerUnit: 6
+  offset: 0
+  looping: 1
   sprites:
   - {fileID: 21300000, guid: 3423d9df849aefd46bb092dfeae769b8, type: 3}
   - {fileID: 21300000, guid: 81a4f98b17e1ef445ab269b8c54ec9fc, type: 3}
@@ -1126,10 +1149,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 60718a19b7943374db64f1acc486d692, type: 3}
   - {fileID: 21300000, guid: 140f38237a3cec940a0c47e6cc8415d1, type: 3}
   - {fileID: 21300000, guid: a29cbff8781548d41b84727df593bbaf, type: 3}
-  parameterName: VerticalPosition
-  SpritesPerUnit: 6
-  offset: 0
-  looping: 1
 --- !u!114 &7147813608475425817
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1156,14 +1175,6 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: b164cf96808893e43ac5ec0fc8de6c41, type: 2}
-    m_Threshold: -0.02
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: HorizontalSpeed
-    m_Mirror: 0
-  - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: a954f42c352fd334aacf21bd573ccc7d, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
@@ -1171,18 +1182,10 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: HorizontalSpeed
     m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: b164cf96808893e43ac5ec0fc8de6c41, type: 2}
-    m_Threshold: 0.02
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: HorizontalSpeed
-    m_Mirror: 0
   m_BlendParameter: VerticalSpeed
   m_BlendParameterY: HorizontalSpeed
-  m_MinThreshold: -0.02
-  m_MaxThreshold: 0.02
+  m_MinThreshold: 0
+  m_MaxThreshold: 0
   m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0

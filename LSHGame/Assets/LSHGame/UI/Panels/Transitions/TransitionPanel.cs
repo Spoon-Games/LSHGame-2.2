@@ -2,6 +2,7 @@
 using System;
 using UINavigation;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace LSHGame.UI
@@ -10,6 +11,10 @@ namespace LSHGame.UI
     {
 
         public float Progress { get; private set; } = 0;
+
+        public UnityEvent OnStartTransition;
+        public UnityEvent OnMiddleTransition;
+        public UnityEvent OnEndTransition;
 
         private float timeMark = float.PositiveInfinity;
         private Func<float> getProgress;
@@ -77,7 +82,23 @@ namespace LSHGame.UI
             else return 1;
         }
 
-        protected virtual void OnSwitchState(State state) { }
+        protected virtual void OnSwitchState(State state) {
+            switch (state)
+            {
+                case State.Idle:
+                    break;
+                case State.Start:
+                    OnStartTransition.Invoke();
+                    break;
+                case State.Middle:
+                    OnMiddleTransition.Invoke();
+                    break;
+                case State.End:
+                    OnEndTransition.Invoke();
+                    break;
+            }
+        }
+
         protected virtual void OnSetProgress(float progress) { }
 
         //public void StartTransition(bool automatic = true)

@@ -4,7 +4,8 @@ using UnityEngine;
 
 namespace LSHGame.PlayerN
 {
-    public class BlackLiliumSubProp : SubstanceProperty
+    [RequireComponent(typeof(RecreateModule))]
+    public class BlackLiliumSubProp : SubstanceProperty,IRecreatable
     {
         private bool isDead = true;
         public bool IsDead => isDead;
@@ -49,6 +50,13 @@ namespace LSHGame.PlayerN
         private void OnDestroy()
         {
             destroied = true;
+        }
+
+        public void Recreate()
+        {
+            isDead = true;
+            healedSprite.SetActive(false);
+            blackSprite.SetActive(true);
         }
     }
 

@@ -67,7 +67,7 @@ namespace LSHGame.Editor
                 instance?.OnDisable();
             }
         }
-    } 
+    }
     #endregion
 
     public class LocoPreview
@@ -82,7 +82,7 @@ namespace LSHGame.Editor
         private SubstanceSet substanceSet;
 
         private PlayerController playerController;
-        private PlayerColliders playerColliders;
+        private PinchPlayerCollider playerColliders;
 
         private Rect mainColliderRect;
         private bool isTouchingClimbWallLeft;
@@ -122,7 +122,7 @@ namespace LSHGame.Editor
                 return;
             }
             playerController = data.playerController;
-            playerColliders = playerController.GetComponentInChildren<PlayerColliders>();
+            playerColliders = playerController.GetComponentInChildren<PinchPlayerCollider>();
 
             SceneView.duringSceneGui += OnSceneGUI;
 
@@ -140,7 +140,7 @@ namespace LSHGame.Editor
             if (ProcessEvents() && isAcitve)
             {
                 input.Update();
-                if(!isPlaying)
+                if (!isPlaying)
                     GetWorldPosition();
 
                 stats = playerColliders.GetStatePreview(worldPosition, substanceSet, stateMachine, playerController, out mainColliderRect, out isTouchingClimbWallLeft);
@@ -189,12 +189,8 @@ namespace LSHGame.Editor
                     GetPrevJump();
                     break;
                 case PlayerStates.ClimbWall:
-                    prevOpDurration = stats.ClimbingWallExhaustDurration;
+                    prevOpDurration = 1;
                     prevVelocity.y = stats.ClimbingWallSlideSpeed * input.Movement.y;
-                    GetPrevJump();
-                    break;
-                case PlayerStates.ClimbWallExhaust:
-                    prevVelocity.y = -stats.ClimbingWallExhaustSlideSpeed;
                     GetPrevJump();
                     break;
                 case PlayerStates.ClimbLadder:
@@ -208,12 +204,29 @@ namespace LSHGame.Editor
                     GetPrevJump();
                     break;
                 case PlayerStates.Dash:
-                    prevVelocity.x = stats.DashSpeed * input.XLooking;
+                    Vector2 direction = stats.DashDirection.normalized;
+                    if (!stats.IsDashActive)
+                        direction = new Vector2(input.XLooking, 0);
+
+
+                    float speed = stats.DashSpeed;
+                    Vector2 dashCenterOffset = (Vector2)worldPosition - stats.DashActivateCenterPos;
+
+                    Vector2 directionToTargetPos = (direction * stats.DashSpeed * stats.DashDurration - dashCenterOffset).normalized;
+
+                    Quaternion dirq = Quaternion.Lerp(Quaternion.LookRotation(Vector3.forward, direction), Quaternion.LookRotation(Vector3.forward, directionToTargetPos)
+                        , stats.EqualizeDashDirectionWeight);
+                    direction = dirq * Vector2.up;
+
+                    float inDirectionLengthDiff = Vector2.Dot(dashCenterOffset, direction);
+                    speed -= inDirectionLengthDiff / stats.DashDurration * Mathf.Clamp01(stats.EqualizeDashLengthWeight);
+
+                    //Debug.Log($"DashCenterOffset: {dashCenterOffset} inDirectionLengthDiff: {inDirectionLengthDiff} Speed: {speed}");
+
+                    prevVelocity = speed * direction;
                     prevOpDurration = stats.DashDurration;
                     break;
                 case PlayerStates.Death:
-                    break;
-                case PlayerStates.Crouching:
                     break;
             }
         }
@@ -240,11 +253,6 @@ namespace LSHGame.Editor
                         prevVelocity = stats.ClimbingWallJumpVelocity * new Vector2(input.Movement.x, 1);
                         prevGravity = stats.Gravity;
                         break;
-                    case PlayerStates.ClimbWallExhaust:
-                        GetPrevRun(true);
-                        prevVelocity = stats.ClimbingWallJumpVelocity * new Vector2(isTouchingClimbWallLeft ? 11 : -1, 1);
-                        prevGravity = stats.Gravity;
-                        break;
                 }
             }
         }
@@ -266,7 +274,7 @@ namespace LSHGame.Editor
 
         private void ResetPrev()
         {
-            if(!isPlaying)
+            if (!isPlaying)
                 prevVelocity = Vector2.zero;
             prevGravity = 0;
             prevXVelocityCurve = null;
@@ -289,9 +297,6 @@ namespace LSHGame.Editor
                 case PlayerStates.ClimbWall:
                     Handles.color = data.climbWallColor;
                     break;
-                case PlayerStates.ClimbWallExhaust:
-                    Handles.color = data.climbWallExhaustColor;
-                    break;
                 case PlayerStates.ClimbLadder:
                     Handles.color = data.climbLadderColor;
                     break;
@@ -303,9 +308,6 @@ namespace LSHGame.Editor
                     break;
                 case PlayerStates.Death:
                     Handles.color = data.deadColor;
-                    break;
-                case PlayerStates.Crouching:
-                    Handles.color = data.groundColor;
                     break;
                 default:
                     break;
@@ -329,7 +331,7 @@ namespace LSHGame.Editor
             for (float t = deltaT; t < prevOpDurration; t += deltaT)
             {
                 velocity.x = GetXVelocity(startT, t, out bool finished);
-                velocity.y = GetYVelocity( t, out bool finished2);
+                velocity.y = GetYVelocity(t, out bool finished2);
 
                 point = lastPoint + velocity * deltaT;
                 Handles.DrawLine(lastPoint, point);
@@ -402,7 +404,6 @@ namespace LSHGame.Editor
         private void CheckInput()
         {
             stateMachine.IsTouchingClimbWall &= input.Shift;
-            stateMachine.IsClimbWallExhausted = input.Control;
             stateMachine.IsDash = input.RightClick;
         }
 

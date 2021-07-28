@@ -6,26 +6,23 @@ using UnityEngine;
 namespace LSHGame.PlayerN
 {
     [System.Serializable]
-    public class PlayerStats : IPlayerLocomotionRec, IPlayerCrouchLocomotionRec, IPlayerJumpRec, IPlayerClimbingRec, IPlayerDashRec, IGravityRec,
+    public class PlayerStats : IPlayerLocomotionRec, IPlayerJumpRec, IPlayerClimbingRec, IPlayerDashRec, IGravityRec,
         IDataReciever, IDamageRec, IIsLadderRec, IIsLadderFeetRec, IMatVelocityRec, IMatBounceRec, IJumpCallbackRec, ISneekCallbackRec, IEffectsMaterialRec,
-        ITriggerEffectRec, IPlayerIsJumpableSubProp, IDashRedirectorRec, IDashCenteredRedirectorRec, ILiliumReciever,IBlackLiliumReciever, ISaveGroundRec
+        ITriggerEffectRec, IPlayerIsJumpableSubProp, IDashRedirectorRec, IDashCenteredRedirectorRec, ILiliumReciever,IBlackLiliumReciever, ISaveGroundRec,
+        IDashActivateRec
     {
         [Header("Locomotion")]
         [SerializeField] private AnimationCurve _runAccelCurve;
         [SerializeField] private AnimationCurve _runDeaccelCurve;
         [SerializeField] private AnimationCurve _runAccelAirborneCurve;
         [SerializeField] private AnimationCurve _runDeaccelAirborneCurve;
-        [Header("Crouching")]
-        [SerializeField] private AnimationCurve _runCrouchAccelCurve;
-        [SerializeField] private AnimationCurve _runCrouchDeaccelCurve;
         [Header("Jump")]
         [SerializeField] private float _jumpSpeed;
         [SerializeField] private float _jumpSpeedCutter;
         [Header("Climbing")]
         [SerializeField] private float _climbingLadderSpeed;
         [SerializeField] private float _climbingWallSlideSpeed;
-        [SerializeField] private float _climbingWallExhaustSlideSpeed;
-        [SerializeField] private float _climbingWallExhaustDurration;
+        [SerializeField] private float _climbingWallSlowSlideSpeed;
         [SerializeField] private Vector2 _climbingWallJumpVelocity;
         [Header("Dash")]
         [SerializeField] private float _dashDurration;
@@ -43,8 +40,7 @@ namespace LSHGame.PlayerN
         public float JumpSpeedCutter { get => _jumpSpeedCutter; set => _jumpSpeedCutter = value; }
         public float ClimbingLadderSpeed { get => _climbingLadderSpeed; set => _climbingLadderSpeed = value; }
         public float ClimbingWallSlideSpeed { get => _climbingWallSlideSpeed; set => _climbingWallSlideSpeed = value; }
-        public float ClimbingWallExhaustSlideSpeed { get => _climbingWallExhaustSlideSpeed; set => _climbingWallExhaustSlideSpeed = value; }
-        public float ClimbingWallExhaustDurration { get => _climbingWallExhaustDurration; set => _climbingWallExhaustDurration = value; }
+        public float ClimbingWallSlowSlideSpeed { get => _climbingWallSlowSlideSpeed; set => _climbingWallSlowSlideSpeed = value; }
         public Vector2 ClimbingWallJumpVelocity { get => _climbingWallJumpVelocity; set => _climbingWallJumpVelocity = value; }
         public float DashDurration { get => _dashDurration; set => _dashDurration = value; }
         public float DashSpeed { get => _dashSpeed; set => _dashSpeed = value; }
@@ -62,8 +58,6 @@ namespace LSHGame.PlayerN
         public HashSet<string> TriggerEffects { get; } = new HashSet<string>();
         public bool IsFeetLadder { get; set; }
         public bool IsJumpableInAir { get; set; } = false;
-        public AnimationCurve RunCrouchAccelCurve { get => _runCrouchAccelCurve; set => _runCrouchAccelCurve = value; }
-        public AnimationCurve RunCrouchDeaccelCurve { get => _runCrouchDeaccelCurve; set => _runCrouchDeaccelCurve = value; }
         public float TargetDashAngle { get; set; }
         public float DashTurningRadius { get; set; } = -1;
         public Vector2 GlobalDashTurningCenter { get; set; } = Vector2.negativeInfinity;
@@ -71,6 +65,11 @@ namespace LSHGame.PlayerN
         public LiliumSubProp LiliumReference { get; set; }
         public BlackLiliumSubProp BlackLiliumReference { get; set; }
         public bool IsSaveGround { get; set; } = true;
+        public bool IsDashActive { get; set; }
+        public Vector2 DashDirection { get; set; }
+        public float EqualizeDashLengthWeight { get; set; }
+        public Vector2 DashActivateCenterPos { get; set; }
+        public float EqualizeDashDirectionWeight { get; set; }
 
         public PlayerStats Clone()
         {

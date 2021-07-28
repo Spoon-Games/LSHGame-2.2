@@ -42,20 +42,12 @@ namespace SceneM
 #if UNITY_EDITOR
         private void OnValidate()
         {
-            if (autoPrioritize && Application.isEditor)
-            {
-                order = transform.GetSiblingIndex();
-                isDefaultStartCheckpoint = order == 0;
-            }
+            AutoSetOrder();
         }
 
         private void OnDrawGizmos()
         {
-            if (autoPrioritize && Application.isEditor)
-            {
-                order = transform.GetSiblingIndex();
-                isDefaultStartCheckpoint = order == 0;
-            }
+            AutoSetOrder();
 
             if (isDefaultStartCheckpoint)
                 Gizmos.DrawIcon(transform.position, "checkpoint-default-start", true);
@@ -67,6 +59,16 @@ namespace SceneM
             UnityEditor.Handles.Label(transform.position,
                 new GUIContent() { text = order.ToString() },
                 new GUIStyle() { contentOffset = new Vector2(-14, -40), fontSize = 20 });
+        }
+
+        private void AutoSetOrder()
+        {
+            if (autoPrioritize && Application.isEditor && !UnityEditor.EditorApplication.isPlaying)
+            {
+                order = transform.GetSiblingIndex();
+                isDefaultStartCheckpoint = order == 0;
+                
+            }
         }
 #endif
     }

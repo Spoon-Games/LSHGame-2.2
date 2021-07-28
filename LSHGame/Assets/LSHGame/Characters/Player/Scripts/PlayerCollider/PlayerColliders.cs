@@ -18,14 +18,14 @@ namespace LSHGame.PlayerN
         [Header("Touchpoints")]
         [SerializeField]
         private Rect headTouchRect;
-        private Rect HeadTouchRect => stateMachine.State == PlayerStates.Crouching ? headTouchCrouchRect : headTouchRect;
+        private Rect HeadTouchRect => headTouchRect;
 
         [SerializeField]
         private Rect climbLadderTouchRect;
 
         [SerializeField]
         private Rect rightSideTouchRect;
-        private Rect RightSideTouchRect => stateMachine.State == PlayerStates.Crouching ? rightSideTouchCrouchRect : rightSideTouchRect;
+        private Rect RightSideTouchRect =>   rightSideTouchRect;
 
         [SerializeField]
         private Rect feetTouchRect;
@@ -90,7 +90,7 @@ namespace LSHGame.PlayerN
             this.parent = parent;
             this.mainColliderRect = mainCollider.GetColliderRect();
 
-            stateMachine.OnStateChanged += OnPlayerStateChanged;
+            //stateMachine.OnStateChanged += OnPlayerStateChanged;
 
             return rb;
         }
@@ -130,7 +130,7 @@ namespace LSHGame.PlayerN
             RetrieveSubstanceOnRect(PlayerSubstanceColliderType.Main, mainCollider);
             bool isCrushed = IsTouchingLayerRectRelative(mainCollider.GetColliderRect().InsetRect(crushedRectInset), crushLayers, false);
 
-            stateMachine.IsHeadObstructed = RetrieveSubstanceOnRect(PlayerSubstanceColliderType.Head, HeadTouchRect,true);
+            //stateMachine.IsHeadObstructed = RetrieveSubstanceOnRect(PlayerSubstanceColliderType.Head, HeadTouchRect,true);
 
 
             /* Activate queried substances */
@@ -191,14 +191,14 @@ namespace LSHGame.PlayerN
 
         #region OnPlayerStateChanged
 
-        private void OnPlayerStateChanged(PlayerStates from, PlayerStates to)
-        {
-            if(to == PlayerStates.Crouching)
-                SetColliderRect(mainCollider, mainColliderCrouchRect);
+        //private void OnPlayerStateChanged(PlayerStates from, PlayerStates to)
+        //{
+        //    if(to == PlayerStates.Crouching)
+        //        SetColliderRect(mainCollider, mainColliderCrouchRect);
 
-            if(from == PlayerStates.Crouching)
-                SetColliderRect(mainCollider, mainColliderRect);
-        }
+        //    if(from == PlayerStates.Crouching)
+        //        SetColliderRect(mainCollider, mainColliderRect);
+        //}
 
         #endregion
 
@@ -508,7 +508,7 @@ namespace LSHGame.PlayerN
 
             RetrieveSubstancePreview(trs, prevSubSet, PlayerSubstanceColliderType.Main, mainCollider.GetColliderRect());
 
-            stateMachine.IsHeadObstructed = RetrieveSubstancePreview(trs, prevSubSet, PlayerSubstanceColliderType.Head, headTouchRect, true);
+            //stateMachine.IsHeadObstructed = RetrieveSubstancePreview(trs, prevSubSet, PlayerSubstanceColliderType.Head, headTouchRect, true);
 
 
             /* Activate queried substances */

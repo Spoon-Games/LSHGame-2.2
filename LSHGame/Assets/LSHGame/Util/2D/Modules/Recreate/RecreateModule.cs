@@ -6,54 +6,65 @@ namespace LSHGame.Util
     public class RecreateModule : MonoBehaviour
     {
         [SerializeField]
-        public string prefabGuid;
-
-        [SerializeField]
         [Tooltip("If the checkpointOrder exceeds this value, the module will not be recreated")]
         private int maxCheckpointOrder = -1;
         public int MaxCheckpointOrder => maxCheckpointOrder;
 
-        private Transform parent;
-        private Vector3 position;
-        private Quaternion rotation;
-        private Vector3 scale;
+        private IRecreatable[] recreatables;
+        private IRecreateBlocker[] blockers;
 
-        private bool wasReset = false;
         private bool wasDestroied = false;
 
         private void Awake()
         {
-            parent = transform.parent;
-            position = transform.position;
-            rotation = transform.rotation;
-            scale = transform.localScale;
             LevelManager.OnExitScene += OnExitScene;
-            LevelManager.OnResetLevel += OnReset;
-            
+            LevelManager.OnResetLevel += Recreate;
+
+            recreatables = GetComponentsInChildren<IRecreatable>();
+            blockers = GetComponentsInChildren<IRecreateBlocker>();
+
+            if(recreatables.Length == 0)
+            {
+                Debug.LogWarning("Recreatemodule " + name + " has no Recreateables assigned");
+            }
         }
 
-        public void OnReset()
+        public void Recreate()
         {
             bool isInOrder = maxCheckpointOrder < 0 || maxCheckpointOrder >= CheckpointManager.CurrentOrder;
             //if(maxCheckpointOrder >= 0)
             //    Debug.Log("CurrentCheckpointOrder: " + CheckpointManager.CurrentOrder + " MaxO: "+maxCheckpointOrder+" IsO: "+isInOrder);
 
-            if (!wasReset && isInOrder)
+            if (isInOrder && !wasDestroied)
             {
-                if (!wasDestroied)
+                foreach(var blocker in blockers)
                 {
-                    Destroy(gameObject);
-                }
-                Deregister();
-
-                RecreateModule newModule = RecreateManager.Instance.Recreate(this, position, rotation,scale,parent);
-                if (newModule != null)
-                {
-                    newModule.maxCheckpointOrder = maxCheckpointOrder;
+                    if (!blocker.DoesRecreate())
+                        return;
                 }
 
-                wasReset = true;
+                foreach(var recreatable in recreatables)
+                {
+                    recreatable.Recreate();
+                }
             }
+
+            //if (!wasReset && isInOrder)
+            //{
+            //    if (!wasDestroied)
+            //    {
+            //        Destroy(gameObject);
+            //    }
+            //    Deregister();
+
+            //    RecreateModule newModule = RecreateManager.Instance.Recreate(this, position, rotation,scale,parent);
+            //    if (newModule != null)
+            //    {
+            //        newModule.maxCheckpointOrder = maxCheckpointOrder;
+            //    }
+
+            //    wasReset = true;
+            //}
         }
 
         private void OnExitScene()
@@ -63,14 +74,8 @@ namespace LSHGame.Util
 
         private void Deregister()
         {
-            LevelManager.OnResetLevel -= OnReset;
+            LevelManager.OnResetLevel -= Recreate;
             LevelManager.OnExitScene -= OnExitScene;
-        }
-
-        internal void SetLocalScale(Vector3 localScale)
-        {
-            transform.localScale = localScale;
-            scale = localScale;
         }
 
         private void OnDestroy()

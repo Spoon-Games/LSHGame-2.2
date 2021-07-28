@@ -7,7 +7,9 @@ using LSHGame.Util;
 namespace LSHGame
 {
     [RequireComponent(typeof(PlayerFollower))]
-    public class CoinPickup : DataPersistBehaviour
+    [RequireComponent(typeof(RecreateModule))]
+    [RequireComponent(typeof(ReTransform))]
+    public class CoinPickup : DataPersistBehaviour,IRecreatable,IRecreateBlocker
     {
         [SerializeField] private InventoryItem inventoryItem;
         [SerializeField]
@@ -21,13 +23,10 @@ namespace LSHGame
         private bool destroied = false;
 
         private bool active = false;
-        private Vector3 startPosition;
 
         private void Awake()
         {
             followComponent = GetComponent<PlayerFollower>();
-            LevelManager.OnResetLevel += OnReset;
-            startPosition = transform.position;
         }
 
         public void OnTriggerEnter2D(Collider2D collision)
@@ -77,18 +76,14 @@ namespace LSHGame
             return new Data<bool>(destroied);
         }
 
-        private void OnDestroy()
-        {
-            LevelManager.OnResetLevel -= OnReset;
-        }
+        public bool DoesRecreate() => !destroied;
 
-        private void OnReset()
+        public void Recreate()
         {
             if (!destroied)
             {
                 followComponent.Active = false;
                 active = false;
-                transform.position = startPosition;
             }
         }
     } 

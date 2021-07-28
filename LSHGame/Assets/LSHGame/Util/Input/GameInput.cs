@@ -8,7 +8,8 @@ namespace LSHGame.Util
     public static class GameInput
     {
         #region Player
-        public static Vector2 MovmentInput => Controller.Player.Movement.ReadValue<Vector2>();
+        private static Vector2 overrideMovmentInput;
+        public static Vector2 MovmentInput => overrideMovmentInput == Vector2.zero? Controller.Player.Movement.ReadValue<Vector2>() : overrideMovmentInput;
 
         private static InputActionWrapper dashWrapper;
         public static bool IsDash => dashWrapper.IsPerformed;
@@ -44,7 +45,6 @@ namespace LSHGame.Util
         #region HintStates
         public static Action Hint_WallClimb;
         public static Action Hint_LadderClimb;
-        public static Action Hint_Dash;
         public static bool Hint_IsLilium = false;
         public static Action Hint_Movement;
         #endregion
@@ -61,6 +61,7 @@ namespace LSHGame.Util
 
             //Player
             dashWrapper = new InputActionWrapper(Controller.Player.Dash);
+            Controller.Player.Dash.performed += ctx => Debug.Log("Dash pressed");
             jumpWrapper = new InputActionWrapper(Controller.Player.Jump);
             wallClimbHoldWrapper = new InputActionWrapper(Controller.Player.WallClimbHold);
 
@@ -130,6 +131,23 @@ namespace LSHGame.Util
             inputMap.Enable();
         }
         #endregion
+
+#if UNITY_EDITOR
+        public static void Debug_OverrideJump(bool performed) => jumpWrapper.OverrideInput(performed);
+
+        public static void Debug_OverrideWASD(bool W,bool A,bool S, bool D)
+        {
+            overrideMovmentInput = Vector2.zero;
+            if (W)
+                overrideMovmentInput.y = 1;
+            if (A)
+                overrideMovmentInput.x = -1;
+            if (S)
+                overrideMovmentInput.y = -1;
+            if (D)
+                overrideMovmentInput.x = 1;
+        }
+#endif
     } 
 
     public class InputActionWrapper
@@ -151,6 +169,13 @@ namespace LSHGame.Util
                 IsPerformed = false;
                 releaseFrame = Time.frameCount;
             };
+        }
+
+        internal void OverrideInput(bool performed)
+        {
+            IsPerformed = performed;
+            if (!performed)
+                releaseFrame = Time.frameCount;
         }
     }
 }

@@ -48,6 +48,11 @@ namespace LSHGame.Util
 
         protected float GetMultiplier()
         {
+            return GetMultiplier(transform, cameraTransform);
+        }
+
+        public static float GetMultiplier(Transform transform, Transform cameraTransform)
+        {
             return 1 - (-cameraTransform.position.z / (transform.position.z - cameraTransform.position.z));
         }
 

@@ -18,6 +18,8 @@ namespace LSHGame.PlayerN
 
         public bool IsSaveGround => characterController.IsSaveGround;
 
+        public bool IsLiliumActive => characterController.liliumState > 0;
+
         public override void Awake()
         {
             base.Awake();

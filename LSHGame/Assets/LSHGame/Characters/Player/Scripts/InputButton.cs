@@ -7,9 +7,7 @@ namespace LSHGame.PlayerN
     public class InputButton
     {
         [SerializeField]
-        private float beforeConDeltaTime;
-        [SerializeField]
-        private float afterConDeltaTime;
+        private InputCondition[] inputConditions = new InputCondition[1];
 
         [SerializeField]
         private bool needRepress = false;
@@ -17,10 +15,7 @@ namespace LSHGame.PlayerN
         [SerializeField]
         private float resetTimer;
 
-        private float beforeConTime = float.NegativeInfinity;
-        private float afterConTime = float.NegativeInfinity;
-        private float conIndex = 0;
-        private float lastActiveTime = float.NegativeInfinity;
+        private float lastActiveTimer = float.NegativeInfinity;
 
         private bool wasRealeasedSinceActivate = true;
 
@@ -62,20 +57,24 @@ namespace LSHGame.PlayerN
 
         public void Reset()
         {
-            beforeConTime = float.NegativeInfinity;
-            afterConTime = float.NegativeInfinity;
-            conIndex = 0;
-            lastActiveTime = float.NegativeInfinity;
+            ResetAllInputConditions();
+            lastActiveTimer = float.NegativeInfinity;
 
             wasRealeasedSinceActivate = true;
 
             wasButtonPressedAndActive = false;
         }
 
+        private void ResetAllInputConditions()
+        {
+            foreach (var inputCondition in inputConditions)
+                inputCondition.Reset();
+        }
+
 
         private bool CheckRaw2(bool buttonDown, bool condition, int conIndex)
         {
-            condition &= Time.time - lastActiveTime >= resetTimer;
+            condition &= Time.fixedTime - lastActiveTimer >= resetTimer;
 
             wasRealeasedSinceActivate |= !buttonDown;
             if (needRepress && !wasRealeasedSinceActivate)
@@ -83,7 +82,7 @@ namespace LSHGame.PlayerN
 
             if (CheckRaw(buttonDown, condition, conIndex))
             {
-                lastActiveTime = Time.time;
+                lastActiveTimer = Time.time;
                 wasRealeasedSinceActivate = false;
                 return true;
             }
@@ -92,41 +91,61 @@ namespace LSHGame.PlayerN
 
         private bool CheckRaw(bool buttonDown, bool condition, int conIndex)
         {
-            if (condition && buttonDown)
+            if (inputConditions[conIndex].IsInRange(buttonDown, condition))
             {
-                afterConTime = float.NegativeInfinity;
-                beforeConTime = float.NegativeInfinity;
+                ResetAllInputConditions();
                 return true;
             }
 
-            if (buttonDown && afterConTime >= Time.time && this.conIndex == conIndex)
-            {
-                afterConTime = float.NegativeInfinity;
-                beforeConTime = float.NegativeInfinity;
-                return true;
-            }
+            if (condition)
+                inputConditions[conIndex].ClockAfter();
 
-            if (condition && beforeConTime >= Time.time)
-            {
-                afterConTime = float.NegativeInfinity;
-                beforeConTime = float.NegativeInfinity;
-                return true;
-            }
-
-            if (condition && !buttonDown)
-            {
-                beforeConTime = float.NegativeInfinity;
-                afterConTime = Time.time + afterConDeltaTime;
-                this.conIndex = conIndex;
-            }
-
-            if (buttonDown && !condition)
-            {
-                afterConTime = float.NegativeInfinity;
-                beforeConTime = Time.time + beforeConDeltaTime;
-            }
+            if (buttonDown)
+                inputConditions[conIndex].ClockBefore();
 
             return false;
+        }
+
+        [System.Serializable]
+        public class InputCondition
+        {
+            [SerializeField]
+            private float beforeConDeltaTime;
+            [SerializeField]
+            private float afterConDeltaTime;
+
+            private float beforeConTimer = float.NegativeInfinity;
+            private float afterConTimer = float.NegativeInfinity;
+
+            public void Reset()
+            {
+                beforeConTimer = float.NegativeInfinity;
+                afterConTimer = float.NegativeInfinity;
+            }
+
+            public void ClockBefore()
+            {
+                beforeConTimer = Time.fixedTime + beforeConDeltaTime;
+            }
+
+            public void ClockAfter()
+            {
+                afterConTimer = Time.fixedTime + afterConDeltaTime;
+            }
+
+            public bool IsInRange(bool buttonDown, bool condition)
+            {
+                if (condition && buttonDown)
+                    return true;
+
+                if (buttonDown && afterConTimer > Time.fixedTime)
+                    return true;
+
+                if (condition && beforeConTimer >= Time.fixedTime)
+                    return true;
+
+                return false;
+            }
         }
     }
 }

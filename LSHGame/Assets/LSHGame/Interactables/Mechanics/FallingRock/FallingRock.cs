@@ -1,4 +1,3 @@
-using LogicC;
 using LSHGame.Util;
 using SceneM;
 using UnityEngine;
@@ -7,79 +6,106 @@ namespace LSHGame
 {
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(Animator))]
-    public class FallingRock : LogicDestination
+    [RequireComponent(typeof(RecreateModule))]
+    [RequireComponent(typeof(ReRigidbody2D))]
+    public class FallingRock : MonoBehaviour, IRecreatable
     {
         [SerializeField]
         private float stallTime = 1;
 
         [SerializeField]
-        private GameObject hitArea;
+        private float gravityModifier = 1f;
+
+        [SerializeField]
+        private LayerMask playerLayers;
 
         private Animator animator;
         private EffectsController effectsController;
         private Rigidbody2D rb;
-        private Vector3 startPosition;
 
-        private bool wasActivated = false;
-        private bool isFalling = false;
-        private float impactThreasholdTimer = float.NegativeInfinity;
+        private enum RockStates { Idle, Stalling, Falling, Landed }
+        private RockStates state = RockStates.Idle;
+
+        private float fallingVelocity = 0;
+        private Timer impactThreasholdTimer = new Timer() { durration = 0.2f };
 
         private bool wasDestroyed = false;
 
-        protected override void Awake()
+        protected void Awake()
         {
-            base.Awake();
-            startPosition = transform.position;
             animator = GetComponent<Animator>();
             effectsController = GetComponent<EffectsController>();
             rb = GetComponent<Rigidbody2D>();
-
-            LevelManager.OnResetLevel += Reset;
         }
 
-        protected override void OnActivated()
+
+        public void ActivateRock()
         {
-            base.OnActivated();
-
-            if(!wasActivated)
+            if (state == RockStates.Idle)
             {
-                wasActivated = true;
-                ActivateRock();
-            }
-        }
+                state = RockStates.Stalling;
 
-        private void ActivateRock()
-        {
-            if(stallTime <= 0)
-            {
-                StartFallRock();
-            }
+                if (stallTime <= 0)
+                {
+                    StartFallRock();
+                }
 
-            animator.SetBool("IsStalling", true);
-            effectsController.TriggerEffect("StallingEffect");
-            TimeSystem.Delay(stallTime,(t) => StartFallRock(),true);
+                animator.SetBool("IsStalling", true);
+                effectsController.TriggerEffect("StallingEffect");
+                TimeSystem.Delay(stallTime, (t) => StartFallRock(), true);
+            }
         }
 
         private void StartFallRock()
         {
+            state = RockStates.Falling;
+
             animator.SetBool("IsStalling", false);
             effectsController.StopEffect("StallingEffect");
             effectsController.TriggerEffect("FallingEffect");
-            rb.bodyType = RigidbodyType2D.Dynamic;
-            hitArea.SetActive(true);
-            isFalling = true;
-            impactThreasholdTimer = Time.fixedTime + 0.2f;
+            impactThreasholdTimer.Clock();
         }
 
         private void FixedUpdate()
         {
-            if(isFalling && rb.velocity.y >= 0 && Time.fixedTime > impactThreasholdTimer)
+            if(state == RockStates.Falling)
             {
+                fallingVelocity += gravityModifier * Physics2D.gravity.y * Time.fixedDeltaTime * Time.fixedDeltaTime;
+                Vector2 position = rb.position;
+                position.y += fallingVelocity * Time.fixedDeltaTime;
+                rb.MovePosition(position);
+            }
+
+            if (state == RockStates.Landed && impactThreasholdTimer.Finished)
+            {
+                PlayImpactEffects();
+            }
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if(state == RockStates.Falling)
+            {
+                if (playerLayers.IsLayer(collision.collider.gameObject.layer))
+                {
+                    PlayImpactEffects();
+                }
+                else
+                {
+                    state = RockStates.Landed;
+
+                    PlayImpactEffects();
+                }
+            }
+        }
+
+        private void PlayImpactEffects()
+        {
+            if (impactThreasholdTimer.Finished)
+            {
+                impactThreasholdTimer.Reset();
                 effectsController.StopEffect("FallingEffect");
                 effectsController.TriggerEffect("ImpactEffect");
-                rb.bodyType = RigidbodyType2D.Static;
-                isFalling = false;
-                hitArea.SetActive(false);
             }
         }
 
@@ -88,20 +114,17 @@ namespace LSHGame
             wasDestroyed = true;
         }
 
-        private void Reset()
+        public void Recreate()
         {
             if (!wasDestroyed)
             {
                 animator.SetBool("IsStalling", false);
                 effectsController.StopEffect("StallingEffect");
                 effectsController.StopEffect("FallingEffect");
-                rb.bodyType = RigidbodyType2D.Static;
-                hitArea.SetActive(false);
-                wasActivated = false;
-                isFalling = false;
-
-                transform.position = startPosition;
+                state = RockStates.Idle;
+                impactThreasholdTimer.Reset();
+                fallingVelocity = 0;
             }
         }
-    } 
+    }
 }

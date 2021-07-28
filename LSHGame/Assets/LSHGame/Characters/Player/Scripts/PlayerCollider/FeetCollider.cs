@@ -86,6 +86,12 @@ namespace LSHGame.PlayerN
 
         #endregion
 
-        public Rect GetColliderRect() => Col.GetColliderRect();
+        public Rect GetColliderRect() {
+
+            if (Col == null)
+                Col = GetComponent<BoxCollider2D>();
+
+            return Col.GetColliderRect();
+        }
     }
 }

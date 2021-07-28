@@ -6,7 +6,7 @@ using UnityEngine.Events;
 namespace LSHGame
 {
     [RequireComponent(typeof(BoxCollider2D))]
-    public class BreakingPlatform : SubstanceProperty
+    public class BreakingPlatform : SubstanceProperty,IRecreatable
     {
         private bool wasTriggered = false;
 
@@ -39,11 +39,28 @@ namespace LSHGame
 
         private void Break()
         {
-            col.enabled = false;
-            onBreak?.Invoke();
-            foreach(var rb in this.GetComponentsInChildren<Rigidbody2D>())
+            if (wasTriggered)
             {
-                rb.bodyType = RigidbodyType2D.Dynamic;
+                col.enabled = false;
+                onBreak?.Invoke();
+                foreach (var rb in this.GetComponentsInChildren<Rigidbody2D>())
+                {
+                    rb.bodyType = RigidbodyType2D.Dynamic;
+                }
+            }
+        }
+
+        public void Recreate()
+        {
+            if (wasTriggered)
+            {
+                wasTriggered = false;
+                col.enabled = true;
+
+                foreach (var rb in this.GetComponentsInChildren<Rigidbody2D>())
+                {
+                    rb.bodyType = RigidbodyType2D.Static;
+                }
             }
         }
     }

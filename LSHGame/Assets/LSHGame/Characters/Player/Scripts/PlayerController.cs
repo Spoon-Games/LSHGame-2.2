@@ -51,6 +51,8 @@ namespace LSHGame.PlayerN
 
         [Header("Input")]
         [SerializeField]
+        private GlobalInputAgent inputAgent;
+        [SerializeField]
         private InputButton jumpInput;
 
         [SerializeField]
@@ -135,6 +137,7 @@ namespace LSHGame.PlayerN
             wallClimbInputExtendRightTimer = new Timer(wallClimbInputExtendDurration);
             wallClimbInputExtendLeftTimer = new Timer(wallClimbInputExtendDurration);
 
+            inputAgent.Listen();
             //Debug.Log("PlayerController IsGroundedHash: " + PlayerLSM.IsGroundedHash + " AnimHash " + Animator.StringToHash("IsGrounded"));
             //GetComponent<Animator>().SetBool(Animator.StringToHash("IsGrounded"), true);
             //inputMaster.Enable();
@@ -166,7 +169,7 @@ namespace LSHGame.PlayerN
             Stats = defaultStats.Clone();
 
             lastInputMovement = inputMovement;
-            inputMovement = GameInput.MovmentInput;
+            inputMovement = inputAgent.Move.Value;
             if (overrideGoRight)
                 inputMovement.x = 1;
 
@@ -184,7 +187,7 @@ namespace LSHGame.PlayerN
             AsignEffectMaterials();
 
             stateMachine.UpdateState();
-
+            //Debug.Log(stateMachine.ToString());
             //Exe Update
             ExeUpdate();
 
@@ -294,7 +297,7 @@ namespace LSHGame.PlayerN
         {
             Stats.IsDashActive &= liliumState > 0 || dashWithoutLilium;
 
-            if (jumpInput.Check(GameInput.IsJump,
+            if (jumpInput.Check(inputAgent.Jump.IsFired,
                 stateMachine.State != PlayerStates.Dash
                 && dashStartDisableTimer + Stats.DashRecoverDurration <= Time.fixedTime 
                 && Stats.IsDashActive, conIndex: 2)
@@ -514,8 +517,10 @@ namespace LSHGame.PlayerN
 
             bool buttonReleased = false;
 
+            bool isJumpCondition = stateMachine.State == PlayerStates.Locomotion || stateMachine.State == PlayerStates.ClimbLadder || stateMachine.State == PlayerStates.ClimbLadderTop || (stateMachine.State == PlayerStates.Aireborne && Stats.IsJumpableInAir);
+            //Debug.Log($"IsJumpCondition: {isJumpCondition}\tState: {stateMachine.State}\tJumpableInAir: {Stats.IsJumpableInAir}");
             if (GreaterYAbs(Stats.JumpSpeed, localVelocity.y) &&
-                jumpInput.Check(GameInput.IsJump, stateMachine.State == PlayerStates.Locomotion || stateMachine.State == PlayerStates.ClimbLadder || stateMachine.State == PlayerStates.ClimbLadderTop || (stateMachine.State == PlayerStates.Aireborne && Stats.IsJumpableInAir), ref buttonReleased))
+                jumpInput.Check(inputAgent.Jump.IsFired, isJumpCondition, ref buttonReleased))
             {
                 localVelocity.y = Mathf.Max(Stats.JumpSpeed * flipedDirection.y, localVelocity.y);
                 lastJumpTimer = Time.fixedTime + 0.2f;
@@ -524,7 +529,7 @@ namespace LSHGame.PlayerN
                 effectsController.TriggerEffect("Jump");
                 //rb.AddForce(new Vector2(0, jumpSpeed),ForceMode2D.Impulse);
             }
-            else if (jumpInput.Check(GameInput.IsJump, stateMachine.State == PlayerStates.ClimbWall, ref buttonReleased, 1))
+            else if (jumpInput.Check(inputAgent.Jump.IsFired, stateMachine.State == PlayerStates.ClimbWall, ref buttonReleased, 1))
             {
                 float xfactor = 1;
                 if (IsTouchingClimbWallLeftAbs)

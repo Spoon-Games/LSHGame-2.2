@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ec5302867d9df5489541371327a5585, type: 3}
   m_Name: MainMenu_SInfo
   m_EditorClassIdentifier: 
-  ScenePath: Assets/LSHGame/Scenes/MainMenu/MainMenu_Scene.unity
-  sceneAsset: {fileID: 102900000, guid: b2926610af9ab3342a6703b76fbbff41, type: 3}
+  ScenePath: Assets/LSHGame/Scenes/MainMenu/MainMenu_Reworked.unity
+  sceneAsset: {fileID: 102900000, guid: e0df2b8ab25255241bdcaab039b52e03, type: 3}
   AdditionalStartScenes: []
   Transition: {fileID: 11400000, guid: 3e45f9d10dad80047b68d2ff1f14d636, type: 2}
   StartCheckpoint: {fileID: 0}

@@ -45,6 +45,22 @@ namespace SceneM
             }
         }
 
+        public static void SaveGlobalSceneData(int buildIndex,string key,Data data,PersistenceType persistenceType)
+        {
+            SceneData scenedata = GetSceneData(buildIndex);
+            scenedata.Store(key, data, persistenceType);
+        }
+
+        public static bool TryLoadGlobalSceneData(int buildIndex,string key,out Data data)
+        {
+            if(SceneData.TryGetValue(buildIndex,out SceneData sceneData))
+            {
+                return sceneData.TryGetData(key, out data);
+            }
+            data = new Data();
+            return false;
+        }
+
         private static IDataPersister[] GetDataPersisters(Scene scene)
         {
             return SceneUtil.FindAllOfTypeInScene<IDataPersister>(scene).ToArray();
@@ -64,6 +80,11 @@ namespace SceneM
                 SceneData.Add(buildIndex, newSceneData);
                 return newSceneData;
             }
+        }
+
+        private static bool TryGetSceneData(Scene scene, out SceneData sceneData)
+        {
+            return SceneData.TryGetValue(scene.buildIndex, out sceneData);
         }
     }
 
@@ -91,6 +112,17 @@ namespace SceneM
             {
                 SavedData.Remove(r);
             }
+        }
+
+        public bool TryGetData(string key,out Data data)
+        {
+            if(SavedData.TryGetValue(key,out SavedData savedData))
+            {
+                data = savedData.Data;
+                return true;
+            }
+            data = new Data();
+            return false;
         }
     }
 

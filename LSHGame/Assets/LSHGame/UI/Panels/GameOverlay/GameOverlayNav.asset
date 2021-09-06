@@ -41,7 +41,7 @@ MonoBehaviour:
     EditorPosition: {x: 601, y: 95}
     CoicePorts: []
     PanelName: DuoCharacterView
-    InputController: Dialog
+    InputController: 
     DoNotHide: 0
     InAnimation: fade
     OutAnimation: fade
@@ -49,7 +49,7 @@ MonoBehaviour:
     EditorPosition: {x: 642, y: 374}
     CoicePorts: []
     PanelName: PictureView
-    InputController: Dialog
+    InputController: 
     DoNotHide: 0
     InAnimation: fade
     OutAnimation: fade

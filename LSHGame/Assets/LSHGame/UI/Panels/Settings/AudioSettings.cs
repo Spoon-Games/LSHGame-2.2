@@ -1,4 +1,5 @@
 ﻿using LSHGame.Util;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,24 +16,20 @@ namespace LSHGame.UI
         [SerializeField]
         private Slider gameSlider;
 
-        [SerializeField]
-        private Slider guiSlider;
 
 
         void Start()
         {
+            InitSlider(masterVolumeSlider,f => AudioManager.MasterVolume = f, AudioManager.MasterVolume);
+            InitSlider(musicSlider, f => AudioManager.MusicVolume = f, AudioManager.MusicVolume);
+            InitSlider(gameSlider, f => AudioManager.SFXVolume = f, AudioManager.SFXVolume);
 
-            masterVolumeSlider.value = AudioManager.MasterVolume;
-            masterVolumeSlider.onValueChanged.AddListener(f => AudioManager.MasterVolume = f);
+        }
 
-            musicSlider.value = AudioManager.MasterVolume;
-            musicSlider.onValueChanged.AddListener(f => AudioManager.MusicVolume = f);
-
-            gameSlider.value = AudioManager.MasterVolume;
-            gameSlider.onValueChanged.AddListener(f => AudioManager.SFXVolume = f);
-
-            guiSlider.value = AudioManager.MasterVolume;
-            guiSlider.onValueChanged.AddListener(f => AudioManager.GUIVolume = f);
+        private void InitSlider(Slider slider,Action<float> SetValue,float startValue)
+        {
+            slider.value = Mathf.Lerp(slider.minValue, slider.maxValue, startValue);
+            slider.onValueChanged.AddListener(f => SetValue(Mathf.InverseLerp(slider.minValue, slider.maxValue, f)));
         }
 
 

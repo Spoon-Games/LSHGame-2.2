@@ -8,7 +8,10 @@ namespace LSHGame
     public class ClickableSpeeker : Speeker
     {
         [SerializeField]
-        public string speekText = "Drücke [I], um zu reden";
+        public GlobalInputAgent interactAgent;
+
+        [SerializeField]
+        public string speekText = "Drücke [Leertaste], um zu reden";
 
         [SerializeField]
         protected LayerMask layerMask;
@@ -20,7 +23,7 @@ namespace LSHGame
         {
             base.Awake();
             triggerCollider = GetComponent<Collider2D>();
-            GameInput.OnInteract += OnInteract;
+            interactAgent.Jump.OnPress += OnInteract;
         }
 
         private void OnInteract()
@@ -29,6 +32,7 @@ namespace LSHGame
             {
                 base.Show();
                 HelpTextView.Instance.HideHelpText(gameObject);
+                interactAgent.StopListening();
             }
         }
 
@@ -42,10 +46,12 @@ namespace LSHGame
                 if (isActive)
                 {
                     HelpTextView.Instance.SetHelpText(speekText,gameObject);
+                    interactAgent.Listen();
                 }
                 else
                 {
                     HelpTextView.Instance.HideHelpText(gameObject);
+                    interactAgent.StopListening();
                 }
             }
         }
@@ -53,7 +59,8 @@ namespace LSHGame
         protected override void OnDestroy()
         {
             base.OnDestroy();
-            GameInput.OnInteract -= OnInteract;
+            interactAgent.StopListening();
+            interactAgent.Jump.OnPress -= OnInteract;
         }
     }
 }

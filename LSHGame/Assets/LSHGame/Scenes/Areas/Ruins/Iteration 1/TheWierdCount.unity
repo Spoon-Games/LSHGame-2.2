@@ -19324,6 +19324,7 @@ Transform:
   - {fileID: 1075049514}
   - {fileID: 1228947329}
   - {fileID: 1183683778}
+  - {fileID: 1635348990}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25593,6 +25594,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sky_Back
       objectReference: {fileID: 0}
+    - target: {fileID: 8515457513607764806, guid: c8d3a9bf05c1d1e4cb26e33067dd3cf8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8515457513607764807, guid: c8d3a9bf05c1d1e4cb26e33067dd3cf8, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -27703,6 +27708,11 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 3
   m_ColliderType: 1
+--- !u!4 &1635348990 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6964125918474839174, guid: 1b92a000b0a3d11458b48aab4b66d737, type: 3}
+  m_PrefabInstance: {fileID: 1670687936}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1666963539
 GameObject:
   m_ObjectHideFlags: 0
@@ -27927,6 +27937,79 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &1670687936
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 932421281}
+    m_Modifications:
+    - target: {fileID: 6964125918474839174, guid: 1b92a000b0a3d11458b48aab4b66d737, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6964125918474839174, guid: 1b92a000b0a3d11458b48aab4b66d737, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6964125918474839174, guid: 1b92a000b0a3d11458b48aab4b66d737, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6964125918474839174, guid: 1b92a000b0a3d11458b48aab4b66d737, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6964125918474839174, guid: 1b92a000b0a3d11458b48aab4b66d737, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6964125918474839174, guid: 1b92a000b0a3d11458b48aab4b66d737, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6964125918474839174, guid: 1b92a000b0a3d11458b48aab4b66d737, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6964125918474839174, guid: 1b92a000b0a3d11458b48aab4b66d737, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6964125918474839174, guid: 1b92a000b0a3d11458b48aab4b66d737, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6964125918474839174, guid: 1b92a000b0a3d11458b48aab4b66d737, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6964125918474839174, guid: 1b92a000b0a3d11458b48aab4b66d737, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6964125918474839175, guid: 1b92a000b0a3d11458b48aab4b66d737, type: 3}
+      propertyPath: m_Name
+      value: SkyBackground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6964125918474839176, guid: 1b92a000b0a3d11458b48aab4b66d737, type: 3}
+      propertyPath: orthographicBounds.x
+      value: 88.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6964125918474839176, guid: 1b92a000b0a3d11458b48aab4b66d737, type: 3}
+      propertyPath: orthographicBounds.y
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6964125918474839176, guid: 1b92a000b0a3d11458b48aab4b66d737, type: 3}
+      propertyPath: orthographicBounds.width
+      value: 91.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6964125918474839176, guid: 1b92a000b0a3d11458b48aab4b66d737, type: 3}
+      propertyPath: orthographicBounds.height
+      value: 50.28
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1b92a000b0a3d11458b48aab4b66d737, type: 3}
 --- !u!1001 &1722816409
 PrefabInstance:
   m_ObjectHideFlags: 0

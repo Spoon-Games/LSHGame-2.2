@@ -194,13 +194,37 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0
   m_Vertices:
-  - position: {x: 0, y: 0, z: 0}
-    color: {r: 0, g: 0, b: 0, a: 0}
+  - position: {x: 0.9985302, y: 0.9985302, z: 0}
+    color: {r: 0.70710677, g: 0.70710677, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  m_Triangles: 0000
+  - position: {x: 0.9985302, y: 0.9985302, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0, y: 0}
+  - position: {x: -0.9985302, y: 0.9985302, z: 0}
+    color: {r: -0.70710677, g: 0.70710677, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: -0.9985302, y: 0.9985302, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0, y: 0}
+  - position: {x: -0.99853003, y: -0.9985304, z: 0}
+    color: {r: -0.70710665, g: -0.7071069, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: -0.99853003, y: -0.9985304, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0, y: 0}
+  - position: {x: 0.99853003, y: -0.9985304, z: 0}
+    color: {r: 0.70710665, g: -0.7071069, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0.99853003, y: -0.9985304, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0, y: 0}
+  m_Triangles: 030001000800020000000100030002000100050003000800040002000300050004000300070005000800060004000500070006000500010007000800000006000700010000000700
   m_LocalBounds:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.78295624
@@ -586,6 +610,7 @@ MonoBehaviour:
   isOverrideMovingVelocity: 0
   overrideMovingVelocity: {x: 0, y: 0}
   overrideGoRight: 0
+  inputAgent: {fileID: 11400000, guid: 3cc8383d30cbfe5499901bee26b8c001, type: 2}
   jumpInput:
     inputConditions:
     - beforeConDeltaTime: 0.1
@@ -595,7 +620,7 @@ MonoBehaviour:
     - beforeConDeltaTime: 0.1
       afterConDeltaTime: 0
     needRepress: 1
-    resetTimer: 0
+    resetTimer: 0.05
   wallClimbInputExtendDurration: 0.2
   playerCollider: {fileID: 6030100856259899549}
   liliumEffect: {fileID: 8515514168544099954}
@@ -1763,6 +1788,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1607685507205838464, guid: 7286af60e1cea10449402db6301dca53, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.7777778
+      objectReference: {fileID: 0}
+    - target: {fileID: 1607685507205838464, guid: 7286af60e1cea10449402db6301dca53, type: 3}
       propertyPath: m_Lens.OrthographicSize
       value: 4.9
       objectReference: {fileID: 0}
@@ -1805,6 +1834,14 @@ PrefabInstance:
     - target: {fileID: 6676720962969372795, guid: 7286af60e1cea10449402db6301dca53, type: 3}
       propertyPath: m_LocalPosition.y
       value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708654348104632169, guid: 7286af60e1cea10449402db6301dca53, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.7777778
+      objectReference: {fileID: 0}
+    - target: {fileID: 8892253715664380937, guid: 7286af60e1cea10449402db6301dca53, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.7777778
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7286af60e1cea10449402db6301dca53, type: 3}

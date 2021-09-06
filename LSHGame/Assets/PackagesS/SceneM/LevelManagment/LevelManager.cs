@@ -10,6 +10,8 @@ namespace SceneM
         #region Attributes
         public static LevelInfo CurrantLevel { get; private set; }
 
+        public static int CurrantScene => SceneManager.GetActiveScene().buildIndex;
+
         public static Action<Func<float>, TransitionInfo> OnStartLoadingMainScene;
 
         public static Action OnExitScene;
@@ -159,10 +161,14 @@ namespace SceneM
                 SceneDataRepository.LoadData(scene);
                 loadedScenesInLevel.Add(scene.buildIndex);
 
-                if(sceneInfo is MainSceneInfo mainSceneInfo && mainSceneInfo.StartCheckpoint != null)
+                if(sceneInfo is MainSceneInfo mainSceneInfo)
                 {
-                    CheckpointManager.SetStartCheckpoint(mainSceneInfo.StartCheckpoint);
+                    //CurrantScene = mainSceneInfo;
+                    if(mainSceneInfo.StartCheckpoint != null)
+                        CheckpointManager.SetStartCheckpoint(mainSceneInfo.StartCheckpoint);
                 }
+
+                
             }
             else
                 Debug.LogError("Something went wrong when loading scene");

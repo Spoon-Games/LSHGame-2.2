@@ -106,5 +106,13 @@ namespace LSHGame.PlayerN
 
             return PlayerStates.Aireborne;
         }
+
+        public override string ToString()
+        {
+            return $"Player State Machine:\n" +
+                $"State: {State}\n" +
+                $"IsGrounded: {IsGrounded}\tIsDash: {IsDash}\tIsDead: {IsDead}\n" +
+                $"IsTouchingClimbWall: {IsTouchingClimbWall}\tIsTouchingClimbLadder: {IsTouchingClimbLadder}\tIsFeetTouchingClimbLadder: {IsFeetTouchingClimbLadder}";
+        }
     }
 }

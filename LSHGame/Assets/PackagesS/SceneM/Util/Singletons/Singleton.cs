@@ -51,6 +51,7 @@ namespace SceneM
             if(_instance == this)
             {
                 instanceWasDestroied = true;
+                _instance = null;
             }
         }
     }

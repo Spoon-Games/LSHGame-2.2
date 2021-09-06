@@ -95,14 +95,12 @@ namespace LSHGame.PlayerN
         public override void LateExeUpdate()
         {
             ExePinching();
-
-            feetCollider.ExeUpdate();
+            
         }
 
         public override void Reset()
         {
             gameObject.layer = 12;
-            feetCollider.Reset();
         }
         #endregion
 
@@ -246,15 +244,16 @@ namespace LSHGame.PlayerN
 
         private void ExeBounce()
         {
-            if (Stats.BounceSettings == null || feetCollider.allCPs.Count == 0)
+            if (Stats.BounceSettings == null)
                 return;
 
-            Vector2 normal = feetCollider.allCPs[0].normal;
-            for (int i = 1; i < feetCollider.allCPs.Count; i++)
-            {
-                normal += feetCollider.allCPs[i].normal;
-            }
-            normal.Normalize();
+            Vector2 normal = Vector2.up;
+            //Vector2 normal = feetCollider.allCPs[0].normal;
+            //for (int i = 1; i < feetCollider.allCPs.Count; i++)
+            //{
+            //    normal += feetCollider.allCPs[i].normal;
+            //}
+            //normal.Normalize();
 
             normal = Stats.BounceSettings.GetRotation(normal);
             float bounceSpeed = Stats.BounceSettings.GetBounceSpeed(Mathf.Abs(Vector2.Dot(normal, rb.velocity)));

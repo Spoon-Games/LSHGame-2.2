@@ -36,13 +36,17 @@ namespace LSHGame.PlayerN
 
         public bool Check(bool buttonDown, bool condition, ref bool wasReleased, int conIndex = 0)
         {
-            if (CheckRaw2(buttonDown, condition, conIndex))
+            if (CheckWithReset(buttonDown, condition, conIndex))
             {
                 if (!buttonDown)
                     wasReleased = true;
                 else
                     wasButtonPressedAndActive = true;
 
+                //Debug.Log($"Check Succes\nButtonDown: {buttonDown}\tCondition: {condition}" +
+                //    $"\nWasReleased: {wasReleased}\tConIndex: {conIndex}\n{inputConditions[conIndex].ToString()}\n" +
+                //    $"lastActiveTimer: {lastActiveTimer}\twasReleasedSinceActive: {wasRealeasedSinceActivate}\n" +
+                //    $"wasButtonPressedSinceActive: {wasButtonPressedAndActive}");
                 return true;
             }
 
@@ -51,6 +55,11 @@ namespace LSHGame.PlayerN
                 wasReleased = true;
                 wasButtonPressedAndActive = false;
             }
+
+            //Debug.Log($"Check Failed\nButtonDown: {buttonDown}\tCondition: {condition}" +
+            //        $"\nWasReleased: {wasReleased}\tConIndex: {conIndex}\n{inputConditions[conIndex].ToString()}\n" +
+            //        $"lastActiveTimer: {lastActiveTimer}\twasReleasedSinceActive: {wasRealeasedSinceActivate}\n" +
+            //        $"wasButtonPressedSinceActive: {wasButtonPressedAndActive}");
 
             return false;
         }
@@ -72,7 +81,7 @@ namespace LSHGame.PlayerN
         }
 
 
-        private bool CheckRaw2(bool buttonDown, bool condition, int conIndex)
+        private bool CheckWithReset(bool buttonDown, bool condition, int conIndex)
         {
             condition &= Time.fixedTime - lastActiveTimer >= resetTimer;
 
@@ -80,7 +89,7 @@ namespace LSHGame.PlayerN
             if (needRepress && !wasRealeasedSinceActivate)
                 buttonDown = false;
 
-            if (CheckRaw(buttonDown, condition, conIndex))
+            if (CheckWithThreshold(buttonDown, condition, conIndex))
             {
                 lastActiveTimer = Time.time;
                 wasRealeasedSinceActivate = false;
@@ -89,7 +98,7 @@ namespace LSHGame.PlayerN
             return false;
         }
 
-        private bool CheckRaw(bool buttonDown, bool condition, int conIndex)
+        private bool CheckWithThreshold(bool buttonDown, bool condition, int conIndex)
         {
             if (inputConditions[conIndex].IsInRange(buttonDown, condition))
             {
@@ -126,11 +135,13 @@ namespace LSHGame.PlayerN
             public void ClockBefore()
             {
                 beforeConTimer = Time.fixedTime + beforeConDeltaTime;
+                afterConTimer = float.NegativeInfinity;
             }
 
             public void ClockAfter()
             {
                 afterConTimer = Time.fixedTime + afterConDeltaTime;
+                beforeConTimer = float.NegativeInfinity;
             }
 
             public bool IsInRange(bool buttonDown, bool condition)
@@ -145,6 +156,11 @@ namespace LSHGame.PlayerN
                     return true;
 
                 return false;
+            }
+
+            public override string ToString()
+            {
+                return $"InputCondition:\nBeforConTimer: {beforeConTimer}\tAfterConTimer: {afterConTimer}";
             }
         }
     }

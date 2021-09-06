@@ -52,7 +52,7 @@ namespace LSHGame.Util
 
 
         #region Init
-        private static InputController Controller { get; set; }
+        public static InputController Controller { get; private set; }
 
         static GameInput()
         {
@@ -61,7 +61,6 @@ namespace LSHGame.Util
 
             //Player
             dashWrapper = new InputActionWrapper(Controller.Player.Dash);
-            Controller.Player.Dash.performed += ctx => Debug.Log("Dash pressed");
             jumpWrapper = new InputActionWrapper(Controller.Player.Jump);
             wallClimbHoldWrapper = new InputActionWrapper(Controller.Player.WallClimbHold);
 

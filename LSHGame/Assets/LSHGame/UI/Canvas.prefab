@@ -321,6 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   furtherButton: {fileID: 0}
+  dialogInputAgent: {fileID: 11400000, guid: d429d102743b7ba48959105ca4829573, type: 2}
   furtherButtonTextField: {fileID: 0}
   defaultFurtherText: Weiter
   typeSpeed: 7
@@ -1898,6 +1899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   furtherButton: {fileID: 8362345992924733399}
+  dialogInputAgent: {fileID: 11400000, guid: d429d102743b7ba48959105ca4829573, type: 2}
   furtherButtonTextField: {fileID: 4329046249182620710}
   defaultFurtherText: Weiter
   typeSpeed: 13

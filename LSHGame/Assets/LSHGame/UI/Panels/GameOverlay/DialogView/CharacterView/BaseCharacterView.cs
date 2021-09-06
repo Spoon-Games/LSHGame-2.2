@@ -8,12 +8,15 @@ using UnityEngine.UI;
 
 namespace LSHGame.UI
 {
-    [RequireComponent(typeof(Activity))]
-    public abstract class BaseCharacterView<D, C> : Singleton<C>, IActivityLifecicleCallback where D : BaseDialog where C : BaseCharacterView<D, C>
+    [RequireComponent(typeof(Panel))]
+    public abstract class BaseCharacterView<D, C> : Singleton<C>, IPanelTransition where D : BaseDialog where C : BaseCharacterView<D, C>
     {
         #region Attributes
         [SerializeField]
         protected Button furtherButton;
+
+        [SerializeField]
+        protected GlobalInputAgent dialogInputAgent;
 
         private bool _isFurther = false;
         [SerializeField]
@@ -27,23 +30,24 @@ namespace LSHGame.UI
         [SerializeField]
         private bool holdForLastStringTag = true;
 
+        [SerializeField]
+        private Panel hubView;
+
         private float currentTypeSpeed;
         private float typeProgress = 0;
 
         protected D Dialog { get; private set; }
 
-        private Activity _activity = null;
-        protected Activity Activity
+        private Panel _panel = null;
+        protected Panel Panel
         {
             get
             {
-                if (_activity == null)
-                    _activity = GetComponent<Activity>();
-                return _activity;
+                if (_panel == null)
+                    _panel = GetComponent<Panel>();
+                return _panel;
             }
         }
-
-        protected virtual string ActivityTransitionName => "Start" + name;
 
         protected TagChain TagChain { get; private set; }
         protected bool Active { get; private set; } = false;
@@ -59,7 +63,7 @@ namespace LSHGame.UI
         {
             furtherButton?.onClick.AddListener(OnFurther);
 
-            GameInput.OnFurther += OnFurther;
+            dialogInputAgent.Jump.OnPress += OnFurther;
         }
         #endregion
 
@@ -197,8 +201,8 @@ namespace LSHGame.UI
 
                 Active = true;
 
-                Activity.Parent.GoToNext(ActivityTransitionName);
-
+                Panel.Parent.ShowPanelByP(Panel);
+                dialogInputAgent.Listen();
                 //Debug.Log("Activate");
 
                 //Debug.Log("TagChain: " + TagChain.ToString());
@@ -224,8 +228,10 @@ namespace LSHGame.UI
 
                 Active = false;
 
-                if (!isDestroied && Activity.IsRunning)
-                    Activity.Parent.PopBackStack();
+                dialogInputAgent.StopListening();
+
+                if (!isDestroied && Panel.State == PanelTransitionState.Visible)
+                    Panel.Parent.ShowPanelByP(hubView);
             }
             //else
                 //Debug.Log("CharacterView was not active");
@@ -240,31 +246,31 @@ namespace LSHGame.UI
             isDestroied = true;
             if (Active)
                 Deactivate();
-            GameInput.OnFurther -= OnFurther;
+            dialogInputAgent.Jump.OnPress -= OnFurther;
         }
 
         #endregion
 
         #region Activity Callbacks
-        public virtual void OnEnter()
-        {
 
-        }
-
-        public virtual void OnEnterComplete()
-        {
-            //GetNext();
-            TagChain.Start();
-        }
-
-        public virtual void OnLeave()
+        public float StartLeaving(Panel nextPanel)
         {
             Deactivate();
+            OnLeave();
+            return 0;
         }
+        public virtual void OnLeave() { }
 
-        public virtual void OnLeaveComplete()
+        public void Leave(Panel nextPanel){}
+
+        public float StartEntering(Panel previousPanel) => 0;
+
+        public void Enter(Panel previousPanel)
         {
+            TagChain.Start();
+            OnEnter();
         }
+        public virtual void OnEnter() { }
         #endregion
 
         #region Text

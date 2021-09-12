@@ -23,7 +23,7 @@ namespace LSHGame.Util
         }
     }
 
-    public interface ITriggerEffectRec
+    public interface ITriggerEffectRec : IDataReciever
     {
         HashSet<string> TriggerEffects { get; }
     }

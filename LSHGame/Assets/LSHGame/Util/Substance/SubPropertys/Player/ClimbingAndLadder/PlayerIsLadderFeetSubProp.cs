@@ -16,7 +16,7 @@ namespace LSHGame.Util
         }
     }
 
-    public interface IIsLadderFeetRec
+    public interface IIsLadderFeetRec : IDataReciever
     {
         bool IsFeetLadder { get; set; }
     }

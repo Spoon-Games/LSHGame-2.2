@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d21a2fc2d25c0f45b5869b081a79208, type: 3}
   m_Name: 6_TheMadMadame
   m_EditorClassIdentifier: 
-  Data: "<Katharina>\nEine nicht zu \xF6ffnende Truhe,\n<Page/>\nWer w\xFCrde so
-    etwas tun?\n<Page/>\nOh, die Geheimnisse,\n<Page/>\nSensei,\nrette mich\n</Katharina>\n<Bettie>\nAber
-    noch mal zum Portal,\n<Page/>\nWas treibt dich an?\n</Bettie>\n<Katharina>\nDie
-    Geister, die Geister,\nund die Truhe nat\xFCrlich.\n</Katharina>\n<Bettie>\nBuh!\n</Bettie>\n<Katharina>\n...\n<Page/>\nTsch\xFCss\n</Katharina>\n<Bettie>\nAuf
-    Wiedersehen\n</Bettie>"
+  Data: "<Katharina>\r\nEine nicht zu \xF6ffnende Truhe,\r\n<Page/>\r\nWer w\xFCrde
+    so etwas tun?\r\n<Page/>\r\nOh, die Geheimnisse,\r\n<Page/>\r\nSensei,\r\nrette
+    mich\r\n</Katharina>\r\n<Bettie>\r\nAber noch mal zum Portal,\r\n<Page/>\r\nWas
+    treibt dich an?\r\n</Bettie>\r\n<Katharina>\r\nDie Geister, die Geister,\r\nund
+    die Truhe nat\xFCrlich.\r\n</Katharina>\r\n<Bettie>\r\nBuh!\r\n</Bettie>\r\n<Katharina>\r\n...\r\n<Page/>\r\nTsch\xFCss\r\n</Katharina>\r\n<Bettie>\r\nAuf
+    Wiedersehen\r\n</Bettie>\r\n"
   PersonRight: {fileID: 11400000, guid: 5484a2a0cbfceec429961b33f0511a54, type: 2}
   PersonLeft: {fileID: 11400000, guid: 6c81a2256fa2f4b41a72836064d452f1, type: 2}
   Actions: []

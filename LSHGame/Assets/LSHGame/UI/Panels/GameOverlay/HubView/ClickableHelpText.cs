@@ -1,4 +1,5 @@
 ﻿using LSHGame.Util;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace LSHGame.UI
@@ -7,10 +8,25 @@ namespace LSHGame.UI
     {
         public UnityEvent OnInteract;
 
-        private void Awake()
+        public GlobalInputAgent inputAgent;
+
+
+        protected override void OnShow()
         {
-            GameInput.OnInteract += Interact;
+            base.OnShow();
+
+            inputAgent.Listen();
+            inputAgent.Jump.OnPress += Interact;
         }
+
+        protected override void OnHide()
+        {
+            base.OnHide();
+
+            inputAgent.StopListening();
+            inputAgent.Jump.OnPress -= Interact;
+        }
+
 
         private void Interact()
         {
@@ -23,7 +39,7 @@ namespace LSHGame.UI
 
         private void OnDestroy()
         {
-            GameInput.OnInteract -= Interact;
+            //GameInput.OnInteract -= Interact;
         }
     }
 }

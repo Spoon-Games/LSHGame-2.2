@@ -23,7 +23,6 @@ namespace LSHGame
         {
             base.Awake();
             triggerCollider = GetComponent<Collider2D>();
-            interactAgent.Jump.OnPress += OnInteract;
         }
 
         private void OnInteract()
@@ -47,11 +46,14 @@ namespace LSHGame
                 {
                     HelpTextView.Instance.SetHelpText(speekText,gameObject);
                     interactAgent.Listen();
+                    interactAgent.Jump.OnPress += OnInteract;
                 }
                 else
                 {
                     HelpTextView.Instance.HideHelpText(gameObject);
                     interactAgent.StopListening();
+                    interactAgent.Jump.OnPress -= OnInteract;
+
                 }
             }
         }

@@ -15,7 +15,7 @@ namespace LSHGame.Util
         }
     }
 
-    public interface IPlayerIsJumpableSubProp
+    public interface IPlayerIsJumpableSubProp : IDataReciever
     {
         bool IsJumpableInAir { get; set; }
     }

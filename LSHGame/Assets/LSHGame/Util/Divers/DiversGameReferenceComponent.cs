@@ -6,7 +6,7 @@ namespace LSHGame.Util
     {
         private void Awake()
         {
-            if (GameInput.IsDash)
+            if (GameInput.Hint_IsLilium)
             {
                 
             }

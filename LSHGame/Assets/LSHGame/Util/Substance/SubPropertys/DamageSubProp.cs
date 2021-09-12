@@ -13,7 +13,7 @@ namespace LSHGame.Util
         }
     }
 
-    public interface IDamageRec
+    public interface IDamageRec : IDataReciever
     {
         bool IsDamage { get; set; }
     }

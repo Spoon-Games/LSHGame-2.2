@@ -34,14 +34,16 @@ namespace LSHGame.UI
             colorFocusedText = Color.white;
         }
 
-        public override void OnEnter()
+        protected override float OnStartEntering()
         {
-            base.OnEnter();
+            base.OnStartEntering();
 
             dialogField.text = "";
             SetDefaultMood(Dialog.PersonLeft, false);
             SetDefaultMood(Dialog.PersonRight, true);
             Defocus();
+
+            return 0;
         }
 
         #region Tag Callbacks

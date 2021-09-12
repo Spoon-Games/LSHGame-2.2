@@ -12,16 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d21a2fc2d25c0f45b5869b081a79208, type: 3}
   m_Name: 12_MdameChester_FadingQuest
   m_EditorClassIdentifier: 
-  Data: "<MadameChester>\nMeine Kleine, \n<Page/>\nIch sehe du hast es geschafft.\n</MadameChester>\n<Katharina>\n...\n</Katharina>\n<MadameChester>\nDer
-    Zeitpunkt ist gekommen, um dir zusagen:\n<Page/>\nEs ist alles nicht real,\n<Button/>\nes
-    gibt es gar nicht.\n<Page/>\nDas Portal, das danach,\nund davor, \n<Page/>\nEs
-    hat keine Bedeutung.\n</MadameChester>\n<Katharina>\n...\n</Katharina>\n<MadameChester>\nDu
-    strebst nach Frieden, Fr\xF6hlichkeit,\nFreiheit?\n<Page/>\nNach Wissen, Glauben,
-    Macht?\n<Page/>\nNach M\xF6glichkeiten, Vielf\xE4ltigkeit \nund Entfaltung?\n<Page/>\nDu
-    strebst nach Freiheit?\n<Page/>\nEs existiert nicht!\n</MadameChester>\n<Katharina>\n...\n<Page/>\n...\n<Page/>\nvieleicht\n</Katharina>\n<MadameChester>\nDu
-    wirst hinter dem Portal nichts finden\n<Page/>\nLeere\n</MadameChester>\n<Katharina>\nVielleicht,\n<Page/>\nVielleicht
-    auch nicht\n<Page/>\nEs gibt nur einen Weg es herauszufinden\n<Page/>\nAuf Wiedersehen\n</Katharina>\n<MadameChester>\nMach
-    es gut,\n<Page/>\nmeine Kleine\n</MadameChester>"
+  Data: "<MadameChester>\r\nMeine Kleine, \r\n<Page/>\r\nIch sehe du hast es geschafft.\r\n</MadameChester>\r\n<Katharina>\r\n...\r\n</Katharina>\r\n<MadameChester>\r\nDer
+    Zeitpunkt ist gekommen, um dir zusagen:\r\n<Page/>\r\nEs ist alles nicht real,\r\n<Button/>\r\nes
+    gibt es gar nicht.\r\n<Page/>\r\nDas Portal, das danach,\r\nund davor, \r\n<Page/>\r\nEs
+    hat keine Bedeutung.\r\n</MadameChester>\r\n<Katharina>\r\n...\r\n</Katharina>\r\n<MadameChester>\r\nDu
+    strebst nach Frieden, Fr\xF6hlichkeit,\r\nFreiheit?\r\n<Page/>\r\nNach Wissen,
+    Glauben, Macht?\r\n<Page/>\r\nNach M\xF6glichkeiten, Vielf\xE4ltigkeit \r\nund
+    Entfaltung?\r\n<Page/>\r\nDu strebst nach Freiheit?\r\n<Page/>\r\nEs existiert
+    nicht!\r\n</MadameChester>\r\n<Katharina>\r\n...\r\n<Page/>\r\n...\r\n<Page/>\r\nvielleicht\r\n</Katharina>\r\n<MadameChester>\r\nDu
+    wirst hinter dem Portal nichts finden\r\n<Page/>\r\nLeere\r\n</MadameChester>\r\n<Katharina>\r\nVielleicht,\r\n<Page/>\r\nVielleicht
+    auch nicht\r\n<Page/>\r\nEs gibt nur einen Weg es herauszufinden\r\n<Page/>\r\nAuf
+    Wiedersehen\r\n</Katharina>\r\n<MadameChester>\r\nMach es gut,\r\n<Page/>\r\nmeine
+    Kleine\r\n</MadameChester>\r\n"
   PersonRight: {fileID: 11400000, guid: 5484a2a0cbfceec429961b33f0511a54, type: 2}
   PersonLeft: {fileID: 11400000, guid: 20e48e05286af4f4cb73360d8beb5be6, type: 2}
   Actions: []

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d21a2fc2d25c0f45b5869b081a79208, type: 3}
+  m_Name: 3_Warehouse
+  m_EditorClassIdentifier: 
+  Data: "<Bettie>\r\nHallo\r\n<Page/>\r\nWarum willst du unbedingt zum Portal?\r\n</Bettie>\r\n<Katharina>\r\nIch
+    bin ja kein Chemiker\r\n<Page/>\r\nAber diese Pflanzen sollten schleunigst einen
+    Doktor aufsuchen.\r\n<Page/>\r\nDas ist doch nicht normal...\r\n</Katharina>\r\n<Bettie>\r\nViele
+    Geheimnisse verbirgt dieses Schloss...\r\n</Bettie>\r\n<Katharina>\r\nSensei,
+    nicht so konkret.\r\n<Page/>\r\nDie Details, sie sind nur zu vorstellbar.\r\n</Katharina>\r\n<Bettie>\r\nUnd
+    du musst sie \xFCberwinden\r\n</Bettie>\r\n<Katharina>\r\nOh nein!\r\nAlle Hoffnung
+    ist verloren.\r\n<Page/>\r\nTsch\xFCss.\r\n</Katharina>\r\n<Bettie>\r\nAuf Wiedersehen.\r\n</Bettie>\r\n"
+  PersonRight: {fileID: 11400000, guid: 6c81a2256fa2f4b41a72836064d452f1, type: 2}
+  PersonLeft: {fileID: 11400000, guid: 5484a2a0cbfceec429961b33f0511a54, type: 2}
+  Actions: []

@@ -12,20 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d21a2fc2d25c0f45b5869b081a79208, type: 3}
   m_Name: 13_ThePortal
   m_EditorClassIdentifier: 
-  Data: "<Katharina>\nBettie,\n<Button/>\nWas machst du denn hier?\n</Katharina>\n<Bettie>\nIch
-    kann dich das doch nicht alleine machen lassen,\n<Page/>\nDu k\xF6nntest noch
-    was kaputt machen.\n<Page/>\nSchere, Messer, Portal und Licht,\n<Button/>\nSind
-    f\xFCr kleine Kinder nicht.\n</Bettie>\n<Katharina>\nEs ist auch sch\xF6n dich
-    zu sehen\n</Katharina>\n<Bettie>\nBist du bereit?\n<Page/>\nUm das Portal zu\xF6ffnen?\n</Bettie>\n<Katharina>\nKurze
-    zwischen Frage:\n<Page/>\nWas sollen die ganzen Schildkr\xF6ten?\n<Page/>\nIst
-    das irgend ein Bild?\n<Page/>\nOder ein Ritual?\n<Page/>\nWir beten dich an\n<Page/>\nGott
-    aller G\xF6tter\n<Button/>\nH\xF6chster der H\xF6chsten\n<Page/>\nSchildie die
-    Schildkr\xF6te\n<Page/>\nGew\xE4hre uns Schutz und Schokolade\n</Katharina>\n<Bettie>\nNiemand
-    wei\xDF es so wirklich.\n<Page/>\nWillst du nun das Portal \xF6ffnen?\n<Button=\"\xD6ffnen\"/>\n<Action=OpenPortal/>\n</Bettie>\n<Pause=12/>\n<Katharina>\nBettie,\n<Page/>\nich
-    habe Angst...\n<Page/>\nWas wenn nichts auf der anderen Seite ist?\n</Katharina>\n<Bettie>\nEs
-    ist ok,\n<Page/>\nDu bist nicht alleine\n<Page/>\nIch bin hier.\n</Bettie>\n<Katharina>\n...\n</Katharina>\n<Bettie>\nDu
-    musst nun hineingehen.\n</Bettie>\n<Katharina>\nTsch\xFCss,\nBettie\n</Katharina>\n<Bettie>\nTsch\xFCss,\n<Page/>\nWir
-    werden uns ganz sicher wiedersehen!\n</Bettie>\n<Katharina>\nIch bin nicht alleine...\n<Button=\"Hineingehen\"/>\n<Action=EnterPortal/>\n</Katharina>"
+  Data: "<Katharina>\r\nBettie,\r\n<Button/>\r\nWas machst du denn hier?\r\n</Katharina>\r\n<Bettie>\r\nIch
+    kann dich das doch nicht alleine machen lassen,\r\n<Page/>\r\nDu k\xF6nntest
+    noch was kaputt machen.\r\n<Page/>\r\nSchere, Messer, Portal und Licht,\r\n<Button/>\r\nSind
+    f\xFCr kleine Kinder nicht.\r\n</Bettie>\r\n<Katharina>\r\nEs ist auch sch\xF6n
+    dich zu sehen\r\n</Katharina>\r\n<Bettie>\r\nBist du bereit?\r\n<Page/>\r\nUm
+    das Portal zu \xF6ffnen?\r\n</Bettie>\r\n<Katharina>\r\nKurze zwischen Frage:\r\n<Page/>\r\nWas
+    sollen die ganzen Schildkr\xF6ten?\r\n<Page/>\r\nIst das irgendein Bild?\r\n<Page/>\r\nOder
+    ein Ritual?\r\n<Page/>\r\nWir beten dich an\r\n<Page/>\r\nGott aller G\xF6tter\r\n<Button/>\r\nH\xF6chster
+    der H\xF6chsten\r\n<Page/>\r\nSchildie die Schildkr\xF6te\r\n<Page/>\r\nGew\xE4hre
+    uns Schutz und Schokolade\r\n</Katharina>\r\n<Bettie>\r\nNiemand wei\xDF es so
+    wirklich.\r\n<Page/>\r\nWillst du nun das Portal \xF6ffnen?\r\n<Button=\"\xD6ffnen\"/>\r\n<Action=OpenPortal/>\r\n</Bettie>\r\n<Pause=12/>\r\n<Katharina>\r\nBettie,\r\n<Page/>\r\nich
+    habe Angst...\r\n<Page/>\r\nWas wenn nichts auf der anderen Seite ist?\r\n</Katharina>\r\n<Bettie>\r\nEs
+    ist ok,\r\n<Page/>\r\nDu bist nicht alleine\r\n<Page/>\r\nIch bin hier.\r\n</Bettie>\r\n<Katharina>\r\n...\r\n</Katharina>\r\n<Bettie>\r\nDu
+    musst nun hineingehen.\r\n</Bettie>\r\n<Katharina>\r\nTsch\xFCss,\r\nBettie\r\n</Katharina>\r\n<Bettie>\r\nTsch\xFCss,\r\n<Page/>\r\nWir
+    werden uns ganz sicher wiedersehen!\r\n</Bettie>\r\n<Katharina>\r\nIch bin nicht
+    alleine...\r\n<Button=\"Hineingehen\"/>\r\n<Action=EnterPortal/>\r\n</Katharina>\r\n"
   PersonRight: {fileID: 11400000, guid: 6c81a2256fa2f4b41a72836064d452f1, type: 2}
   PersonLeft: {fileID: 11400000, guid: 5484a2a0cbfceec429961b33f0511a54, type: 2}
   Actions:

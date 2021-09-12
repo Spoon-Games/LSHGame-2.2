@@ -546,11 +546,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1704081312302857621, guid: d0666d7d72c682540bf8c5943d3fdce6, type: 3}
       propertyPath: dataSettings.dataKey
-      value: d2e153cc-af1d-47b6-9d48-d5b4daf71d11
+      value: 3fa3f545-c0c4-4393-b17a-9095427b8e52
       objectReference: {fileID: 0}
     - target: {fileID: 1704081312302857621, guid: d0666d7d72c682540bf8c5943d3fdce6, type: 3}
       propertyPath: dataSettings.InstanceId
-      value: -440230
+      value: -1109948
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0666d7d72c682540bf8c5943d3fdce6, type: 3}
@@ -3034,11 +3034,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1704081312302857621, guid: d0666d7d72c682540bf8c5943d3fdce6, type: 3}
       propertyPath: dataSettings.dataKey
-      value: 2acf8986-93e7-4de4-b924-b4b353bccd22
+      value: 853616f2-5ed6-4d12-b1e4-8f1f41e28c99
       objectReference: {fileID: 0}
     - target: {fileID: 1704081312302857621, guid: d0666d7d72c682540bf8c5943d3fdce6, type: 3}
       propertyPath: dataSettings.InstanceId
-      value: -116562
+      value: -1110604
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0666d7d72c682540bf8c5943d3fdce6, type: 3}

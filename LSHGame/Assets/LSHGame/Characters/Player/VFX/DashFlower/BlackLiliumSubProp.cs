@@ -60,7 +60,7 @@ namespace LSHGame.PlayerN
         }
     }
 
-    public interface IBlackLiliumReciever
+    public interface IBlackLiliumReciever : IDataReciever
     {
         BlackLiliumSubProp BlackLiliumReference { get; set; }
     }

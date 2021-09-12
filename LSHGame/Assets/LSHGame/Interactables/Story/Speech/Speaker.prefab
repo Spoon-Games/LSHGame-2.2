@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7966646204665419119}
   - component: {fileID: 4466785975998833524}
   m_Layer: 16
-  m_Name: Speeker
+  m_Name: Speaker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,11 +70,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39233a9087a6231478bf2d0aa54a26a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialog: {fileID: 11400000, guid: 80757c33605344549a52c640cb8c4ed4, type: 2}
+  dialog: {fileID: 0}
   OnShow:
     m_PersistentCalls:
       m_Calls: []
-  speekText: "Dr\xFCcke [I], um zu reden"
+  Actions: []
+  interactAgent: {fileID: 11400000, guid: eb811a86230a4814badca80f7ccee29a, type: 2}
+  speekText: "Dr\xFCcke [Leertaste], um zu reden"
   layerMask:
     serializedVersion: 2
     m_Bits: 4096

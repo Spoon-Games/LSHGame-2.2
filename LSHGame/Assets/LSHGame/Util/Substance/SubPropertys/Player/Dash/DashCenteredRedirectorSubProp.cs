@@ -27,7 +27,7 @@ namespace LSHGame.Util
 #endif
     }
 
-    public interface IDashCenteredRedirectorRec
+    public interface IDashCenteredRedirectorRec : IDataReciever
     {
         Vector2 GlobalDashTurningCenter { get; set; }
         float DashDeltaTurningAngle { get; set; }

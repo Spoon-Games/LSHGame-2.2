@@ -34,7 +34,7 @@ namespace LSHGame.Util
         }
     }
 
-    public interface IEffectsMaterialRec
+    public interface IEffectsMaterialRec : IDataReciever
     {
         Dictionary<string,string> EffectMaterials { get; }
     }

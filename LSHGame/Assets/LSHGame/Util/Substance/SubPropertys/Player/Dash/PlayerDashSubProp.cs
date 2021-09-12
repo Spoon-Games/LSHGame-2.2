@@ -20,7 +20,7 @@ namespace LSHGame.Util
         }
     }
 
-    public interface IPlayerDashRec
+    public interface IPlayerDashRec : IDataReciever
     {
         float DashDurration { get; set; }
         float DashSpeed { get; set; }

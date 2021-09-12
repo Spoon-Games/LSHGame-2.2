@@ -23,7 +23,7 @@ namespace LSHGame.Util
         }
     }
 
-    public interface IMatBounceRec
+    public interface IMatBounceRec : IDataReciever
     {
         BounceSettings BounceSettings { get; set; }
 

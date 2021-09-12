@@ -12,20 +12,37 @@ namespace LSHGame.UI
 
         public void Show()
         {
-            HelpTextView.Instance.SetHelpText(text);
-            visible = true;
+            if (!visible)
+            {
+                HelpTextView.Instance.SetHelpText(text);
+                visible = true;
+
+                OnShow();
+            }
         }
+
+        protected virtual void OnShow() { }
 
         public void Hide()
         {
-            HelpTextView.Instance.HideHelpText();
-            visible = false;
+            if (visible)
+            {
+                HelpTextView.Instance.HideHelpText();
+                visible = false;
+
+                OnHide();
+            }
         }
+
+        protected virtual void OnHide() { }
 
         private void OnDestroy()
         {
             if (visible)
+            {
                 HelpTextView.Instance?.HideHelpText();
+                OnHide();
+            }
         }
     } 
 }

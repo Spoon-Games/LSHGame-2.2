@@ -2,17 +2,9 @@
 
 namespace SceneM
 {
-    public class Checkpoint : MonoBehaviour
+    public class Checkpoint : BaseCheckpoint
     {
-        [SerializeField]
-        public bool isDefaultStartCheckpoint ;
-
-        [SerializeField]
-        private int order = 0;
-        internal int Order => order;
-
-        [SerializeField]
-        private CheckpointInfo identifier;
+        
 
         public enum CheckType { Stay, Vanish }
 
@@ -22,22 +14,14 @@ namespace SceneM
         private bool autoPrioritize = true;
 
 
-        private void Awake()
+        public override Vector3 SetCheckpoint()
         {
-            if (isDefaultStartCheckpoint)
-                CheckpointManager.SetDefaultStartCheckpoint(this);
-            if (identifier != null)
-                CheckpointManager.RegisterStartCheckpoint(this, identifier);
+            if (checkType == CheckType.Vanish)
+                Destroy(gameObject);
+
+            return base.SetCheckpoint();
         }
 
-        public void TriggerCheckpoint()
-        {
-            if (CheckpointManager.SetCheckpoint(this))
-            {
-                if (checkType == CheckType.Vanish)
-                    Destroy(gameObject);
-            }
-        }
 
 #if UNITY_EDITOR
         private void OnValidate()
@@ -71,5 +55,36 @@ namespace SceneM
             }
         }
 #endif
+    }
+
+    public abstract class BaseCheckpoint : MonoBehaviour
+    {
+        [SerializeField]
+        public bool isDefaultStartCheckpoint;
+
+        [SerializeField]
+        protected int order = 0;
+        internal int Order => order;
+
+        [SerializeField]
+        protected CheckpointInfo identifier;
+
+        protected virtual void Awake()
+        {
+            if (isDefaultStartCheckpoint)
+                CheckpointManager.SetDefaultStartCheckpoint(this);
+            if (identifier != null)
+                CheckpointManager.RegisterStartCheckpoint(this, identifier);
+        }
+
+        public void TriggerCheckpoint()
+        {
+            CheckpointManager.SetCheckpoint(this);
+        }
+
+        public virtual Vector3 SetCheckpoint()
+        {
+            return transform.position;
+        }
     }
 }

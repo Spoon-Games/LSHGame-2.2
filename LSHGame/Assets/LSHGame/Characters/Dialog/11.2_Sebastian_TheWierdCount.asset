@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d21a2fc2d25c0f45b5869b081a79208, type: 3}
   m_Name: 11.2_Sebastian_TheWierdCount
   m_EditorClassIdentifier: 
-  Data: "<Sebastian>\nDudauda,\ndudadudei\n<Page/>\nOh, hallo, meine H\xFCbsche.\n<Page/>\nIst
-    es nicht zauberhaft? \n</Sebastian>\n<Katharina>\n...\n<Page/>\nbestimmt\n</Katharina>\n<Sebastian>\nAch,
-    das Leben kann so herlich sein.\n<Page/>\nWie ich sehe, sind Sie auf der Durchreise?\n<Page/>\nWo
-    soll es denn hin gehen?\n</Sebastian>\n<Katharina>\nWeiter...\n</Katharina>\n<Sebastian>\nJa,
-    da wollte ich auch mal hin...\n<Page/>\nAls ich noch jung und voller Energie
-    war.\n</Sebastian>\n<Katharina>\nHaben Sie es geschafft?\n</Katharina>\n<Sebastian>\nNein,
-    leider nicht...\n<Page/>\nAber versucht,\nversucht habe ich es.\n<Page/>\nUnd
-    es war jede Minute wert.\n</Sebastian>\n<Katharina>\nDenken Sie, ich werde es
-    schaffen?\n</Katharina>\n<Sebastian>\nOh, ja, ganz bestimmt.\n</Sebastian>\n<Katharina>\nIch
-    muss dann mal weiter...\n</Katharina>\n<Sebastian>\nBis irgendwann,\n<Page/>\nund
-    viel Gl\xFCck.\n<Page/>\ndumdudedei,\ndulududum\n</Sebastian>"
+  Data: "<Sebastian>\r\nDudauda,\r\ndudadudei\r\n<Page/>\r\nOh, hallo, meine H\xFCbsche.\r\n<Page/>\r\nIst
+    es nicht zauberhaft? \r\n</Sebastian>\r\n<Katharina>\r\n...\r\n<Page/>\r\nbestimmt\r\n</Katharina>\r\n<Sebastian>\r\nAch,
+    das Leben kann so herrlich sein.\r\n<Page/>\r\nWie ich sehe, sind Sie auf der
+    Durchreise?\r\n<Page/>\r\nWo soll es denn hin gehen?\r\n</Sebastian>\r\n<Katharina>\r\nWeiter...\r\n</Katharina>\r\n<Sebastian>\r\nJa,
+    da wollte ich auch mal hin...\r\n<Page/>\r\nAls ich noch jung und voller Energie
+    war.\r\n</Sebastian>\r\n<Katharina>\r\nHaben Sie es geschafft?\r\n</Katharina>\r\n<Sebastian>\r\nNein,
+    leider nicht...\r\n<Page/>\r\nAber versucht,\r\nversucht habe ich es.\r\n<Page/>\r\nUnd
+    es war jede Minute wert.\r\n</Sebastian>\r\n<Katharina>\r\nDenken Sie, ich werde
+    es schaffen?\r\n</Katharina>\r\n<Sebastian>\r\nOh, ja, ganz bestimmt.\r\n</Sebastian>\r\n<Katharina>\r\nIch
+    muss dann mal weiter...\r\n</Katharina>\r\n<Sebastian>\r\nBis irgendwann,\r\n<Page/>\r\nund
+    viel Gl\xFCck.\r\n<Page/>\r\ndumdudedei,\r\ndulududum\r\n</Sebastian>\r\n"
   PersonRight: {fileID: 11400000, guid: 49a93f1914f8e204b9c987dc4589d0e8, type: 2}
   PersonLeft: {fileID: 11400000, guid: 5484a2a0cbfceec429961b33f0511a54, type: 2}
   Actions: []

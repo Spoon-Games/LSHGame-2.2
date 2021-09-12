@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d21a2fc2d25c0f45b5869b081a79208, type: 3}
   m_Name: 6.2_MadameChester_TheMadMadame
   m_EditorClassIdentifier: 
-  Data: "<MadameChester>\nBuh!\n</MadameChester>\n<Katharina>\nAh!\n<Page/>\nEin
-    GEIST!!!\n<Page/>\nWarum? Welt warum??\n</Katharina>\n<MadameChester>\nHallo,
-    meine Kleine.\n<Page/>\nSch\xF6n, das du es endlich zu mir geschaft hast.\n<Page/>\nWie
-    war deine Reise?\n</MadameChester>\n<Katharina>\n?!...\n<Page/>\nWie ich schon
-    zu Bettie gesagt habe:\nKeine Zeit, kein Interesse!\n</Katharina>\n<MadameChester>\nOh,
-    es wird dich aber interessieren!\n<Page/>\nIch weis warum du hier bist.\nUnd
-    ich kann dir helfen, meine Kleine.\n<Page/>\nIch kenne das Portal.\n</MadameChester>\n<Katharina>\nGehen
-    Sie weg, \nlassen sie mich alleine.\n<Page/>\nTsch\xFCss!!\n</Katharina>\n<MadameChester>\nAber
-    meine Kleine...\n</MadameChester>\n\n"
+  Data: "<MadameChester>\r\nBuh!\r\n</MadameChester>\r\n<Katharina>\r\nAh!\r\n<Page/>\r\nEin
+    GEIST!!!\r\n<Page/>\r\nWarum? Welt, warum??\r\n</Katharina>\r\n<MadameChester>\r\nHallo,
+    meine Kleine.\r\n<Page/>\r\nSch\xF6n, dass du es endlich zu mir geschafft hast.\r\n<Page/>\r\nWie
+    war deine Reise?\r\n</MadameChester>\r\n<Katharina>\r\n?!...\r\n<Page/>\r\nWie
+    ich schon zu Bettie gesagt habe:\r\nKeine Zeit, kein Interesse!\r\n</Katharina>\r\n<MadameChester>\r\nOh,
+    es wird dich aber interessieren!\r\n<Page/>\r\nIch wei\xDF, warum du hier bist.\r\nUnd
+    ich kann dir helfen, meine Kleine.\r\n<Page/>\r\nIch kenne das Portal.\r\n</MadameChester>\r\n<Katharina>\r\nGehen
+    Sie weg.\r\nLassen sie mich alleine!\r\n<Page/>\r\nTsch\xFCss!!\r\n</Katharina>\r\n<MadameChester>\r\nAber
+    meine Kleine...\r\n</MadameChester>\r\n"
   PersonRight: {fileID: 11400000, guid: 20e48e05286af4f4cb73360d8beb5be6, type: 2}
   PersonLeft: {fileID: 11400000, guid: 5484a2a0cbfceec429961b33f0511a54, type: 2}
   Actions: []

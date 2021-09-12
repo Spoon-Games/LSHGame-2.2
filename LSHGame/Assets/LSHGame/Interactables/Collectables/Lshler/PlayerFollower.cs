@@ -3,20 +3,22 @@ using UnityEngine;
 
 namespace LSHGame
 {
-    [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerFollower : MonoBehaviour
     {
         [SerializeField]
         private Vector2 offset;
 
         [SerializeField]
-        private float minDistance = 1;
+        private float cirleRadius = 1.5f;
 
         [SerializeField]
-        private float maxDistance = 3;
+        private float cirleSpeed = 1f;
 
         [SerializeField]
-        private float maxForce = 5;
+        private float smoothTime = 1;
+
+        [SerializeField]
+        private float maxVelocity = 5;
 
         [SerializeField]
         private bool active = false;
@@ -27,31 +29,30 @@ namespace LSHGame
                     active = value;
                     if (!active)
                     {
-                        rb.velocity = Vector2.zero;
+                        velocity = Vector2.zero;
                     }
                 }
             } }
 
+        private Vector2 velocity = Vector2.zero;
+
         private Transform target;
-        private Rigidbody2D rb;
 
         private void Awake()
         {
             target = Player.Instance.transform;
-            rb = GetComponent<Rigidbody2D>();
         }
 
         private void Update()
         {
             if (active)
             {
-                Vector2 dir = target.position - transform.position;
-                dir += offset;
-                float force = Mathf.Clamp01(Mathf.InverseLerp(minDistance, maxDistance, dir.magnitude)) * maxForce;
+                Vector2 t = target.position; ;
+                t += offset;
 
-                Vector2 f = dir.normalized * force;
+                t += (Vector2) (Quaternion.Euler(0, 0, Mathf.Repeat(Time.time * cirleSpeed, 360)) * new Vector2(cirleRadius, 0));
 
-                rb.AddForce(f);
+                transform.position = Vector2.SmoothDamp(transform.position, t, ref velocity, smoothTime, maxVelocity);
             }
 
         }

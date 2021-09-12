@@ -23,7 +23,7 @@ namespace LSHGame.PlayerN
 
         private void Awake()
         {
-            GameInput.OnCameraLookDown += OnPerformedLookDown;
+            //GameInput.OnCameraLookDown += OnPerformedLookDown;
             fallingDeathCamera.transform.SetParent(null);
             UpdateState();
         }
@@ -84,7 +84,7 @@ namespace LSHGame.PlayerN
 
         private void OnDestroy()
         {
-            GameInput.OnCameraLookDown -= OnPerformedLookDown;
+            //GameInput.OnCameraLookDown -= OnPerformedLookDown;
         }
     }
 }

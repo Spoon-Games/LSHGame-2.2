@@ -70,6 +70,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -127,7 +128,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   Actions: []
-  speekText: Begutachten [I]
+  interactAgent: {fileID: 11400000, guid: eb811a86230a4814badca80f7ccee29a, type: 2}
+  speekText: Begutachten [Leertaste]
   layerMask:
     serializedVersion: 2
     m_Bits: 4096

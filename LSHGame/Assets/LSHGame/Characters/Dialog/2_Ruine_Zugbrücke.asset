@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d21a2fc2d25c0f45b5869b081a79208, type: 3}
   m_Name: "2_Ruine_Zugbr\xFCcke"
   m_EditorClassIdentifier: 
-  Data: "<Katharina>\nAh!\nDu schon wieder.\n<Page/>\nWas willst du von mir?\n</Katharina>\n<Bettie>\nDu
-    weist, dass der Weg kein leichter ist.\n</Bettie>\n<Katharina>\nOh, danke Sensei...\n<Page/>\nIch
-    habe wirklich keine Zeit f\xFCr dass.\n<Page/>\nTsch\xFCss!\n</Katharina>\n<Bettie>\nAuf
-    Wiedersehen.\n</Bettie>\n"
+  Data: "<Katharina>\r\nAh!\r\nDu schon wieder.\r\n<Page/>\r\nWas willst du von mir?\r\n</Katharina>\r\n<Bettie>\r\nDu
+    wei\xDFt, dass der Weg kein leichter ist.\r\n</Bettie>\r\n<Katharina>\r\nOh,
+    danke Sensei...\r\n<Page/>\r\nIch habe wirklich keine Zeit f\xFCr das.\r\n<Page/>\r\nTsch\xFCss!\r\n</Katharina>\r\n<Bettie>\r\nAuf
+    Wiedersehen.\r\n</Bettie>\r\n"
   PersonRight: {fileID: 11400000, guid: 6c81a2256fa2f4b41a72836064d452f1, type: 2}
   PersonLeft: {fileID: 11400000, guid: 5484a2a0cbfceec429961b33f0511a54, type: 2}
   Actions: []

@@ -16,7 +16,7 @@ namespace LSHGame.Util
         }
     }
 
-    public interface IJumpCallbackRec
+    public interface IJumpCallbackRec : IDataReciever
     {
         Action OnJump { get; set; }
     }

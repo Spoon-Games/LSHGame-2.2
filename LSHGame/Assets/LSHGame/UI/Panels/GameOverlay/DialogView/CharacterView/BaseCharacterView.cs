@@ -256,21 +256,23 @@ namespace LSHGame.UI
         public float StartLeaving(Panel nextPanel)
         {
             Deactivate();
-            OnLeave();
-            return 0;
+            return OnStartLeaving(); ;
         }
-        public virtual void OnLeave() { }
+        protected virtual float OnStartLeaving() => 0;
 
-        public void Leave(Panel nextPanel){}
+        public void Leave(Panel nextPanel) => OnLeave();
+        protected virtual void OnLeave() { }
 
-        public float StartEntering(Panel previousPanel) => 0;
-
-        public void Enter(Panel previousPanel)
+        public float StartEntering(Panel previousPanel)
         {
             TagChain.Start();
-            OnEnter();
+            return OnStartEntering();
         }
-        public virtual void OnEnter() { }
+
+        protected virtual float OnStartEntering() => 0;
+
+        public void Enter(Panel previousPanel) => OnEnter();
+        protected virtual void OnEnter() { }
         #endregion
 
         #region Text

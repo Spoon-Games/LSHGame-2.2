@@ -17,7 +17,7 @@ namespace LSHGame.Util
         }
     }
 
-    public interface IDashRedirectorRec
+    public interface IDashRedirectorRec : IDataReciever
     {
         float TargetDashAngle { get; set; }
         float DashTurningRadius { get; set; }

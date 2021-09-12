@@ -15,7 +15,7 @@ namespace LSHGame.Util
         }
     }
 
-    public interface IMatVelocityRec
+    public interface IMatVelocityRec : IDataReciever
     {
         Vector2 MovingVelocity { get; set; }
     }

@@ -9,6 +9,8 @@ namespace LSHGame
     [RequireComponent(typeof(PlayerFollower))]
     [RequireComponent(typeof(RecreateModule))]
     [RequireComponent(typeof(ReTransform))]
+    [RequireComponent(typeof(Animator))]
+    [RequireComponent(typeof(EffectsController))]
     public class CoinPickup : DataPersistBehaviour,IRecreatable,IRecreateBlocker
     {
         [SerializeField] private InventoryItem inventoryItem;
@@ -18,7 +20,11 @@ namespace LSHGame
         [SerializeField]
         private LayerMask layermask;
 
+        [SerializeField]
+        private EffectTrigger activeFX;
+
         private PlayerFollower followComponent;
+        private Animator animator;
 
         private bool destroied = false;
 
@@ -27,6 +33,8 @@ namespace LSHGame
         private void Awake()
         {
             followComponent = GetComponent<PlayerFollower>();
+            animator = GetComponent<Animator>();
+            
         }
 
         public void OnTriggerEnter2D(Collider2D collision)
@@ -41,6 +49,8 @@ namespace LSHGame
             {
                 active = true;
                 followComponent.Active = true;
+                animator.SetTrigger("Activate");
+                activeFX.Trigger();
                 TryPickup();
             }
         }

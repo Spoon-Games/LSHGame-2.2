@@ -25,7 +25,7 @@ namespace LSHGame.Util
         }
     }
 
-    public interface IPlayerClimbingRec
+    public interface IPlayerClimbingRec : IDataReciever
     {
         float ClimbingLadderSpeed { get; set; }
         float ClimbingWallSlideSpeed { get; set; }

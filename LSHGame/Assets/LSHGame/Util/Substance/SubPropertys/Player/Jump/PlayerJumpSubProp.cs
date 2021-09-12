@@ -17,7 +17,7 @@ namespace LSHGame.Util
         }
     }
 
-    public interface IPlayerJumpRec
+    public interface IPlayerJumpRec : IDataReciever
     {
         float JumpSpeed { get; set; }
         float JumpSpeedCutter { get; set; }

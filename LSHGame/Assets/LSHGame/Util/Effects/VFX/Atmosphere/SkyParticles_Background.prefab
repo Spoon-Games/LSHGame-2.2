@@ -73,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2897181269859541271, guid: e5b8ba8d9033d87449038cabeb1ffa0e, type: 3}
       propertyPath: m_Name
-      value: SkyParticles
+      value: SkyParticles_Background
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5b8ba8d9033d87449038cabeb1ffa0e, type: 3}

@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d21a2fc2d25c0f45b5869b081a79208, type: 3}
   m_Name: 1_FirstMeeting
   m_EditorClassIdentifier: 
-  Data: "<Bettie>\nHallo. \nDu siehst aber gestresst aus?\n<Page/>\nWo soll es denn
-    so eilig hin gehen?\n</Bettie>\n<Katharina>\nWeiter. Jetzt halt mich nicht auf.\nIch
-    muss los.\n</Katharina>\n<Bettie>\nWo ist los?\n</Bettie>\n<Katharina>\nZum Portal.\n<Page/>\nJetzt
-    aber Schluss.\nTsch\xFCss!\n</Katharina>\n<Bettie>\nAuf Wiedersehen?\n</Bettie>"
+  Data: "<Bettie>\r\nHallo. \r\nDu siehst aber gestresst aus?\r\n<Page/>\r\nWo soll
+    es denn so eilig hin gehen?\r\n</Bettie>\r\n<Katharina>\r\nWeiter. Jetzt halt
+    mich nicht auf.\r\nIch muss los.\r\n</Katharina>\r\n<Bettie>\r\nWo ist los?\r\n</Bettie>\r\n<Katharina>\r\nZum
+    Portal.\r\n<Page/>\r\nJetzt aber Schluss.\r\nTsch\xFCss!\r\n</Katharina>\r\n<Bettie>\r\nAuf
+    Wiedersehen?\r\n</Bettie>\r"
   PersonRight: {fileID: 11400000, guid: 6c81a2256fa2f4b41a72836064d452f1, type: 2}
   PersonLeft: {fileID: 11400000, guid: 5484a2a0cbfceec429961b33f0511a54, type: 2}
   Actions: []

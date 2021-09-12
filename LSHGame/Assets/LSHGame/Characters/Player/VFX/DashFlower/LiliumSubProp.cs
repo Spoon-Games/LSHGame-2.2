@@ -39,7 +39,7 @@ namespace LSHGame.PlayerN
         }
     }
 
-    public interface ILiliumReciever
+    public interface ILiliumReciever : IDataReciever
     {
         LiliumSubProp LiliumReference { get; set; }
     }

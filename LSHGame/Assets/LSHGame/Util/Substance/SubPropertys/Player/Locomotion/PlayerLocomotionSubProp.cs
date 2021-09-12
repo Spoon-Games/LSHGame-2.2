@@ -21,7 +21,7 @@ namespace LSHGame.Util
         }
     }
 
-    public interface IPlayerLocomotionRec
+    public interface IPlayerLocomotionRec : IDataReciever
     {
         AnimationCurve RunAccelCurve { get; set; }
         AnimationCurve RunDeaccelCurve { get; set; }

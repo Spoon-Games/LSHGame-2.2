@@ -49,6 +49,11 @@ namespace LSHGame.UI
             scoreTextField.color = normalColor;
         }
 
+        private void Start()
+        {
+            scoreTextField.text = Inventory.GetCount(scoreItem).ToString();
+        }
+
         private void Update()
         {
             if (lastDebugCount != debugCount)

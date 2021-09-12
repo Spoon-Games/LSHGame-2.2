@@ -28,9 +28,9 @@ namespace LSHGame.UI
         [FMODUnity.EventRef]
         private string defaultOpeningSound;
 
-        public override void OnEnter()
+        protected override float OnStartEntering()
         {
-            base.OnEnter();
+            base.OnStartEntering();
 
             imageField.sprite = Dialog.Picture;
             imageField.rectTransform.localScale = new Vector3(minScale, minScale, 1);
@@ -45,6 +45,8 @@ namespace LSHGame.UI
             {
                 FMODUnity.RuntimeManager.PlayOneShot(defaultOpeningSound);
             }
+
+            return inScaleTime;
         }
 
         #region Text
@@ -56,11 +58,12 @@ namespace LSHGame.UI
         }
         #endregion
 
-        public override void OnLeave()
+        protected override float OnStartLeaving()
         {
-            base.OnLeave();
+            base.OnStartLeaving();
 
             imageField.rectTransform.DOScale(new Vector3(minScale, minScale, 1), outScaleTime).SetEase(outScaleEase);
+            return outScaleTime;
         }
     }
 }

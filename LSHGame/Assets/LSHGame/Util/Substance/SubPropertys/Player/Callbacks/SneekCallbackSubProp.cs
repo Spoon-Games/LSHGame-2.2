@@ -16,7 +16,7 @@ namespace LSHGame.Util
         }
     }
 
-    public interface ISneekCallbackRec
+    public interface ISneekCallbackRec : IDataReciever
     {
         Action OnSneek { get; set; }
     }

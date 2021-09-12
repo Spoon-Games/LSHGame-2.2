@@ -15,7 +15,7 @@
         }
     }
 
-    public interface IGravityRec
+    public interface IGravityRec : IDataReciever
     {
         float Gravity { get; set; }
         float FallDamping { get; set; }

@@ -8,7 +8,7 @@ namespace SceneM
     {
         private static Vector3 currentCheckPos = Vector3.negativeInfinity;
 
-        private static Dictionary<CheckpointInfo, Checkpoint> startCheckpoints = new Dictionary<CheckpointInfo, Checkpoint>();
+        private static Dictionary<CheckpointInfo, BaseCheckpoint> startCheckpoints = new Dictionary<CheckpointInfo, BaseCheckpoint>();
 
         private static int _currentOrder = 0;
         public static int CurrentOrder => _currentOrder;
@@ -25,12 +25,12 @@ namespace SceneM
             _currentOrder = 0;
         }
 
-        internal static void SetDefaultStartCheckpoint(Checkpoint checkpoint)
+        internal static void SetDefaultStartCheckpoint(BaseCheckpoint checkpoint)
         {
             if (!Equals(currentCheckPos, Vector3.negativeInfinity))
                 Debug.LogError("Multiple default start checkpoints in the scene. This will probably result in " +
                     "unexpected behaviour.");
-            currentCheckPos = checkpoint.transform.position;
+            SetCheckpoint(checkpoint);
 
 #if UNITY_EDITOR
             //Debug.Log("IsTempCheckpoint: " + Editor.TempCheckpointEditor.IsTempCheckpoint + " Pos: "+Editor.TempCheckpointEditor.TempCheckpoint);
@@ -39,14 +39,14 @@ namespace SceneM
 #endif
         }
 
-        internal static void RegisterStartCheckpoint(Checkpoint checkpoint, CheckpointInfo identifier)
+        internal static void RegisterStartCheckpoint(BaseCheckpoint checkpoint, CheckpointInfo identifier)
         {
             startCheckpoints[identifier] = checkpoint;
         }
 
         public static void SetStartCheckpoint(CheckpointInfo identifier, bool clearStartCheckpoints = true)
         {
-            if (startCheckpoints.TryGetValue(identifier, out Checkpoint checkpoint))
+            if (startCheckpoints.TryGetValue(identifier, out BaseCheckpoint checkpoint))
             {
                 SetCheckpoint(checkpoint);
             }
@@ -64,11 +64,12 @@ namespace SceneM
             return currentCheckPos;
         }
 
-        internal static bool SetCheckpoint(Checkpoint checkpoint)
+        internal static bool SetCheckpoint(BaseCheckpoint checkpoint)
         {
             if(checkpoint.Order >= CurrentOrder)
             {
-                currentCheckPos = checkpoint.transform.position;
+                Debug.Log("SetCheckpoint " + checkpoint.name);
+                currentCheckPos = checkpoint.SetCheckpoint();
                 _currentOrder = checkpoint.Order;
                 return true;
             }

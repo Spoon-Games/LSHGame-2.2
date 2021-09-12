@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d21a2fc2d25c0f45b5869b081a79208, type: 3}
   m_Name: 11_TheWierdCount
   m_EditorClassIdentifier: 
-  Data: "<Bettie>\nHallo.\n</Bettie>\n<Katharina>\nWie schaffst du es immer vor mir
-    dazu sein.\n<Page/>\nIch laufe mir einen ab und du,\n</Katharina>\n<Bettie>\nHast
-    du Angst?\n</Bettie>\n<Katharina>\nUnd du, - ...\n<Page/>\nAngst... vor was?\n</Katharina>\n<Bettie>\nVor
-    dem was kommt.\n</Bettie>\n<Katharina>\nAlso, die Hindernisse habe ich doch bis
-    jetzt ganz gut \xFCberwunden.\n</Katharina>\n<Bettie>\nDem was danach kommt,\n<Page/>\nnach
-    dem Schloss, den B\xFCchern, den Steinen,\n<Page/>\n...nach dem Portal...\n</Bettie>\n<Katharina>\n...\n<Page/>\n...\n</Katharina>\n<Bettie>\nAuf
-    Wiedersehen.\n</Bettie>"
+  Data: "<Bettie>\r\nHallo.\r\n</Bettie>\r\n<Katharina>\r\nWie schaffst du es immer
+    vor mir dazu sein.\r\n<Page/>\r\nIch laufe mir einen ab und du,\r\n</Katharina>\r\n<Bettie>\r\nHast
+    du Angst?\r\n</Bettie>\r\n<Katharina>\r\nUnd du, - ...\r\n<Page/>\r\nAngst...
+    vor was?\r\n</Katharina>\r\n<Bettie>\r\nVor dem was kommt.\r\n</Bettie>\r\n<Katharina>\r\nAlso,
+    die Hindernisse habe ich doch bis jetzt ganz gut \xFCberwunden.\r\n</Katharina>\r\n<Bettie>\r\nDem
+    was danach kommt,\r\n<Page/>\r\nnach dem Schloss, den B\xFCchern, den Steinen,\r\n<Page/>\r\n...nach
+    dem Portal...\r\n</Bettie>\r\n<Katharina>\r\n...\r\n<Page/>\r\n...\r\n</Katharina>\r\n<Bettie>\r\nAuf
+    Wiedersehen.\r\n</Bettie>\r\n"
   PersonRight: {fileID: 11400000, guid: 6c81a2256fa2f4b41a72836064d452f1, type: 2}
   PersonLeft: {fileID: 11400000, guid: 5484a2a0cbfceec429961b33f0511a54, type: 2}
   Actions: []

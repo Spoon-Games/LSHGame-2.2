@@ -9,7 +9,6 @@ namespace SceneM
 
         public override Vector3 SetCheckpoint()
         {
-            Debug.Log("OnActivateCheckpoint " + name);
             OnActivateCheckpoint.Invoke();
 
             return base.SetCheckpoint();

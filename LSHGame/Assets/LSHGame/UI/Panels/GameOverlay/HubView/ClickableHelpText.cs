@@ -10,6 +10,11 @@ namespace LSHGame.UI
 
         public GlobalInputAgent inputAgent;
 
+        private void Awake()
+        {
+            inputAgent.Initialize();
+        }
+
 
         protected override void OnShow()
         {

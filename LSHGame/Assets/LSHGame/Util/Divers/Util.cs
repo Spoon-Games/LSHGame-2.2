@@ -21,7 +21,7 @@ namespace LSHGame.Util
 
         public void Put<T>(string name,T value)
         {
-            values.Add(name, value);
+            values[name] = value;
         }
 
         public bool TryGet<T>(string name,out T value)

@@ -17,5 +17,5 @@ MonoBehaviour:
 
     <Page/>
 
-    I pray to you'
-  OpeningSound: 
+    Ich bete dich an!'
+  OpeningSound: {fileID: 0}

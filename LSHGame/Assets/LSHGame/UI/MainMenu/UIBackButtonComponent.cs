@@ -16,6 +16,7 @@ namespace LSHGame.UI
         private void Awake()
         {
             TryGetComponent<GoToComponent>(out goToComponent);
+            agent.Initialize();
         }
 
         private void OnPress()

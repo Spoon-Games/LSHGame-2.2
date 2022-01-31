@@ -11,9 +11,6 @@ namespace LSHGame.Util
         [SerializeField]
         private float refreshRate = 0.5f;
 
-        [SerializeField]
-        private int version = 1;
-
         private GameObject content => fpsText.gameObject;
         private bool visible => content.activeSelf;
 
@@ -44,7 +41,7 @@ namespace LSHGame.Util
                 else
                 {
                     float fps = frameCounter / timeCounter;
-                    fpsText.text = string.Format("FPS: {0:N0}\nMax: {1:N0}ms\nV: {2}", fps, maxSpike * 1000,version);
+                    fpsText.text = string.Format("FPS: {0:N0}\nMax: {1:N0}ms\nV: {2}", fps, maxSpike * 1000,Application.version);
 
                     timeCounter = 0;
                     frameCounter = 0;

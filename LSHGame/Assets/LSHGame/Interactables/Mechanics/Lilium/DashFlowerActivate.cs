@@ -7,9 +7,11 @@ namespace LSHGame
     [RequireComponent(typeof(Collider2D))]
     public class DashFlowerActivate : MonoBehaviour
     {
-        [SerializeField] private ParticleSystem deadFlowerSystem;
-        [SerializeField] private ParticleSystem activeFlowerSystem;
-        [SerializeField] private ParticleSystem highlightSystem;
+        [SerializeField] private string deadFlowerFX;
+        [SerializeField] private string activeFlowerFX;
+        [SerializeField] private string highlightFX;
+
+        [SerializeField] private EffectsController effectsController;
 
         [SerializeField] private LayerMask playerLayer;
 
@@ -21,16 +23,16 @@ namespace LSHGame
             if(!isActive && Player.Instance.IsLiliumActive)
             {
                 isActive = true;
-                deadFlowerSystem.Stop();
-                activeFlowerSystem.Play();
+                effectsController.StopEffect(deadFlowerFX);
+                effectsController.TriggerEffect(activeFlowerFX);
                 if (isPlayerInTouch)
-                    highlightSystem.Play();
+                    effectsController.TriggerEffect(highlightFX);
             }else if(isActive && !Player.Instance.IsLiliumActive)
             {
                 isActive = false;
-                deadFlowerSystem.Play();
-                activeFlowerSystem.Stop();
-                highlightSystem.Stop();
+                effectsController.TriggerEffect(deadFlowerFX);
+                effectsController.StopEffect(highlightFX);
+                effectsController.StopEffect(activeFlowerFX);
             }
         }
 
@@ -40,7 +42,7 @@ namespace LSHGame
             {
                 isPlayerInTouch = true;
                 if (isActive)
-                    highlightSystem.Play();
+                    effectsController.TriggerEffect(highlightFX);
             }
         }
 
@@ -49,7 +51,7 @@ namespace LSHGame
             if (playerLayer.IsLayer(collision.gameObject.layer) && isPlayerInTouch)
             {
                 isPlayerInTouch = false;
-                highlightSystem.Stop();
+                effectsController.StopEffect(highlightFX);
             }
         }
     }

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b6c85a081dc7a4db270f031afe97cc, type: 3}
+  m_Name: Sigh_Sound
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 8f4060f5ff7a9a247bf385e3849c14b0, type: 3}
+  - {fileID: 8300000, guid: 144573adcf63d4342bd6ff2591f29057, type: 3}
+  - {fileID: 8300000, guid: 35a1c875125a92f48b60a9b251768b27, type: 3}
+  - {fileID: 8300000, guid: 3733d41c2a6912d4aaa8ba33e9cf8bed, type: 3}
+  - {fileID: 8300000, guid: c7d55da2912d26647973f4904c733194, type: 3}
+  - {fileID: 8300000, guid: ad180dd05c47e294fb4394600a81a09e, type: 3}
+  - {fileID: 8300000, guid: a71c44b3f0d7b424a9acdee2c2ac55a0, type: 3}
+  - {fileID: 8300000, guid: c593ffc09ae007e4093d4051135c8fe8, type: 3}
+  - {fileID: 8300000, guid: 15a33638046cbd04faba818a797b5dfd, type: 3}
+  - {fileID: 8300000, guid: ea896f41fb9dd9347a6c0b4562240fdd, type: 3}
+  - {fileID: 8300000, guid: 19d84c834af5a464e94bcd05341d8bc1, type: 3}
+  soundInfos: []
+  propabilities: 0b000000
+  outputGroup: {fileID: 5779462121176674679, guid: 92a8c374460c30a4c9e890114f805025, type: 2}
+  minVolume: 0.93
+  maxVolume: 1
+  minPitch: 1.25
+  maxPitch: 1.44
+  loop: 0
+  panStereo: 0
+  spatialBlend: 0
+  childSettingMode: 0

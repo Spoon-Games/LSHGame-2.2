@@ -17,6 +17,8 @@ namespace InputC
         {
             get => _isListening; internal set
             {
+                Initialize();
+
                 foreach (var key in inputKeys)
                     key.Deactivate();
 
@@ -26,6 +28,17 @@ namespace InputC
 
         [NonSerialized]
         internal List<InputKey> inputKeys = new List<InputKey>();
+
+        public bool IsIntitalized { get; private set; } = false;
+
+        public void Initialize()
+        {
+            if (!IsIntitalized)
+            {
+                InitializeKeys();
+                IsIntitalized = true;
+            }
+        }
 
         protected abstract void InitializeKeys();
 
@@ -44,20 +57,24 @@ namespace InputC
 
         public void Listen()
         {
+            Initialize();
+
             InputControllSystem.RegisterListeningAgent(this);
         }
 
         public void StopListening()
         {
+            Initialize();
+
             InputControllSystem.DeregisterListeningAgent(this);
         }
 
         public IEnumerable<InputKey> GetKeys() => inputKeys;
 
-
-        public virtual void OnEnable()
+        private void OnDisable()
         {
-            InitializeKeys();
+            IsIntitalized = false;
         }
+
     }
 }

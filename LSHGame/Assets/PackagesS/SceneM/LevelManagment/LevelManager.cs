@@ -32,6 +32,8 @@ namespace SceneM
                 Debug.Log("SceneInfo is null");
                 return;
             }
+            
+
             if (sceneInfo is MainSceneInfo msi) 
                 LoadMainScene(msi);
             else if (sceneInfo is AdditiveSceneInfo asi)

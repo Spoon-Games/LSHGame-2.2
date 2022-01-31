@@ -105,10 +105,12 @@ namespace LSHGame.PlayerN
         private bool isYFliped => flipedDirection.y == -1;
         private bool isXFliped => flipedDirection.x == -1;
 
-        private bool IsTouchingClimbWallLeftAbs => (!isXFliped && playerCollider.IsTouchingClimbWallLeft ||
-            isXFliped && playerCollider.IsTouchingClimbWallRight);
-        private bool IsTouchingClimbWallRightAbs => (!isXFliped && playerCollider.IsTouchingClimbWallRight ||
-            isXFliped && playerCollider.IsTouchingClimbWallLeft);
+        private bool IsTouchingClimbWallLeftAbs => ((!isXFliped && playerCollider.IsTouchingClimbWallLeft) ||
+            (isXFliped && playerCollider.IsTouchingClimbWallRight));
+        private bool IsTouchingClimbWallRightAbs => ((!isXFliped && playerCollider.IsTouchingClimbWallRight) ||
+            (isXFliped && playerCollider.IsTouchingClimbWallLeft));
+
+        private Bundle jumpWallEffectParams = new Bundle();
 
         [SerializeField]
         private Timer releaseFromClimbWallTimer = new Timer(0.2f);
@@ -137,6 +139,7 @@ namespace LSHGame.PlayerN
             wallClimbInputExtendRightTimer = new Timer(wallClimbInputExtendDurration);
             wallClimbInputExtendLeftTimer = new Timer(wallClimbInputExtendDurration);
 
+            inputAgent.Initialize();
             inputAgent.Listen();
             //Debug.Log("PlayerController IsGroundedHash: " + PlayerLSM.IsGroundedHash + " AnimHash " + Animator.StringToHash("IsGrounded"));
             //GetComponent<Animator>().SetBool(Animator.StringToHash("IsGrounded"), true);
@@ -538,7 +541,9 @@ namespace LSHGame.PlayerN
                     xfactor = inputMovement.x < 0 ? -1 : -0.8f;
                 localVelocity = Stats.ClimbingWallJumpVelocity * new Vector2(xfactor, flipedDirection.y);
                 lastJumpTimer = Time.fixedTime;
-                effectsController.TriggerEffect("Jump", "WallJump");
+
+                UpdateJumpWallEffectsBundle();
+                effectsController.TriggerEffectParams("Jump", "WallJump",jumpWallEffectParams);
             }
 
             if (buttonReleased && GreaterYAbs(localVelocity.y, 0.05f) && GreaterYAbs(Stats.JumpSpeed, localVelocity.y))
@@ -608,21 +613,27 @@ namespace LSHGame.PlayerN
 
         private void FlipSprite()
         {
+            flipedDirection = GetFlipedDirection();
+            transform.localScale = flipedDirection;
+        }
+
+        private Vector2 GetFlipedDirection()
+        {
+            Vector2 direction = this.flipedDirection;
 
             if (GetSign(localGravity, out float ysign))
-                flipedDirection.y = ysign;
+                direction.y = ysign;
 
             if ((stateMachine.State == PlayerStates.ClimbWall))
             {
                 if (GetSign(inputMovement.x, out float sign2))
-                    flipedDirection.x = sign2;
+                    direction.x = sign2;
             }
             else if (GetSign(localVelocity.x, out float sign) || GetSign(inputMovement.x, out sign))
             {
-                flipedDirection.x = sign;
+                direction.x = sign;
             }
-
-            transform.localScale = flipedDirection;
+            return direction;
         }
 
         private bool GetSign(float v, out float sign)
@@ -690,6 +701,17 @@ namespace LSHGame.PlayerN
         }
 
         internal bool GreaterEqualY(float y, float y2) => !SmalerY(y, y2);
+
+        private void UpdateJumpWallEffectsBundle()
+        {
+            Vector3 scale = Vector3.one;
+            bool nextXFliped = GetFlipedDirection().x == 1;
+            scale.x = IsTouchingClimbWallLeftAbs ? -1 : 1;
+            if (nextXFliped != isXFliped)
+                scale.x *= -1;
+
+            jumpWallEffectParams.Put<Vector3>("Scale", scale);
+        }
 
         #endregion
 

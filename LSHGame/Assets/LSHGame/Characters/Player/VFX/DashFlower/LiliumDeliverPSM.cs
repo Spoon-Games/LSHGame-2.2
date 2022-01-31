@@ -1,4 +1,5 @@
-﻿using LSHGame.Util;
+﻿using AudioP;
+using LSHGame.Util;
 using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.ParticleSystem;
@@ -6,15 +7,12 @@ using static UnityEngine.ParticleSystem;
 namespace LSHGame.PlayerN
 {
     [ExecuteInEditMode]
+    [RequireComponent(typeof(AudioPlayer))]
     public class LiliumDeliverPSM : ParticleSystemModifier
     {
         [SerializeField] private AnimationCurve distanceByLifetime;
         [SerializeField]
         private ParticleSystem liliumSpiralSystem;
-
-        [FMODUnity.EventRef]
-        [SerializeField]
-        private string deliverSFX;
 
         public float spiralRadius = 1;
         public float spiralThreshhold = 0.3f;
@@ -24,6 +22,15 @@ namespace LSHGame.PlayerN
         private List<Vector4> customParticleData = new List<Vector4>();
 
         public bool StartPlay = false;
+
+        private AudioPlayer audioPlayer;
+
+        protected override void Awake()
+        {
+            base.Awake();
+
+            audioPlayer = GetComponent<AudioPlayer>();
+        }
 
 #if UNITY_EDITOR
         private void Update()
@@ -40,7 +47,7 @@ namespace LSHGame.PlayerN
         {
             this.blackLiliumTarget = blackLiliumTarget;
             Play();
-            FMODUnity.RuntimeManager.PlayOneShot(deliverSFX);
+            audioPlayer.Play();
         }
 
         private void Play()

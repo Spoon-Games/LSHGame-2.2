@@ -1,19 +1,25 @@
-﻿using FMODUnity;
+﻿using AudioP;
 using LSHGame.Util;
 using UnityEngine;
 
 namespace LSHGame.PlayerN
 {
     [ExecuteInEditMode]
+    [RequireComponent(typeof(AudioPlayer))]
     public class LiliumDashPSM : ParticleSystemModifier
     {
         public LiliumSpiralPSM liliumSpiralSystem;
 
         public bool StartPlay = false;
 
-        [FMODUnity.EventRef]
-        [SerializeField]
-        private string dashSFX;
+        private AudioPlayer audioPlayer;
+
+        protected override void Awake()
+        {
+            base.Awake();
+
+            audioPlayer = GetComponent<AudioPlayer>();
+        }
 
 #if UNITY_EDITOR
         private void Update()
@@ -29,7 +35,7 @@ namespace LSHGame.PlayerN
         public void Play()
         {
             liliumSpiralSystem.TriggerLiliumDash();
-            RuntimeManager.PlayOneShot(dashSFX, transform.position);
+            audioPlayer.Play();
         }
     }
 }

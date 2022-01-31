@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b6c85a081dc7a4db270f031afe97cc, type: 3}
+  m_Name: DemonWingFalp_Sound
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 13a6efb9115729448b1f976e63a16a7d, type: 3}
+  - {fileID: 8300000, guid: fc023a6ce49747c42b139e3e41319aec, type: 3}
+  - {fileID: 8300000, guid: 8c31279b0a0aa4541aecad30d8b87469, type: 3}
+  - {fileID: 8300000, guid: ed2c221fc7d0bad4a991c3b11d4bd9b6, type: 3}
+  soundInfos: []
+  propabilities: 
+  outputGroup: {fileID: 2179049604650196401, guid: 92a8c374460c30a4c9e890114f805025, type: 2}
+  minVolume: 0.214
+  maxVolume: 0.299
+  minPitch: 0.85
+  maxPitch: 1.1
+  loop: 0
+  panStereo: 0
+  spatialBlend: 1
+  minDistance: 0.5
+  maxDistance: 15
+  rolloffMode: 1
+  childSettingMode: 1

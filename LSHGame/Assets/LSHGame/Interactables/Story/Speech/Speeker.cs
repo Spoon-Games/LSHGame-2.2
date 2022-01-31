@@ -33,7 +33,6 @@ namespace LSHGame
                 if (Equals(a.Name, action))
                 {
                     a.Event?.Invoke();
-                    Debug.Log("Invoke Action: " + action);
                 }
             }
         }

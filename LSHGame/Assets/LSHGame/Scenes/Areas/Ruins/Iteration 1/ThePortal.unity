@@ -347,11 +347,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4801650905741744368, guid: bced4de9b4e6167429fd59c05445b887, type: 3}
   m_PrefabInstance: {fileID: 422339843}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &201389033 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 25117438705264145, guid: bf10db5967500f64e8707b0d7d92ab40, type: 3}
-  m_PrefabInstance: {fileID: 1993940181}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &203079790 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2414243144964353030, guid: bf10db5967500f64e8707b0d7d92ab40, type: 3}
@@ -3807,11 +3802,11 @@ PrefabInstance:
       value: 1.7777778
       objectReference: {fileID: 0}
     - target: {fileID: 25117438131651910, guid: bf10db5967500f64e8707b0d7d92ab40, type: 3}
-      propertyPath: m_WrapMode
-      value: 0
+      propertyPath: m_SceneBindings.Array.size
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 25117438131651910, guid: bf10db5967500f64e8707b0d7d92ab40, type: 3}
-      propertyPath: m_SceneBindings.Array.data[3].value
+      propertyPath: m_SceneBindings.Array.data[2].value
       value: 
       objectReference: {fileID: 1099591582}
     - target: {fileID: 25117438244509224, guid: bf10db5967500f64e8707b0d7d92ab40, type: 3}
@@ -3867,9 +3862,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 25117438778135169, guid: bf10db5967500f64e8707b0d7d92ab40, type: 3}
-      propertyPath: m_WrapMode
-      value: 2
+      propertyPath: m_SceneBindings.Array.size
+      value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 25117438778135169, guid: bf10db5967500f64e8707b0d7d92ab40, type: 3}
+      propertyPath: m_SceneBindings.Array.data[5].key
+      value: 
+      objectReference: {fileID: 4133475420151701871, guid: 2f24bd08cc90cba489cdf24d8f35903d, type: 2}
     - target: {fileID: 25117438778135169, guid: bf10db5967500f64e8707b0d7d92ab40, type: 3}
       propertyPath: m_SceneBindings.Array.data[1].value
       value: 
@@ -3905,7 +3904,7 @@ PrefabInstance:
     - target: {fileID: 25117438778135169, guid: bf10db5967500f64e8707b0d7d92ab40, type: 3}
       propertyPath: m_ExposedReferences.m_References.Array.data[4].second
       value: 
-      objectReference: {fileID: 201389033}
+      objectReference: {fileID: 0}
     - target: {fileID: 25117438778135169, guid: bf10db5967500f64e8707b0d7d92ab40, type: 3}
       propertyPath: m_ExposedReferences.m_References.Array.data[5].second
       value: 
@@ -3926,6 +3925,14 @@ PrefabInstance:
       propertyPath: m_ExposedReferences.m_References.Array.data[9].second
       value: 
       objectReference: {fileID: 1369838216}
+    - target: {fileID: 2931293850706331617, guid: bf10db5967500f64e8707b0d7d92ab40, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3368601365167857590, guid: bf10db5967500f64e8707b0d7d92ab40, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5745449243477554815, guid: bf10db5967500f64e8707b0d7d92ab40, type: 3}
       propertyPath: m_Events.m_Events.Array.data[0].m_PersistentCalls.m_Calls.Array.size
       value: 3

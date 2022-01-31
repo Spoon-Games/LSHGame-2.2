@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b6c85a081dc7a4db270f031afe97cc, type: 3}
+  m_Name: DemonHowl
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 6ab6b41b7c05d8542a0c3bae9790b8be, type: 3}
+  - {fileID: 8300000, guid: 327684b4fa3f7cc4aacfff28cda1c9e3, type: 3}
+  soundInfos: []
+  propabilities: 
+  outputGroup: {fileID: 2179049604650196401, guid: 92a8c374460c30a4c9e890114f805025, type: 2}
+  minVolume: 1
+  maxVolume: 1
+  minPitch: 0.86
+  maxPitch: 1.17
+  loop: 0
+  panStereo: 0
+  spatialBlend: 1
+  minDistance: 1
+  maxDistance: 15
+  rolloffMode: 1
+  childSettingMode: 0

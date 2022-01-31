@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b6c85a081dc7a4db270f031afe97cc, type: 3}
+  m_Name: Jump_Sound
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 040c30e30d971754eaa8ee802c92fc2b, type: 3}
+  - {fileID: 8300000, guid: beec2770ec4542740befc62ea753df3e, type: 3}
+  - {fileID: 8300000, guid: 717cc4e85ce87ce4ab66228e78d5684f, type: 3}
+  - {fileID: 8300000, guid: a0fde48f3f12525459a9db74755233b9, type: 3}
+  soundInfos: []
+  propabilities: 
+  outputGroup: {fileID: 5779462121176674679, guid: 92a8c374460c30a4c9e890114f805025, type: 2}
+  minVolume: 0.258
+  maxVolume: 0.327
+  minPitch: 0.8
+  maxPitch: 0.9
+  loop: 0
+  panStereo: 0
+  spatialBlend: 1
+  childSettingMode: 0

@@ -508,8 +508,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4196899687767160688}
   - component: {fileID: 4196899687767160703}
-  - component: {fileID: 4196899687767160702}
-  - component: {fileID: 4196899687767160689}
+  - component: {fileID: 6077736352861376467}
+  - component: {fileID: 1211732863022995878}
   m_Layer: 5
   m_Name: SFX_ValueChanged
   m_TagString: Untagged
@@ -549,7 +549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stopOnRecreate: 1
---- !u!114 &4196899687767160702
+--- !u!114 &6077736352861376467
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -558,21 +558,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4196899687767160691}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Script: {fileID: 11500000, guid: ed6c134e406b472498749e0a84d561a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/UI/Buttons/Button_Highlight
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
---- !u!114 &4196899687767160689
+--- !u!114 &1211732863022995878
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -581,9 +570,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4196899687767160691}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0db4eaa01b562884d961d378914b2896, type: 3}
+  m_Script: {fileID: 11500000, guid: b0734be92bf81b44c978344636afe315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundInfo: {fileID: 11400000, guid: e45d5efb35f3d134aa7f532ed0251658, type: 2}
+  playOnStart: 0
+  stopOnDestroy: 0
 --- !u!1 &4196899687913730713
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,8 +812,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4196899688158245639}
   - component: {fileID: 4196899688158245634}
-  - component: {fileID: 4196899688158245637}
-  - component: {fileID: 4196899688158245636}
+  - component: {fileID: 6492028852919565791}
+  - component: {fileID: 6320584151663016913}
   m_Layer: 5
   m_Name: SFX_Highlight
   m_TagString: Untagged
@@ -861,7 +853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stopOnRecreate: 1
---- !u!114 &4196899688158245637
+--- !u!114 &6492028852919565791
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -870,21 +862,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4196899688158245638}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Script: {fileID: 11500000, guid: b0734be92bf81b44c978344636afe315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/UI/Buttons/Button_Highlight
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
---- !u!114 &4196899688158245636
+  soundInfo: {fileID: 11400000, guid: e45d5efb35f3d134aa7f532ed0251658, type: 2}
+  playOnStart: 0
+  stopOnDestroy: 0
+--- !u!114 &6320584151663016913
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -893,7 +877,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4196899688158245638}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0db4eaa01b562884d961d378914b2896, type: 3}
+  m_Script: {fileID: 11500000, guid: ed6c134e406b472498749e0a84d561a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4196899688252850851

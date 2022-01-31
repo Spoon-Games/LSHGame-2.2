@@ -10,7 +10,6 @@ namespace LSHGame.UI
         private void Awake()
         {
             var status = SceneMarker.GetSceneStatus(startScene);
-            Debug.Log($"StartScene {startScene} Status: {status}");
             if (status == SceneStatus.NotBegun)
                 gameObject.SetActive(false);
         }

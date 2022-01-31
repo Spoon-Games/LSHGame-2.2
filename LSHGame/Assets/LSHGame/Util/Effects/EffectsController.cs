@@ -17,7 +17,7 @@ namespace LSHGame.Util
         /// Use this function if you don't have the direct refrence to the VFXTrigger, like in an animator (VFXTriggerSMB).
         /// </summary>
         /// <param name="name">The name of the trigger</param>
-        public void TriggerEffectParams(string name,Bundle parameters)
+        public void TriggerEffectParams(string name, Bundle parameters)
         {
             if (effectTriggers.TryGetValue(name, out IEffectTrigger trigger))
             {
@@ -26,6 +26,14 @@ namespace LSHGame.Util
             else
                 Debug.Log("EffectTrigger " + name + " was not found");
         }
+
+        public void TriggerEffectParams(string name, string material, Bundle parameters)
+        {
+            SetMaterial(name, material);
+            TriggerEffectParams(name, parameters);
+            SetMaterialDefault(name);
+        }
+
 
         public void TriggerEffect(string name)
         {
@@ -41,18 +49,18 @@ namespace LSHGame.Util
 
         public void SetAllMaterialsToDefault()
         {
-            foreach(var trigger in effectTriggers.Values)
+            foreach (var trigger in effectTriggers.Values)
             {
                 trigger.SetMaterialToDefault();
             }
         }
 
-        public void SetMaterial(string effect,string material)
+        public void SetMaterial(string effect, string material)
         {
             if (effectTriggers.TryGetValue(effect, out IEffectTrigger trigger))
                 trigger.SetMaterial(material);
             else
-                Debug.Log("Can not set Material in " + this.name + ", effect " + effect + " does not exists");
+                Debug.Log("Can not set Material in " + name + ", effect " + effect + " does not exists");
         }
 
         public void SetMaterialDefault(string effect)
@@ -60,7 +68,7 @@ namespace LSHGame.Util
             if (effectTriggers.TryGetValue(effect, out IEffectTrigger trigger))
                 trigger.SetMaterialToDefault();
             else
-                Debug.Log("Can not set Material Default in " + this.name + ", effect " + effect + " does not exists");
+                Debug.Log("Can not set Material Default in " + name + ", effect " + effect + " does not exists");
         }
 
         public void StopEffect(string name)
@@ -88,7 +96,7 @@ namespace LSHGame.Util
             }
         }
     }
-    
+
     public interface IEffectTrigger
     {
         void AddToDict(Dictionary<string, IEffectTrigger> triggers);

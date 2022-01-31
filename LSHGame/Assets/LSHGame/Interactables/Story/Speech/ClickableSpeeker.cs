@@ -23,6 +23,7 @@ namespace LSHGame
         {
             base.Awake();
             triggerCollider = GetComponent<Collider2D>();
+            interactAgent.Initialize();
         }
 
         private void OnInteract()

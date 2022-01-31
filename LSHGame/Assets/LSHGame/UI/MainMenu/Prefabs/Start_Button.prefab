@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8174532509260887724}
   - component: {fileID: 5223985981350771986}
-  - component: {fileID: 8016079447396502213}
-  - component: {fileID: 6831377036379555264}
+  - component: {fileID: 3705703372827962012}
+  - component: {fileID: 8743248570955822027}
   m_Layer: 5
   m_Name: SFX_Highlight
   m_TagString: Untagged
@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stopOnRecreate: 1
---- !u!114 &8016079447396502213
+--- !u!114 &3705703372827962012
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -60,21 +60,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 656431719247396360}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Script: {fileID: 11500000, guid: b0734be92bf81b44c978344636afe315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/UI/Buttons/Button_Highlight
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
---- !u!114 &6831377036379555264
+  soundInfo: {fileID: 11400000, guid: e45d5efb35f3d134aa7f532ed0251658, type: 2}
+  playOnStart: 0
+  stopOnDestroy: 0
+--- !u!114 &8743248570955822027
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -83,7 +75,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 656431719247396360}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0db4eaa01b562884d961d378914b2896, type: 3}
+  m_Script: {fileID: 11500000, guid: ed6c134e406b472498749e0a84d561a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2259845412740878154
@@ -96,8 +88,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3798683156313974779}
   - component: {fileID: 2978778463980255300}
-  - component: {fileID: 1950021487669663699}
-  - component: {fileID: 26489511742383621}
+  - component: {fileID: 4583427896472166982}
+  - component: {fileID: 962060162803796949}
   m_Layer: 5
   m_Name: SFX_Press
   m_TagString: Untagged
@@ -137,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stopOnRecreate: 1
---- !u!114 &1950021487669663699
+--- !u!114 &4583427896472166982
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,21 +138,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2259845412740878154}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Script: {fileID: 11500000, guid: ed6c134e406b472498749e0a84d561a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/UI/Buttons/Button_Press
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
---- !u!114 &26489511742383621
+--- !u!114 &962060162803796949
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,9 +150,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2259845412740878154}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0db4eaa01b562884d961d378914b2896, type: 3}
+  m_Script: {fileID: 11500000, guid: b0734be92bf81b44c978344636afe315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundInfo: {fileID: 11400000, guid: 0adbc426fced8704a9c5d33263c79105, type: 2}
+  playOnStart: 0
+  stopOnDestroy: 0
 --- !u!1 &4037005700801992595
 GameObject:
   m_ObjectHideFlags: 0

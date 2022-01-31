@@ -22,8 +22,8 @@ MonoBehaviour:
     ein Ritual?\r\n<Page/>\r\nWir beten dich an\r\n<Page/>\r\nGott aller G\xF6tter\r\n<Button/>\r\nH\xF6chster
     der H\xF6chsten\r\n<Page/>\r\nSchildie die Schildkr\xF6te\r\n<Page/>\r\nGew\xE4hre
     uns Schutz und Schokolade\r\n</Katharina>\r\n<Bettie>\r\nNiemand wei\xDF es so
-    wirklich.\r\n<Page/>\r\nWillst du nun das Portal \xF6ffnen?\r\n<Button=\"\xD6ffnen\"/>\r\n<Action=OpenPortal/>\r\n</Bettie>\r\n<Pause=12/>\r\n<Katharina>\r\nBettie,\r\n<Page/>\r\nich
-    habe Angst...\r\n<Page/>\r\nWas wenn nichts auf der anderen Seite ist?\r\n</Katharina>\r\n<Bettie>\r\nEs
+    wirklich.\r\n<Page/>\r\nWillst du das Portal \xF6ffnen?\r\n<Button=\"\xD6ffnen\"/>\r\n<Action=OpenPortal/>\r\n</Bettie>\r\n<Pause=12/>\r\n<Katharina>\r\nBettie,\r\n<Page/>\r\nich
+    habe Angst...\r\n<Page/>\r\nWas wenn Nichts auf der anderen Seite ist?\r\n</Katharina>\r\n<Bettie>\r\nEs
     ist ok,\r\n<Page/>\r\nDu bist nicht alleine\r\n<Page/>\r\nIch bin hier.\r\n</Bettie>\r\n<Katharina>\r\n...\r\n</Katharina>\r\n<Bettie>\r\nDu
     musst nun hineingehen.\r\n</Bettie>\r\n<Katharina>\r\nTsch\xFCss,\r\nBettie\r\n</Katharina>\r\n<Bettie>\r\nTsch\xFCss,\r\n<Page/>\r\nWir
     werden uns ganz sicher wiedersehen!\r\n</Bettie>\r\n<Katharina>\r\nIch bin nicht

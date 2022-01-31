@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using AudioP;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,9 +25,7 @@ namespace LSHGame.UI
         [SerializeField]
         private Ease outScaleEase = Ease.InQuad;
 
-        [SerializeField]
-        [FMODUnity.EventRef]
-        private string defaultOpeningSound;
+        [SerializeField] private SoundInfo defaultOpeningSound;
 
         protected override float OnStartEntering()
         {
@@ -38,13 +37,7 @@ namespace LSHGame.UI
 
             dialogField.text = "";
 
-            if (!string.IsNullOrEmpty(Dialog.OpeningSound))
-            {
-                FMODUnity.RuntimeManager.PlayOneShot(Dialog.OpeningSound);
-            }else if (!string.IsNullOrEmpty(defaultOpeningSound))
-            {
-                FMODUnity.RuntimeManager.PlayOneShot(defaultOpeningSound);
-            }
+            AudioManager.Play(Dialog.OpeningSound??defaultOpeningSound);
 
             return inScaleTime;
         }

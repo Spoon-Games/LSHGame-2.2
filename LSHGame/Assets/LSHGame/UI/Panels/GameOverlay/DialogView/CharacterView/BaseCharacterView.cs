@@ -63,6 +63,7 @@ namespace LSHGame.UI
         {
             furtherButton?.onClick.AddListener(OnFurther);
 
+            dialogInputAgent.Initialize();
             dialogInputAgent.Jump.OnPress += OnFurther;
         }
         #endregion
@@ -265,8 +266,10 @@ namespace LSHGame.UI
 
         public float StartEntering(Panel previousPanel)
         {
+            float time = OnStartEntering();
             TagChain.Start();
-            return OnStartEntering();
+
+            return time;
         }
 
         protected virtual float OnStartEntering() => 0;

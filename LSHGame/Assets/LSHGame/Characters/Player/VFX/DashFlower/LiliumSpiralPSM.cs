@@ -1,9 +1,11 @@
+using AudioP;
 using LSHGame.Util;
 using UnityEngine;
 
 namespace LSHGame.PlayerN
 {
     [ExecuteInEditMode()]
+    [RequireComponent(typeof(AudioPlayer))]
     public class LiliumSpiralPSM : ParticleSystemModifier
     {
         [SerializeField]
@@ -25,16 +27,16 @@ namespace LSHGame.PlayerN
         [SerializeField] private AnimationCurve trailLength;
         [Space]
         [SerializeField] private int liliumDashSubEmitterIndex = 1;
-        [Space]
-        [FMODUnity.EventRef]
-        [SerializeField]
-        private string spiralSFX;
-        private FMOD.Studio.EventInstance spiralSoundInstance;
+
+        private AudioPlayer audioPlayer;
+        
 
 
         protected override void Awake()
         {
             base.Awake();
+
+            audioPlayer = GetComponent<AudioPlayer>();
              
             var main = ps.main;
             lifeTime.Awake((v => main.startLifetime = v));
@@ -66,9 +68,8 @@ namespace LSHGame.PlayerN
             if (!ps.isPlaying)
             {
                 ps.Play();
-                spiralSoundInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-                spiralSoundInstance = FMODUnity.RuntimeManager.CreateInstance(spiralSFX);
-                spiralSoundInstance.start();
+
+                audioPlayer.Play();
             }
         }
 
@@ -76,7 +77,8 @@ namespace LSHGame.PlayerN
         {
             if (ps.isPlaying)
                 ps.Stop(true,ParticleSystemStopBehavior.StopEmittingAndClear);
-            spiralSoundInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
+            audioPlayer.Stop();
         }
 
         private void Evaluate(float t)

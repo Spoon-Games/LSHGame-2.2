@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using AudioP;
+using DG.Tweening;
 using System.Linq;
 using TagInterpreterR;
 using TMPro;
@@ -18,6 +19,8 @@ namespace LSHGame.UI
 
         public TMP_Text dialogField;
 
+        public MutipleSourcesAudioPlayer leftAudioPlayer;
+        public MutipleSourcesAudioPlayer rightAudioPlayer;
 
         [Header("Attributes")]
         public Color colorNoneFocusedImage;
@@ -26,7 +29,8 @@ namespace LSHGame.UI
 
         private Color colorFocusedText;
 
-        private CharacterVoice currentVoice;
+        private MutipleSourcesAudioPlayer currentAudioPlayer;
+        private IndexedSoundInfo currentVoice;
 
         public override void Awake()
         {
@@ -148,6 +152,8 @@ namespace LSHGame.UI
             {
                 (isRight ? characterImageRight : characterImageLeft).sprite = (mood.Picture != null ? mood.Picture : defaultMood.Picture);
                 currentVoice = (mood.Voice != null ? mood.Voice : defaultMood.Voice);
+                currentAudioPlayer = isRight ? rightAudioPlayer : leftAudioPlayer;
+                currentAudioPlayer.soundInfo = currentVoice;
             }
 
             (isRight ? nameFieldRight : nameFieldLeft).text = titleName;
@@ -165,7 +171,8 @@ namespace LSHGame.UI
 
         protected override void OnAddFractionChar(char c)
         {
-            currentVoice?.PlayChar(c);
+            currentVoice?.SetChar(c);
+            currentAudioPlayer.Play();
         }
         #endregion
 

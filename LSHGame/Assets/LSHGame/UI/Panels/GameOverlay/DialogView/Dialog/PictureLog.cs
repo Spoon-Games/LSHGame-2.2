@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using TagInterpreterR;
+﻿using AudioP;
 using UnityEngine;
 
 namespace LSHGame.UI
@@ -11,8 +10,8 @@ namespace LSHGame.UI
 
         [Multiline(lines: 20,order = 5)]
         public string Text;
-        [FMODUnity.EventRef]
-        public string OpeningSound;
+
+        public SoundInfo OpeningSound;
 
         protected override string GetData()
         {

@@ -68,7 +68,6 @@ namespace SceneM
         {
             if(checkpoint.Order >= CurrentOrder)
             {
-                Debug.Log("SetCheckpoint " + checkpoint.name);
                 currentCheckPos = checkpoint.SetCheckpoint();
                 _currentOrder = checkpoint.Order;
                 return true;

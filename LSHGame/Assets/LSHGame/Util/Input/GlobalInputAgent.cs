@@ -16,5 +16,7 @@ namespace LSHGame.Util
             Move.Init(this, GameInput.Controller.Player.Movement,"Move");
             Back.Init(this, GameInput.Controller.Player.BackUI,"Back");
         }
+
+        
     }
 }

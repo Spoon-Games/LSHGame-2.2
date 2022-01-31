@@ -7,9 +7,15 @@ namespace SceneM
         [SerializeField]
         private MySceneInfo sceneInfo;
 
+        private bool isLoading = false;
+
         public void LoadScene()
         {
-            LevelManager.LoadScene(sceneInfo);
+            if (!isLoading)
+            {
+                LevelManager.LoadScene(sceneInfo);
+                isLoading = true;
+            }
         }
 
         public void UnloadScene()

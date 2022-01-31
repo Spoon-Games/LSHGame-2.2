@@ -1,4 +1,4 @@
-﻿
+﻿using AudioP;
 using UnityEngine;
 
 namespace LSHGame.UI
@@ -17,6 +17,6 @@ namespace LSHGame.UI
     {
         public string Name;
         public Sprite Picture;
-        public CharacterVoice Voice;
+        public IndexedSoundInfo Voice;
     }
 }

@@ -303,37 +303,103 @@ namespace LSHGame.Util
             ],
             ""bindings"": [
                 {
-                    ""name"": """",
-                    ""id"": ""035ae003-1910-4861-8910-762505be02ea"",
+                    ""name"": ""Shift C"",
+                    ""id"": ""6ab2eebc-7a06-41d4-a9cf-78bb50fb7bf1"",
+                    ""path"": ""ButtonWithOneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleConsole"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""e3a54b2f-870a-443f-86d0-a74757f8b546"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleConsole"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""button"",
+                    ""id"": ""071b05ff-d9c4-4f7b-9a74-9917f5950536"",
                     ""path"": ""<Keyboard>/c"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""ToggleConsole"",
                     ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Shift X"",
+                    ""id"": ""d18b6ca2-3ade-4394-a145-caf376fcb9bd"",
+                    ""path"": ""ButtonWithOneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleSceneView"",
+                    ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""0a48a7f9-0528-4c54-bedc-46bd4721a620"",
+                    ""name"": ""modifier"",
+                    ""id"": ""04f8ccf0-759b-4019-9d79-6ab81b8412cb"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleSceneView"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""button"",
+                    ""id"": ""2b8e82ae-cd01-4846-9daf-b94796edd1f8"",
                     ""path"": ""<Keyboard>/x"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""ToggleSceneView"",
                     ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Shift V"",
+                    ""id"": ""97d4863e-ef9b-4f9b-ae4e-920539ba19cb"",
+                    ""path"": ""ButtonWithOneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleFPSView"",
+                    ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""b2e80b2e-fa1c-4d88-91d6-a2a7e2180265"",
+                    ""name"": ""modifier"",
+                    ""id"": ""67d8184e-9151-4a8b-b705-432571a39d14"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleFPSView"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""button"",
+                    ""id"": ""f40cd8ab-6e5b-4706-a910-7c6d93e63591"",
                     ""path"": ""<Keyboard>/v"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""ToggleFPSView"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
                 }
             ]
         },

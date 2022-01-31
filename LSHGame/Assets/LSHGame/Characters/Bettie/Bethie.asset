@@ -17,4 +17,4 @@ MonoBehaviour:
   Moods:
   - Name: Default
     Picture: {fileID: 21300000, guid: 1d3047f35b632ce4aac8e85f24e12b52, type: 3}
-    Voice: {fileID: 11400000, guid: 6d6ac85a9dbeeee4db1236d0f3e2eed1, type: 2}
+    Voice: {fileID: 11400000, guid: b460b0a7bc04c584089c825c0eb3b267, type: 2}
